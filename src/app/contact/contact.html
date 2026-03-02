@@ -1,0 +1,93 @@
+<div class="contact-part">
+    <img src="/imgs/contact/contact-img.png" alt="" class="banner">
+    <div class="contact-content">
+        <div class="left-part">
+            <div class="">
+                <div class="heading">GET IN TOUCH</div>
+                <div class="para">Have Question or Ready to Own a Farm Land ?</div>
+            </div>
+
+            <div class="cards">
+                <a href="mailto:sharanyafarms@gmail.com" class="card-link">
+                    <div class="card">
+                        <img src="/imgs/contact/mail.png" alt="">
+                        <div class="flex">
+                            <div class="label">Email Us</div>
+                            <div class="name">sharanyafarms@gmail.com</div>
+                        </div>
+                        <span class="add-arrow"><img src="/imgs/contact/arrow.png" alt=""></span>
+                    </div>
+                </a>
+
+                <a href="tel:+919901935250" class="card-link">
+                    <div class="card">
+                        <img src="/imgs/contact/phone.png" alt="">
+                        <div class="flex">
+                            <div class="label">Phone</div>
+                            <div class="name">+91 9901935250</div>
+                        </div>
+                        <span class="add-arrow"><img src="/imgs/contact/arrow.png" alt=""></span>
+                    </div>
+
+                </a>
+                <a href="" class="card-link">
+                    <div class="card add">
+                        <img src="/imgs/contact/location.png" alt="">
+                        <div class="address">
+                            #1582, Samarth Arcade, 3rd Floor, BEML, 5th stage, H V Halli Double Road, Rajarajeshwari
+                            Nagar,
+                            Bangalore -560098
+                        </div>
+                        <span class="add-arrow"><img src="/imgs/contact/arrow.png" alt=""></span>
+                    </div>
+                </a>
+
+
+            </div>
+        </div>
+
+        <div class="right-part">
+            <form class="form" [formGroup]="contactForm" (ngSubmit)="submitForm()">
+
+                <!-- First Name -->
+                <div class="form-group">
+                    <input type="text" formControlName="firstName" placeholder="First Name">
+                    <small class="error" *ngIf="submitted && f['firstName'].errors">
+                        <span *ngIf="f['firstName'].errors['required']">First name is required</span>
+                        <span *ngIf="f['firstName'].errors['minlength']">Minimum 3 characters required</span>
+                    </small>
+                </div>
+
+                <!-- Mobile -->
+                <div class="form-group">
+                    <input type="number" formControlName="mobile" placeholder="Mobile Number">
+                    <small class="error" *ngIf="submitted && f['mobile'].errors">
+                        <span *ngIf="f['mobile'].errors['required']">Mobile number is required</span>
+                        <span *ngIf="f['mobile'].errors['pattern']">Enter valid 10 digit number</span>
+                    </small>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <input type="email" formControlName="email" placeholder="Email">
+                    <small class="error" *ngIf="submitted && f['email'].errors">
+                        <span *ngIf="f['email'].errors['required']">Email is required</span>
+                        <span *ngIf="f['email'].errors['email']">Enter valid email</span>
+                    </small>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                    <textarea formControlName="message" placeholder="Your Message"></textarea>
+                    <small class="error" *ngIf="submitted && f['message'].errors">
+                        <span *ngIf="f['message'].errors['required']">Message is required</span>
+                        <span *ngIf="f['message'].errors['minlength']">Minimum 10 characters required</span>
+                    </small>
+                </div>
+
+                <button type="submit">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>
