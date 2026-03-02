@@ -1,0 +1,305 @@
+.banner {
+    width: 100%;
+    position: absolute;
+    height:auto;
+}
+
+.contact-content {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding-top: 100px;
+    gap: 40px;
+}
+
+.left-part {
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+    position: relative;
+}
+
+.heading {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.para {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.card {
+    display: flex;
+    width: 600px;
+    height: 80px;
+    padding: 10px 10px 10px 20px;
+    align-items: center;
+    gap: 20px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.add-arrow {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .add-arrow {
+    transform: rotate(45deg);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+
+.flex {
+    width: 72%;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.label,
+.address {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.name {
+    color: #B1B1B1;
+    font-family: Syne;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.form {
+    width: 600px;
+    height: auto;
+    border-radius: 40px;
+
+    /* Glass Background */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.address {
+    width: 390px;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+
+    padding: 12px 20px;
+    outline: none;
+    color: #FFF;
+    font-family: Syne;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.form textarea {
+    display: flex;
+    width: 500px;
+    height: 240px;
+    padding: 10px 160px 10px 20px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.10);
+}
+
+.form button {
+    display: flex;
+    width: 500px;
+    height: 48px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background: #FFF;
+    color: #0E2F1F;
+    font-family: Syne;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.error {
+    color: #ff4d4f;
+    font-size: 12px;
+    margin-top: 4px;
+    font-family: Syne;
+    padding-left: 5px;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border: 1px solid #ff4d4f;
+}
+
+@media(max-width:1439px) {
+
+    .form,
+    .form textarea,
+    .form button,
+    .card {
+        width: 100%;
+    }
+
+    .contact-content {
+        padding: 20px
+    }
+
+    .banner{
+        height: 650px;
+    }
+
+    .add-arrow {
+        margin-left: 0;
+    }
+
+    .add {
+        padding: 10px;
+    }
+
+    .form textarea{
+        width: 350px;
+        height: 200px;
+    }
+
+    .form{
+        padding: 30px;
+    }
+
+}
+
+@media(max-width:1023px) {
+    .contact-content {
+        flex-wrap: wrap;
+    }
+
+    .banner {
+        height: 1120px;
+    }
+
+    .left-part {
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .form textarea {
+        padding: 20px;
+    }
+}
+
+@media(max-width:767px) {
+    .card {
+        height: auto;
+        padding: 10px;
+    }
+
+    .flex {
+        width: 100%;
+    }
+
+    .add {
+        padding: 10px;
+    }
+
+    .address {
+        width: 100%;
+    }
+
+    .heading{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .para{
+        font-size: 16px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .card span{
+        display: none;
+    }
+
+    .left-part{
+        gap: 20px;
+    }
+
+    .form{
+        padding: 30px;
+    }
+    .form textarea{
+        width: 100%;
+    }
+
+}
