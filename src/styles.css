@@ -4,3 +4,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+  :root {
+      --primary: #1a4a3c;
+      --primary-hover: #0f3028;
+      --accent: #2a6b55;
+      --text-dark: #1a1a1a;
+      --text-muted: #6b7280;
+      --text-label: #374151;
+      --border: #d1d5db;
+      --border-focus: #1a4a3c;
+      --bg-page: #f0f4f2;
+      --error: #dc2626;
+    }

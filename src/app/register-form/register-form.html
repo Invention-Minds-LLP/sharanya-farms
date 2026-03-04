@@ -1,0 +1,261 @@
+<div class="register-form">
+    <div class="left-side">
+        <div class="logo">
+            <img src="/imgs/register-form/logo.png" alt="">
+        </div>
+        <div class="star-part">
+            <img src="/imgs/register-form/star.svg" alt=""> <span>Premium Farmland Investment Event</span>
+        </div>
+
+        <div class="main-heading">Celebrate Land. <span>Celebrate Life.</span></div>
+
+        <div>
+            <div class="english-heading">Sharanya Utsava 2026</div>
+            <div class="kanada-heading">ಶರಣ್ಯ ಉತ್ಸವ 2026</div>
+        </div>
+
+        <div class="flex">
+            <div class="line"></div>
+            <div class="banner-para">A One-Day Farm Experience Near Bangalore-Mysore Road.
+                Step into a day filled with nature, community, and conscious living.</div>
+        </div>
+
+        <div class="lists">
+            <div class="list" *ngFor="let lists of list">
+                <img [src]="lists.img" alt="">
+                <div class="list-para">{{lists.para}}</div>
+            </div>
+        </div>
+        <div class="border"></div>
+
+        <div class="counts">
+            <div class="count-card">
+                <div class="numer">51+</div>
+                <div class="name">Acres Developed</div>
+            </div>
+            <div class="count-card">
+                <div class="numer">10K+</div>
+                <div class="name">Investors</div>
+            </div>
+            <div class="count-card">
+                <div class="numer">100%</div>
+                <div class="name">Managed</div>
+            </div>
+        </div>
+
+
+        <div class="limited"><img src="/imgs/register-form/time.svg" alt=""> <span>Limited Entry – Pre Registration
+                Required</span></div>
+    </div>
+
+    <div class="right-side">
+        <div class="page-wrap">
+            <div class="accent-bar"></div>
+            <div class="form-card">
+
+                <div class="form-header">
+                    <h1 class="form-title">Book Your Spot</h1>
+                    <p class="form-subtitle">Sharanya Utsava – Free Entry</p>
+                </div>
+
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form-body" novalidate>
+
+                    <!-- Full Name -->
+                    <div class="field-group">
+                        <label class="field-label">FULL NAME <span class="required">*</span></label>
+                        <input type="text" formControlName="fullName" class="field-input"
+                            placeholder="Enter your full name" />
+
+                        <span class="error-msg" *ngIf="submitted && f['fullName'].errors">
+                            Full name is required
+                        </span>
+                    </div>
+
+            
+                    <div class="field-row">
+
+                        <!-- Phone -->
+                        <div class="field-group">
+                            <label class="field-label">PHONE <span class="required">*</span></label>
+                            <div class="phone-wrap">
+                                <span class="phone-prefix">+91</span>
+                                <input type="tel" formControlName="phone" class="phone-input"
+                                    placeholder="Enter phone number" />
+                            </div>
+
+                            <span class="error-msg" *ngIf="submitted && f['phone'].errors">
+                                Valid 10-digit phone required
+                            </span>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="field-group">
+                            <label class="field-label">EMAIL <span class="required">*</span></label>
+                            <input type="email" formControlName="email" class="field-input"
+                                placeholder="name@email.com" />
+
+                            <span class="error-msg" *ngIf="submitted && f['email'].errors">
+                                Valid email required
+                            </span>
+                        </div>
+
+                    </div>
+
+                
+                    <div class="field-row">
+
+                        <!-- City -->
+                        <div class="field-group">
+                            <label class="field-label">CITY</label>
+                            <div class="select-wrap">
+                                <select formControlName="city" class="field-select">
+                                    <option value="bangalore">Bangalore</option>
+                                    <option value="mysore">Mysore</option>
+                                    <option value="tumkur">Tumkur</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Occupation -->
+                        <div class="field-group">
+                            <label class="field-label">OCCUPATION</label>
+                            <div class="select-wrap">
+                                <select formControlName="occupation" class="field-select">
+                                    <option value="it">IT</option>
+                                    <option value="business">Business</option>
+                                    <option value="doctor">Doctor</option>
+                                    <option value="govt">Govt</option>
+                                    <option value="student">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Preference Box -->
+                    <div class="preference-box">
+
+                        <!-- Looking For -->
+                        <div class="field-group">
+                            <label class="field-label">LOOKING FOR:</label>
+                            <div class="radio-group">
+
+                                <label class="radio-label">
+                                    <input type="radio" formControlName="lookingFor" value="investment" />
+                                    <span class="radio-custom"></span>
+                                    <span>Investment</span>
+                                </label>
+
+                                <label class="radio-label">
+                                    <input type="radio" formControlName="lookingFor" value="lifestyle" />
+                                    <span class="radio-custom"></span>
+                                    <span>Lifestyle</span>
+                                </label>
+
+                                <label class="radio-label">
+                                    <input type="radio" formControlName="lookingFor" value="both" />
+                                    <span class="radio-custom"></span>
+                                    <span>Both</span>
+                                </label>
+
+                            </div>
+                        </div>
+
+                        <!-- Budget -->
+                        <div class="field-group">
+                            <label class="field-label">BUDGET RANGE</label>
+                            <div class="select-wrap">
+                                <select formControlName="budget" class="field-select">
+                                    <option value="5 Lakhs">5 Lakhs</option>
+                                    <option value="5-10">5 - 10 Lakhs</option>
+                                    <option value="10-25">10 - 25 Lakhs</option>
+                                    <option value="20 Lakhs">20 Lakhs</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="submit-btn">
+                        REGISTER FOR FREE FARM VISIT
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M12.175 9H0V7H12.175L6.575 1.4L8 0L16 8L8 16L6.575 14.6L12.175 9Z" fill="white" />
+                        </svg>
+                    </button>
+
+                    <p class="consent-text">
+                        By registering, I agree to be contacted via call/WhatsApp regarding this event.
+                    </p>
+
+                </form>
+
+                <!-- Trust Badges -->
+                <div class="trust-badges">
+                    <div class="badge">
+                        <span class="badge-icon">
+                            <img src="/imgs/register-form/star.svg" alt="">
+                        </span>
+                        VERIFIED
+                    </div>
+
+                    <div class="badge">
+                        <span class="badge-icon">
+                            <img src="/imgs/register-form/secure.svg" alt="">
+                        </span>
+                        SECURE
+                    </div>
+
+                    <div class="badge">
+                        <span class="badge-icon">
+                            <img src="/imgs/register-form/eco.svg" alt="">
+                        </span>
+                        ECO-FRIENDLY
+                    </div>
+                </div>
+
+                <!-- Event Details -->
+                <div class="event-details">
+                    <div class="event-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#888" stroke-width="1.5">
+                            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+
+                    <div class="event-info">
+                        <p><strong>Event Details</strong></p>
+                        <p>Date: March 28, 2026</p>
+                        <p>Time: 9:00 AM – 5:00 PM</p>
+                        <a class="directions-link" href="https://maps.app.goo.gl/xsXvFAJnFyiCbiJm7?g_st=aw" target="_blank">Get Directions</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-part">
+    <div class="heading-part">
+        <div class="bottom-sub-heading">Experience the Lifestyle</div>
+        <div class="bottom-heading">Event Highlights</div>
+        <div class="bor"></div>
+    </div>
+
+    <div class="bottom-cards">
+        <div class="bootom-card" *ngFor="let card of card">
+            <div class="icon-img">
+                <img [src]="card.img" alt="" class="icon">
+            </div>
+            <div class="card-heading">{{card.heading}}</div>
+            <div class="card-para">{{card.para}}</div>
+        </div>
+    </div>
+
+
+</div>
