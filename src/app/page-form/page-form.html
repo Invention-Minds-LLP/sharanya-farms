@@ -1,0 +1,86 @@
+<div class="page-form">
+    <div class="heading">SEND US A MESSAGE</div>
+    <div class="form">
+        <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+
+            <div class="flex">
+                <div>
+                    <input type="text" placeholder="First Name" formControlName="firstName">
+                    <small *ngIf="contactForm.get('firstName')?.touched && contactForm.get('firstName')?.invalid">
+                        First name is required
+                    </small>
+                </div>
+
+                <div>
+                    <input type="text" placeholder="Last Name" formControlName="lastName">
+                    <small *ngIf="contactForm.get('lastName')?.touched && contactForm.get('lastName')?.invalid">
+                        Last name is required
+                    </small>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div>
+                    <input type="tel" placeholder="Mobile Number" formControlName="mobile">
+                    <small
+                        *ngIf="contactForm.get('mobile')?.touched && contactForm.get('mobile')?.errors?.['required']">
+                        Mobile number is required
+                    </small>
+                    <small *ngIf="contactForm.get('mobile')?.errors?.['pattern']">
+                        Enter valid 10 digit number
+                    </small>
+                </div>
+
+                <div>
+                    <input type="email" placeholder="Email" formControlName="email">
+                    <small *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']">
+                        Email is required
+                    </small>
+                    <small *ngIf="contactForm.get('email')?.errors?.['email']">
+                        Enter valid email
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <textarea placeholder="Your Message" formControlName="message"></textarea>
+                <small *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+                    Message is required
+                </small>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+
+        </form>
+    </div>
+    <div class="heading">GET IN TOUCH</div>
+
+    <div class="flex1">
+        <div class="msg-part">
+            <div class="email">
+                <div class="label">Email us</div>
+                <a href="mailto:sharanyafarms@gmail.com">
+                    <div class="name">sharanyafarms@gmail.com</div>
+                </a>
+            </div>
+
+            <div class="whatsapp">
+                <div class="label">Whatsapp</div>
+                <a href="https://wa.me/919901935250" target="_blank">
+                    <div class="name">+91 9901935250</div>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="address">
+            <div class="label">Address</div>
+            <a href="https://www.google.com/maps/place/Sharanya+Farms/@12.7819212,76.4901249,17z/data=!3m1!4b1!4m6!3m5!1s0x3baf8bde82aab07b:0xa7cb49c5f0746e93!8m2!3d12.7819212!4d76.4901249!16s%2Fg%2F11fmmdm7wk!17m2!4m1!1e3!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMwMS4xIKXMDSoASAFQAw%3D%3D"
+                target="_blank">
+                <div class="name">#1582, Samarth Arcade, 3rd Floor, BEML, 5th stage, H V Halli Double Road,
+                    Rajarajeshwari
+                    Nagar, Bangalore -560098</div>
+            </a>
+        </div>
+    </div>
+</div>
