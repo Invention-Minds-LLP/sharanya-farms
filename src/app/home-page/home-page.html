@@ -1,0 +1,250 @@
+<div class="home-page">
+    <div class="banner-video">
+        <!-- <video src="/imgs/home-page/home-page-banner-video.mp4"  autoplay loop muted playinline></video> -->
+    </div>
+
+    <div class="benefits-part">
+        <div class="benefits-heading">4 Benefits in One Investment</div>
+        <div class="features-banner">
+            <div class="features-track">
+
+
+                <div class="feature-item">
+                    <div class="icon-wrap">
+                        <img src="/imgs/home-page/benefits-img-1.png" alt="">
+                    </div>
+                    <p class="feature-label">Own a Valuable<br>Land Asset</p>
+                </div>
+
+
+                <div class="feature-item">
+                    <div class="icon-wrap">
+                        <img src="/imgs/home-page/benefits-img-2.png" alt="">
+                    </div>
+                    <p class="feature-label">Enjoy Your Personal<br>Weekend Retreat</p>
+                </div>
+
+
+                <div class="feature-item">
+                    <div class="icon-wrap">
+                        <img src="/imgs/home-page/benefits-img-3.png" alt="">
+                    </div>
+                    <p class="feature-label">Earn Potential<br>Income from<br>Your Farm</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="icon-wrap">
+                        <img src="/imgs/home-page/benefits-img-4.png" alt="">
+                    </div>
+                    <p class="feature-label">Professionally<br>Managed Farmland</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="tree-part">
+        <div class="second-part">
+            <div class="second-part-para">At Sharanya Farms, we believe in creating meaningful, lasting connections
+                between people and nature through responsible land ownership and eco-conscious living.</div>
+            <img src="/imgs/home-page/tree-img.png" alt="">
+        </div>
+
+        <div class="we-are-part">
+            <div class="we-are-bg">
+                <img src="/imgs/home-page/we-are-part-bg.png" alt="">
+            </div>
+
+            <div class="we-are-content">
+                <div class="we-are-heading">WE ARE DIFFERENT IN EVERY WAY</div>
+
+                <div class="card-slider">
+
+                    <!-- LEFT CARD -->
+                    <div class="card left" (click)="prev()">
+                        <img [src]="cards[leftIndex].image">
+
+                        <div class="overlay">
+                            <h3>{{cards[leftIndex].title}}</h3>
+                            <p>{{cards[leftIndex].desc}}</p>
+                        </div>
+                    </div>
+
+
+                    <!-- CENTER CARD -->
+                    <div class="card center">
+                        <img [src]="cards[active].image">
+                    </div>
+
+
+                    <!-- RIGHT CARD -->
+                    <div class="card right" (click)="next()">
+                        <img [src]="cards[rightIndex].image">
+
+                        <div class="overlay">
+                            <h3>{{cards[rightIndex].title}}</h3>
+                            <p>{{cards[rightIndex].desc}}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- BOTTOM CENTER CONTENT -->
+                <div class="center-content">
+                    <h2>{{cards[active].title}}</h2>
+                    <p>{{cards[active].desc}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="steps-section">
+
+        <img src="/imgs/home-page/step-img.png" class="plant">
+
+        <!-- STEP 1 -->
+        <div class="step step1" (mouseenter)="activeStep=1" (mouseleave)="activeStep=0">
+            1
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step step2" (mouseenter)="activeStep=2" (mouseleave)="activeStep=0">
+            2
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step step3" (mouseenter)="activeStep=3" (mouseleave)="activeStep=0">
+            3
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step step4" (mouseenter)="activeStep=4" (mouseleave)="activeStep=0">
+            4
+        </div>
+
+
+        <!-- CONTENT CARD -->
+        <!-- STEP 1 CARD -->
+        <div class="info-card right1" [class.active]="activeStep==1">
+            <img src="/imgs/home-page/right-line.svg" class="arrow arrow1">
+            <h2>Schedule a Visit</h2>
+            <p>Book a guided tour to explore our farmland projects and understand the layout.</p>
+        </div>
+
+        <!-- STEP 2 CARD -->
+        <div class="info-card right2" [class.active]="activeStep==2">
+            <img src="/imgs/home-page/right-line.svg" class="arrow arrow2">
+            <h2>Choose Your Plot</h2>
+            <p>Select from legally clear plots of various sizes based on your budget.</p>
+        </div>
+
+        <!-- STEP 3 CARD -->
+        <div class="info-card left1" [class.active]="activeStep==3">
+            <img src="/imgs/home-page/leftline-1.svg" class="arrow arrow3">
+            <h2>Registration & Handover</h2>
+            <p>Complete documentation and registration with full transparency.</p>
+        </div>
+
+        <!-- STEP 4 CARD -->
+        <div class="info-card left2" [class.active]="activeStep==4">
+            <img src="/imgs/home-page/left-line-2.svg" class="arrow arrow4">
+            <h2>Farm Management Begins</h2>
+            <p>Our team plants, maintains, and harvests your farmland.</p>
+        </div>
+
+    </div>
+
+    <div class="farm-slider" [style.backgroundImage]="'url(' + slides[farmIndex].image + ')'">
+
+        <div class="farm-slider-part">
+
+            <!-- LEFT CONTENT -->
+            <div class="left-side">
+                <div class="left-content">
+                    <h1>{{slides[farmIndex].title}}</h1>
+                    <div class="flex">
+                        <div class="line1"></div>
+                        <div class="farm-name">Sharanya Farms</div>
+                    </div>
+                </div>
+
+
+                <!-- ARROWS -->
+                <div class="arrows">
+                    <button (click)="prevFarm()"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="20"
+                            viewBox="0 0 26 20" fill="none">
+                            <path
+                                d="M12.8568 3.21568L9.64318 -0.000230789L0 9.64295L9.64318 19.2861L12.8568 16.0725L8.70227 11.9157H25.8318V7.37022H8.70227L12.8568 3.21568Z"
+                                fill="#FFFEFE" />
+                        </svg></button>
+                    <button (click)="nextFarm()"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="20"
+                            viewBox="0 0 26 20" fill="none">
+                            <path
+                                d="M12.9752 16.0705L16.1888 19.2864L25.832 9.64318L16.1888 0L12.9752 3.21364L17.1298 7.37046H0.000207901V11.9159H17.1298L12.9752 16.0705Z"
+                                fill="#FFFEFE" />
+                        </svg></button>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <!-- RIGHT CONTENT -->
+                <div class="right-content">
+                    <h2>{{slides[farmIndex].number}}</h2>
+                    <p>{{slides[farmIndex].desc}}</p>
+                </div>
+
+                <div class="right-side-part2">
+                    <div class="line"></div>
+                    <img src="/imgs/home-page/x.png" alt="">
+                    <img src="/imgs/home-page/face-book.png" alt="">
+                    <img src="/imgs/home-page/insta.png" alt="">
+                    <img src="/imgs/home-page/youtube.png" alt="">
+                    <div class="follow">follow us</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="know-more-part">
+        <div class="farm-section">
+
+            <div class="farm-left">
+
+                <h1>{{slide[current].title}}</h1>
+                <p>{{slide[current].desc}}</p>
+
+                <button class="know-btn">Know More</button>
+
+                <div class="circle small" [class.moveSmall]="animate">
+                    <img [src]="slide[nextIndex].img">
+                </div>
+
+            </div>
+
+            <div class="farm-right">
+
+                <div class="circle big" [class.moveBig]="animate">
+                    <img [src]="slide[current].img">
+                </div>
+
+                <div class="arrow-buttons">
+                    <button (click)="goPrevSlide()">▲</button>
+                    <button (click)="goNextSlide()">▼</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div> -->
+
+</div>
+
+<div class="form-part">
+    <app-page-form></app-page-form>
+    <div class="video"></div>
+</div>
+
+<div class="footer">
+    <app-footer></app-footer>
+</div>
