@@ -1,0 +1,48 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* pointer-events: none; */
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px;
+    gap: 40px;
+    border-radius: 70px;
+    border: 1px solid #5B7F4A;
+    background: #FFF;
+}
+
+.links {
+    color: #227546;
+    font-family: Syne;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+ .active {
+    color: #227546;
+    font-family: Syne;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
+

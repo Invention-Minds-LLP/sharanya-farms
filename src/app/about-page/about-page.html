@@ -1,0 +1,177 @@
+<div class="about-page">
+    <div class="banner-part">
+        <div class="banner-imgs">
+            <div class="col">
+                <img src="/imgs/about/img-1.png" alt="">
+                <img src="/imgs/about/img-2.png" alt="">
+                
+                <img src="/imgs/about/img-1.png" alt="">
+                <img src="/imgs/about/img-2.png" alt="">
+                <img src="/imgs/about/img-1.png" alt="">
+                <img src="/imgs/about/img-2.png" alt="">
+
+                <img src="/imgs/about/img-1.png" alt="">
+                <img src="/imgs/about/img-2.png" alt="">
+            </div>
+            <div class="col">
+                <img src="/imgs/about/img-3.png" alt="">
+                <img src="/imgs/about/img-4.png" alt="">
+
+                <img src="/imgs/about/img-3.png" alt="">
+                <img src="/imgs/about/img-4.png" alt="">
+                <img src="/imgs/about/img-3.png" alt="">
+                <img src="/imgs/about/img-4.png" alt="">
+
+                <img src="/imgs/about/img-3.png" alt="">
+                <img src="/imgs/about/img-4.png" alt="">
+            </div>
+            <div class="col">
+                <img src="/imgs/about/img-5.png" alt="">
+                <img src="/imgs/about/img-6.png" alt="">
+
+                <img src="/imgs/about/img-5.png" alt="">
+                <img src="/imgs/about/img-6.png" alt="">
+            </div>
+            <div class="col">
+                <img src="/imgs/about/img-7.png" alt="">
+                <img src="/imgs/about/img-8.png" alt="">
+
+                <img src="/imgs/about/img-7.png" alt="">
+                <img src="/imgs/about/img-8.png" alt="">
+            </div>
+            <div class="col">
+                <img src="/imgs/about/img-9.png" alt="">
+                <img src="/imgs/about/img-10.png" alt="">
+
+                <img src="/imgs/about/img-9.png" alt="">
+                <img src="/imgs/about/img-10.png" alt="">
+            </div>
+            <div class="col">
+                <img src="/imgs/about/img-11.png" alt="">
+                <img src="/imgs/about/img-12.png" alt="">
+
+                <img src="/imgs/about/img-11.png" alt="">
+                <img src="/imgs/about/img-12.png" alt="">
+            </div>
+        </div>
+
+        <div class="banner-wrapper">
+
+            <div class="banner-part">
+            </div>
+
+            <div class="banner-content">
+                <div class="banner-heading">
+                    CRAFTING FARMLAND DREAMS <br> INTO REALITY
+                </div>
+
+                <div class="banner-para">
+                    Ready to Own a Farm Land.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="news-part">
+
+        <div class="news-track">
+
+            <div class="channels" *ngFor="let chan of channels">
+                <img src="/imgs/about/dot.png" alt="">
+
+                <img [src]="chan.img">
+                <div class="chanel-name">{{chan.name}}</div>
+            </div>
+
+            <div class="channels" *ngFor="let chan of channels">
+                <img src="/imgs/about/dot.png" alt="">
+
+                <img [src]="chan.img">
+                <div class="chanel-name">{{chan.name}}</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="areas-part">
+        <div class="ares-banner">
+            <img src="/imgs/about/banner-img.png" alt="">
+        </div>
+        <div class="areas-content">
+            <div class="ares-heading">OUR MISSION - IN 3 KEY FOCUS AREAS</div>
+
+            <div class="ares-cards">
+                <div class="ares-card" *ngFor="let card of card">
+                    <div class="card-heading">{{card.heading}}</div>
+                    <div class="card-para">{{card.para}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="way-part">
+        <div class="left-side">
+            <div class="way-heading">
+                WE ARE DIFFERENT IN EVERY WAY
+            </div>
+
+            <div class="way-para">
+                Book a guided tour to explore our farmland projects and understand the layout.
+            </div>
+
+            <div class="left-button" (click)="scrollToForm()">
+                Get Started
+            </div>
+        </div>
+
+        <div class="right-side" [style.background]="slides[current].color">
+
+            <div class="number">
+                <span class="current">
+                    {{current + 1 | number:'2.0'}}
+                </span>
+                <span class="total">
+                    /{{slides.length | number:'2.0'}}
+                </span>
+            </div>
+
+            <div class="right-heading">
+                {{slides[current].title}}
+            </div>
+
+            <div class="right-para">
+                {{slides[current].desc}}
+            </div>
+
+            <div class="arrows">
+                <button (click)="prev()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 20 20" fill="none">
+                        <path
+                            d="M13.3836 2.04498C13.618 2.27939 13.7496 2.59729 13.7496 2.92877C13.7496 3.26024 13.618 3.57814 13.3836 3.81256L7.1961 10.0001L13.3836 16.1876C13.6041 16.4245 13.7242 16.7377 13.7185 17.0613C13.7128 17.3849 13.5818 17.6937 13.3531 17.9227C13.1243 18.1517 12.8157 18.283 12.4921 18.2891C12.1685 18.2951 11.8551 18.1754 11.618 17.9551L4.54571 10.8848C4.31135 10.6504 4.17969 10.3325 4.17969 10.001C4.17969 9.66956 4.31135 9.35166 4.54571 9.11724L11.616 2.04498C11.8504 1.81061 12.1683 1.67896 12.4998 1.67896C12.8313 1.67896 13.1492 1.81061 13.3836 2.04498Z"
+                            fill="white" />
+                    </svg></button>
+                <button (click)="next()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 20 20" fill="none">
+                        <path
+                            d="M6.6164 2.04498C6.38204 2.27939 6.25038 2.59729 6.25038 2.92877C6.25038 3.26024 6.38204 3.57814 6.6164 3.81255L12.8039 10.0001L6.6164 16.1876C6.39586 16.4245 6.27581 16.7377 6.28151 17.0613C6.2872 17.3849 6.4182 17.6937 6.64694 17.9227C6.87568 18.1517 7.18433 18.283 7.50793 18.2891C7.83154 18.2951 8.14488 18.1754 8.38202 17.9551L15.4543 10.8848C15.6887 10.6504 15.8203 10.3325 15.8203 10.001C15.8203 9.66956 15.6887 9.35165 15.4543 9.11724L8.38398 2.04498C8.14956 1.81061 7.83166 1.67896 7.50019 1.67896C7.16871 1.67896 6.85081 1.81061 6.6164 2.04498Z"
+                            fill="white" />
+                    </svg></button>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="form-part" id="form-section">
+       <div class="form">
+         <app-page-form></app-page-form>
+       </div>
+
+        <div class="video-part">
+
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>

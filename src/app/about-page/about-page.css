@@ -1,0 +1,512 @@
+.banner-part {
+    width: 100%;
+    height: 615px;
+}
+
+.banner-imgs {
+    display: flex;
+    /* gap: 10px; */
+    overflow: hidden;
+    height: 615px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+}
+
+.col:nth-child(odd) {
+    animation: scrollUp 40s linear infinite;
+}
+
+.col:nth-child(even) {
+    animation: scrollDown 40s linear infinite;
+}
+
+.col img {
+    width: 250px;
+    height: 250px;
+    aspect-ratio: 1/1;
+    /* object-fit: cover; */
+    /* border-radius: 15px; */
+}
+
+@keyframes scrollUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.banner-wrapper {
+    position: relative;
+    top: -610px;
+}
+
+/* DARK OVERLAY */
+.banner-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 39%,
+            rgba(0, 0, 0, 1.6) 80%,
+            rgba(0, 0, 0, 0.95) 100%);
+    pointer-events: none;
+}
+
+.banner-content {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+}
+
+.banner-heading {
+    color: #fff;
+    text-align: center;
+    font-family: Syne;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.banner-para {
+    color: #fff;
+    font-family: Syne;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+.news-part {
+    width: 100%;
+    height: 100px;
+    background: #A5C846;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.news-track {
+    display: flex;
+    gap: 60px;
+    width: max-content;
+    animation: newsScroll 70s linear infinite;
+}
+
+.channels {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    white-space: nowrap;
+}
+
+.chanel-name {
+    color: #F1F5F9;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+@keyframes newsScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.ares-banner img {
+    width: 100%;
+    height: 720px;
+    aspect-ratio: 2/1;
+    /* opacity: 0.8; */
+    /* position: relative; */
+}
+
+
+.areas-content {
+    position: absolute;
+    top: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 40px 20px; */
+    gap: 30px;
+}
+
+.ares-cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.ares-card {
+    width: 470px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: start;
+    border-radius: 12px;
+
+    /* glass background */
+    background: rgba(255, 255, 255, 0.08);
+
+    /* blur effect */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    /* glass border */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    /* soft glow */
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.35),
+        inset 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.ares-heading {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.card-heading {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.card-para {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 410px;
+    margin-top: 10px;
+}
+
+.way-part {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    margin-top: -4px;
+}
+
+.left-side {
+    width: 100%;
+    height: 500px;
+    background: #030303;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 50px;
+}
+
+.way-heading {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 496px;
+}
+
+.way-para {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 558px;
+}
+
+.left-button {
+    display: inline-flex;
+    padding: 16px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 40px;
+    background: #FFF;
+    color: #227546;
+    font-family: Syne;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.right-side {
+    width: 100%;
+    height: auto;
+    color: white;
+    padding: 0 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.current {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.total {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.right-heading {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 20px;
+}
+
+.right-para {
+    color: #FFF;
+    font-family: Syne;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 410px;
+    margin-top: 10px;
+}
+
+.arrows {
+    margin-top: 110px;
+    display: flex;
+    gap: 30px;
+}
+
+.arrows button {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    /* glass background */
+    background: rgba(255, 255, 255, 0.12);
+
+    /* blur */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    /* glass border */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    /* glow shadow */
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.25),
+        inset 0 1px rgba(255, 255, 255, 0.25);
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-part {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.video-part {
+    width: 100%;
+    height: 560px;
+}
+
+
+@media(max-width:1439px) {
+    /* .banner-content {
+        top: 320px;
+    } */
+
+    .banner-heading{
+        font-size: 54px;
+    }
+
+    .ares-cards {
+        padding: 0;
+    }
+}
+
+@media(max-width:1023px) {
+    .ares-banner img {
+        height: 950px;
+    }
+
+    .banner-heading {
+        font-size: 44px;
+    }
+
+    .banner-content {
+        top: 390px;
+    }
+
+    .way-part {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .form-part {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        align-items: center;
+    }
+
+    .left-side {
+        align-items: center;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .way-heading,
+    .way-para,
+    .right-para {
+        width: 100%;
+        text-align: center;
+    }
+
+    .arrows {
+        margin-top: 50px;
+    }
+
+    .chanel-name {
+        font-size: 20px;
+    }
+
+    .right-side {
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media(max-width:767px) {
+    .banner-heading {
+        font-size: 22px;
+    }
+
+    .col img {
+        width: 160px;
+        height: auto;
+    }
+
+    .banner-para {
+        font-size: 18px;
+    }
+
+    .banner-content {
+        top: 480px;
+    }
+
+    .chanel-name {
+        font-size: 16px;
+    }
+
+    .news-part{
+        height: auto;
+        padding: 10px;
+    }
+
+    .ares-heading,
+    .way-heading,
+    .right-heading,
+    .card-heading {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .card-para {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .card-para,
+    .way-para {
+        width: 100%;
+    }
+
+    .left-side {
+        padding: 10px;
+    }
+
+    .left-button {
+        font-size: 16px;
+    }
+
+    .ares-banner img {
+        height: 970px;
+
+    }
+
+    .ares-card {
+        height: auto;
+        width: 100%;
+    }
+
+    .areas-content{
+        top: 740px;
+        padding: 20px;
+    }
+}
