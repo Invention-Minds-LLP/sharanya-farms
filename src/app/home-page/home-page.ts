@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PageForm } from "../page-form/page-form";
 import { Footer } from "../footer/footer";
@@ -97,14 +97,42 @@ export class HomePage {
       desc: 'Unwind at our luxury farmland resort near Mysuru with wellness retreats, organic cuisine, and scenic nature stays.'
     },
   ];
+
   farmIndex = 0;
+  farmAnimate = false;
 
   nextFarm() {
-    this.farmIndex = (this.farmIndex + 1) % this.slides.length;
+
+    if (this.farmIndex >= this.slides.length - 1) return;
+
+    this.farmAnimate = true;
+
+    setTimeout(() => {
+
+      this.farmIndex = this.farmIndex + 1;
+      this.farmAnimate = false;
+
+    }, 500);
+
   }
 
   prevFarm() {
-    this.farmIndex = (this.farmIndex - 1 + this.slides.length) % this.slides.length;
+
+    if (this.farmIndex <= 0) return;
+
+    this.farmAnimate = true;
+
+    setTimeout(() => {
+
+      this.farmIndex = this.farmIndex - 1;
+      this.farmAnimate = false;
+
+    }, 500);
+
+  }
+
+  get nextFarmIndex() {
+    return (this.farmIndex + 1) % this.slides.length;
   }
 
   current = 0;
@@ -153,6 +181,114 @@ export class HomePage {
       this.animate = false;
     }, 600);
 
+
+  }
+
+  channels = [
+    {
+      img: '/imgs/about/chan-1.png',
+      name: 'PUBLIC TV'
+    },
+    {
+      img: '/imgs/about/chan-2.png',
+      name: 'PUBLIC TV'
+    },
+    {
+      img: '/imgs/about/chan-3.png',
+      name: 'SUVARNA news'
+    },
+    {
+      img: '/imgs/about/chan-4.png',
+      name: 'KARNATAKA TV9'
+    },
+    {
+      img: '/imgs/about/chan-5.png',
+      name: 'No.1 VIJAYAVANI KANNADA DAILY'
+    },
+    {
+      img: '/imgs/about/chan-6.png',
+      name: 'VIJAY KARNATAKA'
+    },
+  ]
+
+  card = [
+    {
+      title: 'Sharanya Sandal valley Farms',
+      desc: 'Sharanya Sandal Valley Farms represents a captivating blend of aesthetics, fostering a community-centric lifestyle within an eco-friendly expanse located on T Narasipura Road, near NH-Mysore-Malavali Road. Our vision is to reshape the essence of living and redefine the experience of acquiring real estate. Located off NH-Mysore-Malavali Road, near the prestigious World Heritage...',
+      image: '/imgs/home-page/Ellipse 3.png'
+    },
+    {
+      title: 'Sharanya Hillview Farms',
+      desc: 'Sharanya Hillview Farms is a nature-friendly getaway near Mysore designed for those seeking peace, greenery, and value. With sandalwood plantations and lush surroundings, its an ideal destination for weekend retreats, remote working, or mindful farming...',
+      image: '/imgs/home-page/Ellipse 1.png'
+    },
+    {
+      title: 'Sharanya Weekend Village',
+      desc: 'Sharanya Hillview Farms is a nature-friendly getaway near Mysore designed for those seeking peace, greenery, and value. With sandalwood plantations and lush surroundings, its an ideal destination for weekend retreats, remote working, or mindful farming...',
+      image: '/imgs/home-page/Ellipse 2.png'
+    }
+  ]
+
+  // current = 0
+
+  direction = ''
+  get cardnextIndex() {
+    return (this.current + 1) % this.card.length
+  }
+
+  cardnext() {
+    this.current = (this.current + 1) % this.card.length
+  }
+
+  cardprev() {
+    this.current = (this.current - 1 + this.card.length) % this.card.length
+  }
+
+  // activeStep = 0;
+  isMobile = false;
+
+  ngOnInit() {
+    this.checkScreen();
+  }
+
+  checkScreen() {
+    this.isMobile = window.innerWidth <= 1023;
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkScreen();
+  }
+
+
+  /* Desktop hover */
+
+  onHover(step: number) {
+    if (!this.isMobile) {
+      this.activeStep = step;
+    }
+  }
+
+  onLeave() {
+    if (!this.isMobile) {
+      this.activeStep = 0;
+    }
+  }
+
+
+  /* Mobile click */
+
+  onStepClick(step: number) {
+
+    if (this.isMobile) {
+
+      if (this.activeStep === step) {
+        this.activeStep = 0;   // close if clicked again
+      } else {
+        this.activeStep = step;  // open selected card
+      }
+
+    }
 
   }
 }
