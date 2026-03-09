@@ -213,7 +213,7 @@ textarea.ng-invalid.ng-touched {
     }
 
     .contact-content {
-        padding: 20px
+        padding: 20px;
     }
 
     .banner{
@@ -242,6 +242,7 @@ textarea.ng-invalid.ng-touched {
 @media(max-width:1023px) {
     .contact-content {
         flex-wrap: wrap;
+        padding: 20px 20px 0;
     }
 
     .banner {
@@ -250,7 +251,8 @@ textarea.ng-invalid.ng-touched {
 
     .left-part {
         align-items: center;
-        margin-top: 20px;
+        margin-top: 144px;
+        gap: 30px;
     }
 
     .form textarea {

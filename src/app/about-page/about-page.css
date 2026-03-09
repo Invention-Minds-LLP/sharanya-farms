@@ -1,13 +1,13 @@
 .banner-part {
     width: 100%;
-    height: 615px;
+    height: 725px;
 }
 
 .banner-imgs {
     display: flex;
     /* gap: 10px; */
     overflow: hidden;
-    height: 615px;
+    height: 725px;
 }
 
 .col {
@@ -54,7 +54,7 @@
 
 .banner-wrapper {
     position: relative;
-    top: -610px;
+    top: -720px;
 }
 
 /* DARK OVERLAY */
@@ -71,7 +71,7 @@
 
 .banner-content {
     position: absolute;
-    top: 400px;
+    top: 490px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -149,7 +149,7 @@
 
 .areas-content {
     position: absolute;
-    top: 800px;
+    top: 880px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,7 +165,7 @@
     justify-content: center;
     gap: 40px;
     padding: 30px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .ares-card {
@@ -237,7 +237,7 @@
     gap: 20px;
     justify-content: center;
     flex-direction: column;
-    padding-left: 50px;
+    padding-left: 130px;
 }
 
 .way-heading {
@@ -364,7 +364,8 @@
 
 .form-part {
     display: grid;
-    grid-template-columns: 60% 40%;
+    /* grid-template-columns: 60% 40%; */
+    grid-template-columns: 55% 45%;
 }
 
 .video-part {
@@ -384,6 +385,10 @@
 
     .ares-cards {
         padding: 0;
+    }
+
+    .left-side{
+        padding-left: 50px;
     }
 }
 
@@ -408,12 +413,13 @@
 
     .form-part {
         display: flex;
-        flex-wrap: wrap-reverse;
+        flex-wrap: wrap;
         align-items: center;
     }
 
     .left-side {
         align-items: center;
+        padding: 20px;
     }
 
     .form {
@@ -445,6 +451,15 @@
 @media(max-width:767px) {
     .banner-heading {
         font-size: 22px;
+    }
+
+    .banner-wrapper{
+        top: -650px;
+    }
+
+    .banner-part,
+    .banner-imgs{
+        height: 655px;
     }
 
     .col img {
@@ -488,25 +503,29 @@
     }
 
     .left-side {
-        padding: 10px;
+        padding: 20px;
+        height: auto;
+
     }
 
     .left-button {
         font-size: 16px;
+        padding: 10px 15px;
     }
 
     .ares-banner img {
-        height: 970px;
+        height: 870px;
 
     }
 
     .ares-card {
         height: auto;
         width: 100%;
+        padding: 20px;
     }
 
     .areas-content{
-        top: 740px;
+        top: 750px;
         padding: 20px;
     }
 }
