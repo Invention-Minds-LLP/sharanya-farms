@@ -42,7 +42,7 @@
   <!-- HERO -->
   <section class="hero" data-aos="zoom-in">
     <div class="hero-content">
-      <h1>Sharanya<br />Sandal Valley Farms</h1>
+      <h1>Sharanya Hillview Farms</h1>
     </div>
   </section>
 
@@ -57,17 +57,15 @@
 
         <div class="about-right" data-aos="fade-left">
           <p>
-            Sharanya Sandal Valley Farms Represents A Captivating Blend Of
-            Aesthetics, Fostering A Community-Centric Lifestyle Within An
-            Eco-Friendly Expanse Located On T Narasipura Road, Near NH-Mysore-Malavali
-            Road. Our Vision Is To Reshape The Essence Of Living And Redefine
-            The Experience Of Acquiring Real Estate.
+            Sharanya Sandal Valley Farms represents a captivating blend of aesthetics, fostering a community-centric
+            lifestyle within an eco-friendly expanse located on T Narasipura Road, near NH-Mysore-Malavali Road. Our
+            vision is to reshape the essence of living and redefine the experience of acquiring real estate.
           </p>
         </div>
       </div>
 
       <div class="about-cards">
-        <div class="feature-card large" data-aos="fade-up">
+        <!-- <div class="feature-card large" data-aos="fade-up">
           <div class="feature-copy">
             <h3>Private Sandal Valley</h3>
             <p>
@@ -77,24 +75,37 @@
             </p>
           </div>
           <div class="feature-art">
-            <img src="assets/plant.png" alt="plant" />
+            <img src="imgs/project-1/plant.png" alt="plant" />
           </div>
-        </div>
+        </div> -->
+
+        <div class="card big">
+          <div class="content-align">
+              <h3>Private Sandal Valley</h3>
+              <p>
+                  Sharanya Sandal Valley Farms Represents A Captivating Blend Of
+                  Aesthetics, Fostering A Community-Centric Lifestyle Within
+                  An Eco-Friendly Expanse
+              </p>
+          </div>
+
+          <div class="img">
+              <img src="imgs/project-1/plant.png" alt="plant">
+          </div>
+      </div>
 
         <div class="feature-card small" data-aos="fade-up" data-aos-delay="100">
           <h3>Private Sandal Valley</h3>
-          <p>Sharanya Sandal Valley Farms Represents</p>
-          <span>
+          <p>Sharanya Sandal Valley Farms Represents
             A Captivating Blend Of Aesthetics, Fostering A Community-Centric...
-          </span>
+          </p>
         </div>
 
         <div class="feature-card small" data-aos="fade-up" data-aos-delay="200">
           <h3>Private Sandal Valley</h3>
-          <p>Sharanya Sandal Valley Farms Represents</p>
-          <span>
+          <p>Sharanya Sandal Valley Farms Represents
             A Captivating Blend Of Aesthetics, Fostering A Community-Centric...
-          </span>
+          </p>
         </div>
       </div>
     </div>
@@ -102,7 +113,7 @@
 
   <!-- BANNER -->
   <section class="banner">
-    <img src="assets/banner.jpg" alt="banner" class="banner-image" />
+    <img src="imgs/project-1/Rectangle 55.png" alt="banner" class="banner-image" />
     <div class="banner-overlay"></div>
 
     <div class="banner-content" data-aos="zoom-in-up">
@@ -110,7 +121,7 @@
       <p>Where Nature’s Wisdom Embraces Us And The Land Blooms With Abundance</p>
       <button class="cta-btn white">
         Discover it in real time
-        <span>⟳</span>
+        <span><img src="imgs/project-1/arrow.png" alt=""></span>
       </button>
     </div>
 
@@ -139,13 +150,9 @@
       </div>
 
       <div class="highlight-grid">
-        <div
-          class="highlight-card"
-          *ngFor="let card of highlights; let i = index"
-          data-aos="fade-up"
-          [attr.data-aos-delay]="i * 80"
-        >
-          <div class="highlight-icon">{{ card.icon }}</div>
+        <div class="highlight-card" *ngFor="let card of highlights; let i = index" data-aos="fade-up"
+          [attr.data-aos-delay]="i * 80">
+          <div class="highlight-icon"><img [src]="card.icon" alt="icon"></div>
           <small>{{ card.label }}</small>
           <h3>{{ card.title }}</h3>
           <p>{{ card.description }}</p>
@@ -163,26 +170,62 @@
       </div>
 
       <div class="pricing-grid">
-        <div
-          class="price-card"
-          *ngFor="let item of pricing; let i = index"
-          [class.recommended-card]="item.recommended"
-          data-aos="zoom-in"
-          [attr.data-aos-delay]="i * 100"
-        >
-          <div class="recommended-pill" *ngIf="item.recommended">⭐ Recommended</div>
+        <div class="price-card">
 
-          <h3>{{ item.name }}</h3>
-          <small>{{ item.size }}</small>
-          <h4>{{ item.price }}</h4>
-          <p class="roi">{{ item.roi }}</p>
+          <div class="card-head">
+          <h3>Starter Plot</h3>
+          <small>1200 sq.ft</small>
+          <h4>₹25 Lakhs</h4>
+          <p>Expected ROI: 15-18% annually</p>
+          </div>
 
           <div class="future-box">
             <span>Estimated Value in 5 Years</span>
-            <strong>{{ item.value }}</strong>
+            <strong>₹40-45 Lakhs</strong>
           </div>
 
           <button class="start-btn">Start now</button>
+
+        </div>
+        <div class="big-price-card">
+          <!-- <div class="recommended-pill" *ngIf="item.recommended">⭐ Recommended</div> -->
+
+
+          <div class="big-price-card-head">
+            <div class="recommended">
+              ★ Recommended
+            </div>
+            <h3>Premium Plot</h3>
+          <small>2500 sq.ft</small>
+          <h4>₹48 Lakhs</h4>
+          <p>Expected ROI: 18-20% annually</p>
+          </div>
+
+          <div class="future-box">
+            <span>Estimated Value in 5 Years</span>
+            <strong>₹85-95 Lakhs</strong>
+          </div>
+
+          <button class="start-btn">Start now</button>
+
+        </div>
+      
+        <div class="price-card">
+
+          <div class="card-head">
+            <h3>Starter Plot</h3>
+          <small>1200 sq.ft</small>
+          <h4>₹25 Lakhs</h4>
+          <p class="roi">Expected ROI: 15-18% annually</p>
+          </div>
+
+          <div class="future-box">
+            <span>Estimated Value in 5 Years</span>
+            <strong>₹40-45 Lakhs</strong>
+          </div>
+
+          <button class="start-btn">Start now</button>
+
         </div>
       </div>
     </div>
@@ -190,6 +233,9 @@
 
   <!-- AMENITIES -->
   <section class="amenities" id="gallery">
+    <div class="amenities-head">
+      <h2>Amenities</h2>
+    </div>
     <div class="container">
       <div class="amenities-slider">
         <button class="slider-arrow left" (click)="prevAmenity()">‹</button>
@@ -208,15 +254,11 @@
 
           <div class="amenity-thumbs">
             <img [src]="rightAmenity.image" [alt]="rightAmenity.title" />
-            <img src="assets/amenities/amenity-4.jpg" alt="amenity" />
           </div>
 
           <div class="amenity-pagination">
-            <button
-              *ngFor="let item of amenities; let i = index"
-              [class.active]="i === currentAmenityIndex"
-              (click)="goToAmenity(i)"
-            >
+            <button *ngFor="let item of amenities; let i = index" [class.active]="i === currentAmenityIndex"
+              (click)="goToAmenity(i)">
               {{ i + 1 }}
             </button>
           </div>
@@ -227,53 +269,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="contact-section" id="contact">
-    <div class="contact-grid">
-      <div class="contact-left" data-aos="fade-right">
-        <h2>SEND US A MESSAGE</h2>
-
-        <form class="contact-form">
-          <div class="form-row">
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-          </div>
-          <div class="form-row">
-            <input type="text" placeholder="Mobile Number" />
-            <input type="email" placeholder="Email" />
-          </div>
-          <textarea rows="6" placeholder="Your Message"></textarea>
-        </form>
-
-        <div class="get-in-touch">
-          <h3>GET IN TOUCH</h3>
-
-          <div class="contact-details">
-            <div>
-              <span>Email us</span>
-              <p>sharanyafarms@gmail.com</p>
-            </div>
-            <div>
-              <span>Whatsapp</span>
-              <p>+91 9901935250</p>
-            </div>
-            <div>
-              <span>Address</span>
-              <p>
-                #1582, Samarth Arcade, 3rd Floor, BEML, 5th stage,
-                H V Halli Double Road, Rajarajeshwari Nagar,
-                Bangalore -560098
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-right" data-aos="fade-left">
-        <img src="assets/farm-model.png" alt="Farm model" />
-      </div>
-    </div>
-  </section>
 
   <!-- FOOTER -->
   <!-- <footer class="footer" id="blogs">
