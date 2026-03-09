@@ -1,13 +1,13 @@
 .nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-top: 50px;
-    position: absolute;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
-    /* pointer-events: none; */
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    transition: all .4s ease;
 }
 
 .nav-bar {
@@ -19,30 +19,237 @@
     border-radius: 70px;
     border: 1px solid #5B7F4A;
     background: #FFF;
+    transition: all .4s ease;
 }
 
 .links {
     color: #227546;
     font-family: Syne;
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.logo {
+    height: 38px;
+}
+
+
+/* SCROLL EFFECT */
+
+.nav.scrolled .nav-bar {
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.35),
+        inset 0 1px rgba(255, 255, 255, 0.2);
+}
+
+
+.projects-dropdown {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.projects-container {
+    width: 100%;
+    max-width: 860px;
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.35),
+        inset 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    /* border: 1px solid #6f8f5a; */
+}
+
+/* cards */
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
     cursor: pointer;
 }
 
- .active {
-    color: #227546;
-    font-family: Syne;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-skip-ink: auto;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
+.project-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Syne;
+}
+
+/* left big card */
+
+.big {
+    width: 380px;
+    height: 470px;
+    object-fit: cover;
+}
+
+/* right side */
+
+.right-projects {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.small {
+    width: 380px;
+    height: 230px;
+    object-fit: cover;
+}
+
+.nav.scrolled .links,
+.menu-icon span {
+    color: white;
+}
+
+
+/* HAMBURGER */
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    width: 22px;
+    height: 2px;
+    background: #333;
+    display: block;
+}
+
+.nav.scrolled .menu-icon span {
+    background: white;
+}
+
+
+/* MOBILE MENU */
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100%;
+    background: #1b1b1b;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 80px 30px;
+    transition: 0.4s;
+    z-index: 20000;
+}
+
+.mobile-menu a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width:1023px) {
+
+    .links {
+        display: none;
+    }
+
+    .nav-bar {
+        width: 90%;
+        justify-content: space-between;
+        padding: 18px 25px;
+        flex-direction: row-reverse;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .logo {
+        height: 32px;
+        margin-left: auto;
+    }
+
+    .mobile-project-dropdown {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .mobile-project-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        width: 232px;
+    }
+
+    .mobile-project-card img {
+        width: 60px;
+        height: 45px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .mobile-project-card span {
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+}

@@ -7,10 +7,11 @@ import { PageForm } from './page-form/page-form';
 import { NavBar } from './nav-bar/nav-bar';
 import { HomePage } from './home-page/home-page';
 import { AboutPage } from './about-page/about-page';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Contact, RegisterForm, Footer, PageForm, NavBar, HomePage, AboutPage],
+  imports: [RouterOutlet,  Footer, NavBar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
