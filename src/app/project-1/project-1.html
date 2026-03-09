@@ -1,0 +1,343 @@
+<div class="page-shell">
+  <!-- HEADER -->
+  <!-- <header class="header" id="home">
+    <div class="nav-pill" data-aos="fade-down">
+      <button class="mobile-toggle" (click)="toggleMobileMenu()" aria-label="Toggle menu">
+        ☰
+      </button>
+
+      <a
+        *ngFor="let item of navItems.slice(0, 3)"
+        [href]="item.link"
+        class="nav-link desktop-only"
+      >
+        {{ item.label }}
+      </a>
+
+      <a href="#home" class="brand desktop-brand">
+        <img src="assets/logo.png" alt="logo" />
+      </a>
+
+      <a
+        *ngFor="let item of navItems.slice(3)"
+        [href]="item.link"
+        class="nav-link desktop-only"
+      >
+        {{ item.label }}
+      </a>
+
+      <div class="mobile-menu" [class.open]="mobileMenuOpen">
+        <a
+          *ngFor="let item of navItems"
+          [href]="item.link"
+          (click)="closeMobileMenu()"
+          class="nav-link mobile-link"
+        >
+          {{ item.label }}
+        </a>
+      </div>
+    </div>
+  </header> -->
+
+  <!-- HERO -->
+  <section class="hero" data-aos="zoom-in">
+    <div class="hero-content">
+      <h1>Sharanya<br />Sandal Valley Farms</h1>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-top">
+        <div class="about-left" data-aos="fade-right">
+          <h2>Managed Farmplots<br />With Private Sandal Valley</h2>
+          <button class="cta-btn">Get Started</button>
+        </div>
+
+        <div class="about-right" data-aos="fade-left">
+          <p>
+            Sharanya Sandal Valley Farms Represents A Captivating Blend Of
+            Aesthetics, Fostering A Community-Centric Lifestyle Within An
+            Eco-Friendly Expanse Located On T Narasipura Road, Near NH-Mysore-Malavali
+            Road. Our Vision Is To Reshape The Essence Of Living And Redefine
+            The Experience Of Acquiring Real Estate.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-cards">
+        <div class="feature-card large" data-aos="fade-up">
+          <div class="feature-copy">
+            <h3>Private Sandal Valley</h3>
+            <p>
+              Sharanya Sandal Valley Farms Represents A Captivating Blend Of
+              Aesthetics, Fostering A Community-Centric Lifestyle Within An
+              Eco-Friendly Expanse
+            </p>
+          </div>
+          <div class="feature-art">
+            <img src="assets/plant.png" alt="plant" />
+          </div>
+        </div>
+
+        <div class="feature-card small" data-aos="fade-up" data-aos-delay="100">
+          <h3>Private Sandal Valley</h3>
+          <p>Sharanya Sandal Valley Farms Represents</p>
+          <span>
+            A Captivating Blend Of Aesthetics, Fostering A Community-Centric...
+          </span>
+        </div>
+
+        <div class="feature-card small" data-aos="fade-up" data-aos-delay="200">
+          <h3>Private Sandal Valley</h3>
+          <p>Sharanya Sandal Valley Farms Represents</p>
+          <span>
+            A Captivating Blend Of Aesthetics, Fostering A Community-Centric...
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER -->
+  <section class="banner">
+    <img src="assets/banner.jpg" alt="banner" class="banner-image" />
+    <div class="banner-overlay"></div>
+
+    <div class="banner-content" data-aos="zoom-in-up">
+      <h2>A Symphony Of Nature’s Bounty.</h2>
+      <p>Where Nature’s Wisdom Embraces Us And The Land Blooms With Abundance</p>
+      <button class="cta-btn white">
+        Discover it in real time
+        <span>⟳</span>
+      </button>
+    </div>
+
+    <div class="stats-bar" data-aos="fade-up">
+      <div class="stat-item">
+        <h3>15-20%</h3>
+        <p>Annual Appreciation</p>
+      </div>
+      <div class="stat-item">
+        <h3>₹50L+</h3>
+        <p>Average Returns in 5 Years</p>
+      </div>
+      <div class="stat-item">
+        <h3>100%</h3>
+        <p>Legal Ownership</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="highlights" id="projects">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Project Highlights</h2>
+        <p>Discover what makes our farmland investment opportunity exceptional.</p>
+      </div>
+
+      <div class="highlight-grid">
+        <div
+          class="highlight-card"
+          *ngFor="let card of highlights; let i = index"
+          data-aos="fade-up"
+          [attr.data-aos-delay]="i * 80"
+        >
+          <div class="highlight-icon">{{ card.icon }}</div>
+          <small>{{ card.label }}</small>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="section-title light" data-aos="fade-up">
+        <h2>Project Highlights</h2>
+        <p>Discover what makes our farmland investment opportunity exceptional.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div
+          class="price-card"
+          *ngFor="let item of pricing; let i = index"
+          [class.recommended-card]="item.recommended"
+          data-aos="zoom-in"
+          [attr.data-aos-delay]="i * 100"
+        >
+          <div class="recommended-pill" *ngIf="item.recommended">⭐ Recommended</div>
+
+          <h3>{{ item.name }}</h3>
+          <small>{{ item.size }}</small>
+          <h4>{{ item.price }}</h4>
+          <p class="roi">{{ item.roi }}</p>
+
+          <div class="future-box">
+            <span>Estimated Value in 5 Years</span>
+            <strong>{{ item.value }}</strong>
+          </div>
+
+          <button class="start-btn">Start now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section class="amenities" id="gallery">
+    <div class="container">
+      <div class="amenities-slider">
+        <button class="slider-arrow left" (click)="prevAmenity()">‹</button>
+
+        <div class="amenity-side-card left-card" data-aos="fade-right">
+          <img [src]="leftAmenity.image" [alt]="leftAmenity.title" />
+        </div>
+
+        <div class="amenity-main-card" data-aos="zoom-in">
+          <img [src]="currentAmenity.image" [alt]="currentAmenity.title" />
+          <div class="amenity-main-caption">{{ currentAmenity.title }}</div>
+        </div>
+
+        <div class="amenity-info" data-aos="fade-left">
+          <h2>Amenities</h2>
+
+          <div class="amenity-thumbs">
+            <img [src]="rightAmenity.image" [alt]="rightAmenity.title" />
+            <img src="assets/amenities/amenity-4.jpg" alt="amenity" />
+          </div>
+
+          <div class="amenity-pagination">
+            <button
+              *ngFor="let item of amenities; let i = index"
+              [class.active]="i === currentAmenityIndex"
+              (click)="goToAmenity(i)"
+            >
+              {{ i + 1 }}
+            </button>
+          </div>
+        </div>
+
+        <button class="slider-arrow right" (click)="nextAmenity()">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-grid">
+      <div class="contact-left" data-aos="fade-right">
+        <h2>SEND US A MESSAGE</h2>
+
+        <form class="contact-form">
+          <div class="form-row">
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Last Name" />
+          </div>
+          <div class="form-row">
+            <input type="text" placeholder="Mobile Number" />
+            <input type="email" placeholder="Email" />
+          </div>
+          <textarea rows="6" placeholder="Your Message"></textarea>
+        </form>
+
+        <div class="get-in-touch">
+          <h3>GET IN TOUCH</h3>
+
+          <div class="contact-details">
+            <div>
+              <span>Email us</span>
+              <p>sharanyafarms@gmail.com</p>
+            </div>
+            <div>
+              <span>Whatsapp</span>
+              <p>+91 9901935250</p>
+            </div>
+            <div>
+              <span>Address</span>
+              <p>
+                #1582, Samarth Arcade, 3rd Floor, BEML, 5th stage,
+                H V Halli Double Road, Rajarajeshwari Nagar,
+                Bangalore -560098
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-right" data-aos="fade-left">
+        <img src="assets/farm-model.png" alt="Farm model" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <!-- <footer class="footer" id="blogs">
+    <div class="footer-top">
+      <div class="footer-left" data-aos="fade-up">
+        <img src="assets/logo-white.png" alt="logo" class="footer-logo" />
+        <h3>Sharanya Farms</h3>
+        <span class="footer-subtitle">Create your own Swindle</span>
+        <p>
+          The first free end-to-end analytics service for the site,
+          designed to work with enterprises of various levels and
+          business segments.
+        </p>
+        <a href="#about">More about us →</a>
+
+        <div class="social-grid">
+          <span>◎</span>
+          <span>f</span>
+          <span>▶</span>
+          <span>✕</span>
+        </div>
+      </div>
+
+      <div class="footer-right" data-aos="fade-up" data-aos-delay="120">
+        <nav class="footer-nav">
+          <a href="#home">HOME</a>
+          <a href="#about">ABOUT</a>
+          <a href="#projects">PROJECTS</a>
+          <a href="#gallery">GALLERY</a>
+          <a href="#blogs">BLOGS</a>
+          <a href="#contact">CONTACT US</a>
+        </nav>
+
+        <div class="footer-contact">
+          <div>
+            <span>Email us</span>
+            <p>sharanyafarms@gmail.com</p>
+          </div>
+          <div>
+            <span>Whatsapp</span>
+            <p>+91 9901935250</p>
+          </div>
+          <div>
+            <span>Address</span>
+            <p>
+              #1582, Samarth Arcade, 3rd Floor, BEML, 5th stage,
+              H V Halli Double Road, Rajarajeshwari Nagar,
+              Bangalore -560098
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-map">
+          <img src="assets/map.jpg" alt="Map" />
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 - Copyright All Rights reserved</span>
+      <span>Design & Developed by Invention Minds</span>
+      <span>Privacy Policy</span>
+      <span>|</span>
+      <span>Terms & Conditions</span>
+    </div>
+  </footer> -->
+</div>

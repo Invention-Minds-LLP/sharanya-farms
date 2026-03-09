@@ -17,3 +17,30 @@
       --bg-page: #f0f4f2;
       --error: #dc2626;
     }
+
+    @import 'aos/dist/aos.css';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Syne', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
