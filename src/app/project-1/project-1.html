@@ -41,9 +41,10 @@
 
   <!-- HERO -->
   <section class="hero" data-aos="zoom-in">
-    <div class="hero-content">
+      <video src="/imgs/project-1/home-page-banner-video.mp4" autoplay loop muted playinline class="home-page-video"></video>
+    <!-- <div class="hero-content">
       <h1>Sharanya Hillview Farms</h1>
-    </div>
+    </div> -->
   </section>
 
   <!-- ABOUT -->
@@ -65,19 +66,7 @@
       </div>
 
       <div class="about-cards">
-        <!-- <div class="feature-card large" data-aos="fade-up">
-          <div class="feature-copy">
-            <h3>Private Sandal Valley</h3>
-            <p>
-              Sharanya Sandal Valley Farms Represents A Captivating Blend Of
-              Aesthetics, Fostering A Community-Centric Lifestyle Within An
-              Eco-Friendly Expanse
-            </p>
-          </div>
-          <div class="feature-art">
-            <img src="imgs/project-1/plant.png" alt="plant" />
-          </div>
-        </div> -->
+      
 
         <div class="card big">
           <div class="content-align">
@@ -113,8 +102,9 @@
 
   <!-- BANNER -->
   <section class="banner">
-    <img src="imgs/project-1/Rectangle 55.png" alt="banner" class="banner-image" />
-    <div class="banner-overlay"></div>
+    <div class="banner-image" #bgImage (mousemove)="onMouseMove($event)" (mouseleave)="resetTilt()">
+    <!-- <img src="imgs/project-1/Rectangle 55.png" alt="banner"/> -->
+    </div>
 
     <div class="banner-content" data-aos="zoom-in-up">
       <h2>A Symphony Of Nature’s Bounty.</h2>

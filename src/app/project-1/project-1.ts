@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, HostListener } from '@angular/core';
+import { AfterViewInit, Component, HostListener, ViewChild, ElementRef } from '@angular/core';
 import AOS from 'aos';
 
 interface HighlightCard {
@@ -176,4 +176,25 @@ export class Project1 {
       this.mobileMenuOpen = false;
     }
   }
+
+  @ViewChild('bgImage') bgImage!: ElementRef;
+
+  onMouseMove(event: MouseEvent) {
+
+    const x = event.clientX / window.innerWidth - 0.5;
+    const y = event.clientY / window.innerHeight - 0.5;
+
+    const rotateX = -y * 15;
+    const rotateY = x * 15;
+
+    this.bgImage.nativeElement.style.transform =
+      `scale(1.1) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  }
+
+  resetTilt() {
+    this.bgImage.nativeElement.style.transform =
+      `scale(1) rotateX(0deg) rotateY(0deg)`;
+  }
+
+
 }
