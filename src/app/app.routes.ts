@@ -18,7 +18,7 @@ export const routes: Routes = [
     { path: 'sandalvalley', component: Project1},
     { path: 'image-page', component: ImagePage},
     { path: 'hillview', component: Project2},
-    // { path: 'image-page2', component: ImagePage2},
+    { path: 'image-page2', component: ImagePage2},
     { path: 'weekendvillage', component: Project3},
-    // { path: 'image-page3', component: ImagePage3},
+    { path: 'image-page3', component: ImagePage3},
 ];
