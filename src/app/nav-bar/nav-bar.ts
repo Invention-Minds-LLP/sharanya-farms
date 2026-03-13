@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule,RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Component({
@@ -9,6 +9,7 @@ import { filter } from 'rxjs';
   templateUrl: './nav-bar.html',
   styleUrl: './nav-bar.css',
 })
+
 export class NavBar {
 
   constructor(private router: Router) { }

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import AOS from 'aos';
 
 interface HighlightCard {
@@ -146,6 +147,10 @@ export class Project1 {
         : this.currentAmenityIndex + 1;
   }
 
+  get progressWidth(): number {
+    return ((this.currentAmenityIndex + 1) / this.amenities.length) * 100;
+  }
+
   goToAmenity(index: number): void {
     this.currentAmenityIndex = index;
   }
@@ -170,10 +175,19 @@ export class Project1 {
     ];
   }
 
-  @HostListener('window:resize')
-  onResize(): void {
-    if (window.innerWidth > 991) {
-      this.mobileMenuOpen = false;
-    }
+  get nextRightAmenity(): AmenitySlide {
+    return this.amenities[
+      this.currentAmenityIndex >= this.amenities.length - 2
+        ? (this.currentAmenityIndex + 2) % this.amenities.length
+        : this.currentAmenityIndex + 2
+    ];
   }
+
+  constructor(private router: Router) {}
+
+  goToImagePage(): void {
+
+    this.router.navigate(['/image-page2']);
+    console.log('clicking')
+}
 }
