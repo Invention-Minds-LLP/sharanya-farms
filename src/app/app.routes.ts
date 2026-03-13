@@ -13,6 +13,7 @@ import { ImagePage2 } from './project-2/image-page2/image-page2';
 
 export const routes: Routes = [
     { path: '', component: HomePage },
+    { path: '', component: HomePage },
     { path: 'contact', component: Contact },
     { path: 'about', component: AboutPage },
     { path: 'sandalvalley', component: Project1},
