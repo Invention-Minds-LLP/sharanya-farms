@@ -9,6 +9,7 @@ import { filter } from 'rxjs';
   templateUrl: './nav-bar.html',
   styleUrl: './nav-bar.css',
 })
+
 export class NavBar {
 
   constructor(private router: Router) { }
