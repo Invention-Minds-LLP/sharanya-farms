@@ -1,13 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
-import AOS from 'aos';
-import { Viewer } from 'photo-sphere-viewer';
-import { AfterViewInit } from '@angular/core';
-import { RouterLink } from "@angular/router";
-import { ImagePage } from './image-page/image-page';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-
-
+import AOS from 'aos';
 
 interface HighlightCard {
   icon: string;
@@ -16,6 +10,14 @@ interface HighlightCard {
   description: string;
 }
 
+// interface PriceCard {
+//   name: string;
+//   size: string;
+//   price: string;
+//   roi: string;
+//   value: string;
+//   recommended?: boolean;
+// }
 
 interface AmenitySlide {
   title: string;
@@ -24,8 +26,7 @@ interface AmenitySlide {
 
 @Component({
   selector: 'app-project-1',
-  standalone: true,
-  imports: [CommonModule, RouterLink, ImagePage],
+  imports: [CommonModule],
   templateUrl: './project-1.html',
   styleUrl: './project-1.css',
 })
@@ -80,12 +81,37 @@ export class Project1 {
     }
   ];
 
+  // pricing: PriceCard[] = [
+  //   {
+  //     name: 'Starter Plot',
+  //     size: '1200 sq.ft',
+  //     price: '₹25 Lakhs',
+  //     roi: 'Expected ROI: 15-18% annually',
+  //     value: '₹40-45 Lakhs'
+  //   },
+    // {
+    //   name: 'Premium Plot',
+    //   size: '2500 sq.ft',
+    //   price: '₹48 Lakhs',
+    //   roi: 'Expected ROI: 18-20% annually',
+    //   value: '₹85-95 Lakhs',
+    //   recommended: true
+    // },
+  //   {
+  //     name: 'Starter Plot',
+  //     size: '1200 sq.ft',
+  //     price: '₹25 Lakhs',
+  //     roi: 'Expected ROI: 15-18% annually',
+  //     value: '₹40-45 Lakhs'
+  //   }
+  // ];
 
   amenities: AmenitySlide[] = [
     { title: 'Landscape', image: 'imgs/project-1/Rectangle51.png' },
     { title: 'Gated Community', image: 'imgs/project-1/Rectangle52.png' },
     { title: 'Plantation', image: 'imgs/project-1/Rectangle53.png' },
     { title: 'Landscape', image: 'imgs/project-1/Rectangle54.png' },
+    { title: 'Landscape', image: 'imgs/project-1/Rectangle51.png' },
   ];
 
   currentAmenityIndex = 0;
@@ -161,8 +187,7 @@ export class Project1 {
 
   goToImagePage(): void {
 
-    this.router.navigate(['/image-page']);
+    this.router.navigate(['/image-page2']);
     console.log('clicking')
 }
-
 }
