@@ -391,7 +391,8 @@
 .highlight-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 30px;
+  padding: 0px 165px 80px 165px
 }
 
 .highlight-card {
@@ -400,6 +401,7 @@
   border-radius: 14px;
   padding: 22px;
   min-height: 225px;
+  width: 100%;
 }
 
 .highlight-icon {
@@ -449,7 +451,7 @@
 
 .pricing-section {
   background: #7d9d69;
-  padding: 64px 0 86px;
+  padding: 64px 86px 40px;
 }
 
 .pricing-grid {
@@ -545,9 +547,7 @@
   opacity: 1;
   border-radius: 14px;
   gap: 4px;
-  padding-top: 16px;
-  padding-right: 16px;
-  padding-left: 16px;
+  
   background: #ffffff99;
   display: flex;
   flex-direction: column;
@@ -746,13 +746,13 @@
 
 .amenities {
   background: #002f1c;
-  padding: 72px 0 82px;
+  padding: 72px 85px 82px 85px;
 }
 
 .amenities-slider {
   display: grid;
   grid-template-columns: 52px 1fr 1.45fr 1fr 52px;
-  gap: 16px;
+  /* gap: 16px; */
   align-items: center;
 }
 
@@ -765,6 +765,10 @@
   color: #fff;
   font-size: 30px;
   cursor: pointer;
+}
+
+.slider-arrow .left{
+  right: 0px;
 }
 
 .amenity-side-card,
@@ -825,6 +829,7 @@
 .amenity-thumbs {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  /* gap: 14px; */
 }
 
 .amenity-thumbs img {
@@ -1089,19 +1094,63 @@
   display: none;
 }
 
-@media (max-width: 1200px) {
-  .highlight-grid,
-  .pricing-grid {
+.amenities-line{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.progress-container {
+  width: 220px;
+  height: 4px;
+  background: rgba(255,255,255,0.3); /* gray line */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #2ecc71; /* green */
+  border-radius: 10px;
+  transition: width 0.5s ease; /* smooth movement */
+}
+
+@media (max-width: 1439px) {
+  .about {
+    padding: 50px 55px 80px;
+  }
+
+  .highlight-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0px 165px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .pricing-section {
+    padding: 60px 225px 40px;
   }
 
   .amenities-slider {
-    grid-template-columns: 1fr;
+    padding: 60px;
+  }
+
+  .highlights {
+    padding: 72px 0px;
+  }
+
+  .amenities {
+    padding: 0px;
   }
 
   /* .slider-arrow {
-    display: none;
-  } */
+      display: none;
+    } */
 
   .recommended-card {
     transform: none;
@@ -1109,12 +1158,21 @@
   .amenity-head {
     display: none;
   }
+
+  .amenity-main-caption {
+    font-size: 30px;
+  }
 }
 
-@media (max-width: 991px) {
+
+@media (max-width: 1023px) {
   .desktop-only,
   .desktop-brand {
     display: none;
+  }
+
+  .highlight-grid {
+    padding: 0px 85px 40px 85px;
   }
 
   .mobile-toggle {
@@ -1163,14 +1221,38 @@
     bottom: auto;
     transform: none;
     margin: 24px auto 0;
+    gap: 25px;
+  }
+
+  .about {
+    padding: 40px;
+  }
+
+  .feature-card.small {
+    height: auto;
+    gap: 50px;
+    justify-content: center;
+    min-height: 0px;
   }
 
   .highlights {
-    padding-top: 70px;
+    padding: 0px;
+  }
+
+  .section-title h2 {
+    padding: 40px 0px 0px;
   }
 
   .contact-left {
     padding: 44px 24px;
+  }
+
+  .pricing-section {
+    padding: 0px;
+  }
+
+  .pricing-section {
+    padding: 10px 136px 30px;
   }
 
   .footer {
@@ -1179,15 +1261,57 @@
 
   .amenities-slider {
     display: flex;
+    justify-content: center;
+    padding: 60px 40px;
   }
-  .amenity-head {
+  .amenities-head {
     display: none;
+  }
+
+  .amenity-main-caption {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 767px) {
+  .about-top {
+    gap: 0px;
+  }
+
+  .about-left h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .about-right p {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  .cta-btn {
+    font-size: 16px;
+  }
+
   .card img {
     display: none;
+  }
+
+  .banner-content {
+    padding-top: 50px;
+  }
+
+  .banner-content h2 {
+    font-size: 46px;
+  }
+
+  .banner-content p {
+    font-size: 16spx;
+    line-height: 28px;
+  }
+
+  .cta-btn.white {
+    font-size: 16px;
   }
 
   .card .img {
@@ -1206,23 +1330,41 @@
     font-size: 44px;
   }
 
-  .about,
-  .highlights,
-  .pricing-section {
-    padding: 56px 0;
+  .about {
+    padding: 30px;
+  }
+  .highlights {
+    padding: 0px;
   }
 
-  .highlight-grid,
-  .stats-bar {
-    /* grid-template-columns: 1fr; */
-    flex-direction: column;
-    /* justify-items: center; */
+  .section-title h2 {
+    font-size: 36px;
+  }
+
+  .section-title p {
+    font-size: 14px;
+    padding: 0px 20px;
+  }
+
+  .pricing-section {
+    padding: 0px;
+  }
+
+  .highlight-grid {
+    grid-template-columns: 1fr;
     gap: 15px;
+    padding: 0px 67px 40px 67px;
+  }
+
+  .stats-bar {
+    flex-direction: column;
+    gap: 0px;
   }
 
   .pricing-grid {
     grid-template-columns: 1fr;
     justify-items: center;
+    padding: 0px 40px 40px 40px;
   }
 
   .form-row {
@@ -1249,6 +1391,7 @@
     grid-template-columns: 1fr;
     justify-item: center;
     position: relative;
+    padding: 0px 40px 60px 40px;
   }
 
   .amenity-main-caption {
@@ -1266,18 +1409,22 @@
     margin-bottom: 20px;
   }
 
+  .amenities-head {
+    display: block;
+    text-align: center;
+  }
+
   .amenities-head h2 {
     font-family: Syne;
     font-weight: 700;
     font-style: Bold;
-    font-size: 52px;
+    font-size: 48px;
     leading-trim: NONE;
     line-height: 100%;
     letter-spacing: 0px;
     vertical-align: middle;
     text-transform: capitalize;
     color: #ffffff;
-    margin-left: 58px;
-    margin-bottom: 15px;
+    padding: 20px;
   }
 }

@@ -1,6 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
 import AOS from 'aos';
+import { Viewer } from 'photo-sphere-viewer';
+import { AfterViewInit } from '@angular/core';
+import { RouterLink } from "@angular/router";
+import { ImagePage } from './image-page/image-page';
+import { Router } from '@angular/router';
+
+
 
 interface HighlightCard {
   icon: string;
@@ -9,14 +16,6 @@ interface HighlightCard {
   description: string;
 }
 
-// interface PriceCard {
-//   name: string;
-//   size: string;
-//   price: string;
-//   roi: string;
-//   value: string;
-//   recommended?: boolean;
-// }
 
 interface AmenitySlide {
   title: string;
@@ -25,7 +24,8 @@ interface AmenitySlide {
 
 @Component({
   selector: 'app-project-1',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, RouterLink, ImagePage],
   templateUrl: './project-1.html',
   styleUrl: './project-1.css',
 })
@@ -80,37 +80,12 @@ export class Project1 {
     }
   ];
 
-  // pricing: PriceCard[] = [
-  //   {
-  //     name: 'Starter Plot',
-  //     size: '1200 sq.ft',
-  //     price: '₹25 Lakhs',
-  //     roi: 'Expected ROI: 15-18% annually',
-  //     value: '₹40-45 Lakhs'
-  //   },
-    // {
-    //   name: 'Premium Plot',
-    //   size: '2500 sq.ft',
-    //   price: '₹48 Lakhs',
-    //   roi: 'Expected ROI: 18-20% annually',
-    //   value: '₹85-95 Lakhs',
-    //   recommended: true
-    // },
-  //   {
-  //     name: 'Starter Plot',
-  //     size: '1200 sq.ft',
-  //     price: '₹25 Lakhs',
-  //     roi: 'Expected ROI: 15-18% annually',
-  //     value: '₹40-45 Lakhs'
-  //   }
-  // ];
 
   amenities: AmenitySlide[] = [
     { title: 'Landscape', image: 'imgs/project-1/Rectangle51.png' },
     { title: 'Gated Community', image: 'imgs/project-1/Rectangle52.png' },
     { title: 'Plantation', image: 'imgs/project-1/Rectangle53.png' },
     { title: 'Landscape', image: 'imgs/project-1/Rectangle54.png' },
-    { title: 'Landscape', image: 'imgs/project-1/Rectangle51.png' },
   ];
 
   currentAmenityIndex = 0;
@@ -146,6 +121,10 @@ export class Project1 {
         : this.currentAmenityIndex + 1;
   }
 
+  get progressWidth(): number {
+    return ((this.currentAmenityIndex + 1) / this.amenities.length) * 100;
+  }
+
   goToAmenity(index: number): void {
     this.currentAmenityIndex = index;
   }
@@ -170,31 +149,20 @@ export class Project1 {
     ];
   }
 
-  @HostListener('window:resize')
-  onResize(): void {
-    if (window.innerWidth > 991) {
-      this.mobileMenuOpen = false;
-    }
+  get nextRightAmenity(): AmenitySlide {
+    return this.amenities[
+      this.currentAmenityIndex >= this.amenities.length - 2
+        ? (this.currentAmenityIndex + 2) % this.amenities.length
+        : this.currentAmenityIndex + 2
+    ];
   }
 
-  @ViewChild('bgImage') bgImage!: ElementRef;
+  constructor(private router: Router) {}
 
-  onMouseMove(event: MouseEvent) {
+  goToImagePage(): void {
 
-    const x = event.clientX / window.innerWidth - 0.5;
-    const y = event.clientY / window.innerHeight - 0.5;
-
-    const rotateX = -y * 15;
-    const rotateY = x * 15;
-
-    this.bgImage.nativeElement.style.transform =
-      `scale(1.1) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  }
-
-  resetTilt() {
-    this.bgImage.nativeElement.style.transform =
-      `scale(1) rotateX(0deg) rotateY(0deg)`;
-  }
-
+    this.router.navigate(['/image-page']);
+    console.log('clicking')
+}
 
 }
