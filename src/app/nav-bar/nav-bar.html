@@ -26,7 +26,7 @@
 
             <div class="projects-container">
 
-                <div class="project-card big" (click)="closeProjects()">
+                <div class="project-card big" (click)="closeProjects()" routerLink="/sandalvalley">
                     <img src="/imgs/sandal-valley.png">
                     <div class="project-title">Sharanya Sandal Valley Farms</div>
                 </div>
@@ -38,7 +38,7 @@
                         <div class="project-title">Sharanya Hillview Farms</div>
                     </div>
 
-                    <div class="project-card small" (click)="closeProjects()">
+                    <div class="project-card small" (click)="closeProjects()" routerLink="/weekendvillage">
                         <img src="/imgs/weekend-village.png">
                         <div class="project-title">Sharanya Weekend Village</div>
                     </div>
@@ -81,7 +81,7 @@
 
     <div class="mobile-project-dropdown" *ngIf="showMobileProjects">
 
-        <div class="mobile-project-card" (click)="toggleMenu()">
+        <div class="mobile-project-card" (click)="toggleMenu()" routerLink="/sandalvalley">
             <img src="/imgs/sandal-valley.png">
             <span>Sharanya Sandal Valley Farms</span>
         </div>
@@ -91,7 +91,7 @@
             <span>Sharanya Hillview Farms</span>
         </div>
 
-        <div class="mobile-project-card" (click)="toggleMenu()">
+        <div class="mobile-project-card" (click)="toggleMenu()" routerLink="/weekendvillage">
             <img src="/imgs/weekend-village.png">
             <span>Sharanya Weekend Village</span>
         </div>

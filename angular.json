@@ -25,9 +25,8 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "styles": ["src/styles.css", "node_modules/pannellum/build/pannellum.css"],
+            "scripts": ["node_modules/pannellum/build/pannellum.js"]
           },
           "configurations": {
             "production": {
@@ -52,6 +51,8 @@
             }
           },
           "defaultConfiguration": "production"
+          
+        
         },
         "serve": {
           "builder": "@angular/build:dev-server",

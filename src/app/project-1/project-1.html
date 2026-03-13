@@ -1,49 +1,11 @@
 <div class="page-shell">
-  <!-- HEADER -->
-  <!-- <header class="header" id="home">
-    <div class="nav-pill" data-aos="fade-down">
-      <button class="mobile-toggle" (click)="toggleMobileMenu()" aria-label="Toggle menu">
-        ☰
-      </button>
 
-      <a
-        *ngFor="let item of navItems.slice(0, 3)"
-        [href]="item.link"
-        class="nav-link desktop-only"
-      >
-        {{ item.label }}
-      </a>
-
-      <a href="#home" class="brand desktop-brand">
-        <img src="assets/logo.png" alt="logo" />
-      </a>
-
-      <a
-        *ngFor="let item of navItems.slice(3)"
-        [href]="item.link"
-        class="nav-link desktop-only"
-      >
-        {{ item.label }}
-      </a>
-
-      <div class="mobile-menu" [class.open]="mobileMenuOpen">
-        <a
-          *ngFor="let item of navItems"
-          [href]="item.link"
-          (click)="closeMobileMenu()"
-          class="nav-link mobile-link"
-        >
-          {{ item.label }}
-        </a>
-      </div>
-    </div>
-  </header> -->
-
-  <!-- HERO -->
   <section class="hero" data-aos="zoom-in">
-    <div class="hero-content">
-      <h1>Sharanya Hillview Farms</h1>
-    </div>
+    <video src="/imgs/project-1/sharanya_sandalwood_bannervid.mp4" autoplay loop muted playinline
+      class="home-page-video"></video>
+    <!-- <div class="hero-content">
+      <h1>Sharanya sandal valley Farms</h1>
+    </div> -->
   </section>
 
   <!-- ABOUT -->
@@ -65,34 +27,22 @@
       </div>
 
       <div class="about-cards">
-        <!-- <div class="feature-card large" data-aos="fade-up">
-          <div class="feature-copy">
-            <h3>Private Sandal Valley</h3>
-            <p>
-              Sharanya Sandal Valley Farms Represents A Captivating Blend Of
-              Aesthetics, Fostering A Community-Centric Lifestyle Within An
-              Eco-Friendly Expanse
-            </p>
-          </div>
-          <div class="feature-art">
-            <img src="imgs/project-1/plant.png" alt="plant" />
-          </div>
-        </div> -->
+
 
         <div class="card big">
           <div class="content-align">
-              <h3>Private Sandal Valley</h3>
-              <p>
-                  Sharanya Sandal Valley Farms Represents A Captivating Blend Of
-                  Aesthetics, Fostering A Community-Centric Lifestyle Within
-                  An Eco-Friendly Expanse
-              </p>
+            <h3>Private Sandal Valley</h3>
+            <p>
+              Sharanya Sandal Valley Farms Represents A Captivating Blend Of
+              Aesthetics, Fostering A Community-Centric Lifestyle Within
+              An Eco-Friendly Expanse
+            </p>
           </div>
 
           <div class="img">
-              <img src="imgs/project-1/plant.png" alt="plant">
+            <img src="imgs/project-1/plant.png" alt="plant">
           </div>
-      </div>
+        </div>
 
         <div class="feature-card small" data-aos="fade-up" data-aos-delay="100">
           <h3>Private Sandal Valley</h3>
@@ -113,13 +63,14 @@
 
   <!-- BANNER -->
   <section class="banner">
-    <img src="imgs/project-1/Rectangle 55.png" alt="banner" class="banner-image" />
-    <div class="banner-overlay"></div>
+    <div class="banner-image" #bgImage>
+      <!-- <img src="imgs/project-1/Rectangle 55.png" alt="banner"/> -->
+    </div>
 
     <div class="banner-content" data-aos="zoom-in-up">
       <h2>A Symphony Of Nature’s Bounty.</h2>
       <p>Where Nature’s Wisdom Embraces Us And The Land Blooms With Abundance</p>
-      <button class="cta-btn white">
+      <button class="cta-btn white" (click)="goToImagePage()">
         Discover it in real time
         <span><img src="imgs/project-1/arrow.png" alt=""></span>
       </button>
@@ -173,10 +124,10 @@
         <div class="price-card">
 
           <div class="card-head">
-          <h3>Starter Plot</h3>
-          <small>1200 sq.ft</small>
-          <h4>₹25 Lakhs</h4>
-          <p>Expected ROI: 15-18% annually</p>
+            <h3>Starter Plot</h3>
+            <small>1200 sq.ft</small>
+            <h4>₹25 Lakhs</h4>
+            <p>Expected ROI: 15-18% annually</p>
           </div>
 
           <div class="future-box">
@@ -196,9 +147,9 @@
               ★ Recommended
             </div>
             <h3>Premium Plot</h3>
-          <small>2500 sq.ft</small>
-          <h4>₹48 Lakhs</h4>
-          <p>Expected ROI: 18-20% annually</p>
+            <small>2500 sq.ft</small>
+            <h4>₹48 Lakhs</h4>
+            <p>Expected ROI: 18-20% annually</p>
           </div>
 
           <div class="future-box">
@@ -209,14 +160,14 @@
           <button class="start-btn">Start now</button>
 
         </div>
-      
+
         <div class="price-card">
 
           <div class="card-head">
             <h3>Starter Plot</h3>
-          <small>1200 sq.ft</small>
-          <h4>₹25 Lakhs</h4>
-          <p class="roi">Expected ROI: 15-18% annually</p>
+            <small>1200 sq.ft</small>
+            <h4>₹25 Lakhs</h4>
+            <p class="roi">Expected ROI: 15-18% annually</p>
           </div>
 
           <div class="future-box">
@@ -254,13 +205,19 @@
 
           <div class="amenity-thumbs">
             <img [src]="rightAmenity.image" [alt]="rightAmenity.title" />
+            <img [src]="nextRightAmenity.image" [alt]="nextRightAmenity.title" />
           </div>
 
-          <div class="amenity-pagination">
-            <button *ngFor="let item of amenities; let i = index" [class.active]="i === currentAmenityIndex"
-              (click)="goToAmenity(i)">
-              {{ i + 1 }}
-            </button>
+          <div class="amenities-line">
+            <div class="progress-container">
+              <div class="progress-bar" [style.width.%]="progressWidth"></div>
+            </div>
+            <div class="amenity-pagination">
+              <button *ngFor="let item of amenities; let i = index" [class.active]="i === currentAmenityIndex"
+                (click)="goToAmenity(i)">
+                {{ i + 1 }}
+              </button>
+            </div>
           </div>
         </div>
 
