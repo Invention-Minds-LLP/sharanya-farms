@@ -222,7 +222,7 @@ export class HomePage {
       title: 'Sharanya Sandal valley Farms',
       desc: 'Sharanya Sandal Valley Farms represents a captivating blend of aesthetics, fostering a community-centric lifestyle within an eco-friendly expanse located on T Narasipura Road, near NH-Mysore-Malavali Road. Our vision is to reshape the essence of living and redefine the experience of acquiring real estate. Located off NH-Mysore-Malavali Road, near the prestigious World Heritage...',
       image: '/imgs/home-page/sandal-villey.png',
-      link: ''
+      link: '/sandalvalley'
     },
     {
       title: 'Sharanya Hillview Farms',
@@ -234,7 +234,7 @@ export class HomePage {
       title: 'Sharanya Weekend Village',
       desc: 'Sharanya Hillview Farms is a nature-friendly getaway near Mysore designed for those seeking peace, greenery, and value. With sandalwood plantations and lush surroundings, its an ideal destination for weekend retreats, remote working, or mindful farming...',
       image: '/imgs/home-page/weekend.png',
-      link: ''
+      link: '/weekendvillage'
     }
   ]
 
