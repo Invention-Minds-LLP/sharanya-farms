@@ -14,8 +14,8 @@ export class PageForm {
 
   constructor(private fb: FormBuilder) {
 
-  
-    emailjs.init("YOUR_PUBLIC_KEY");
+
+    emailjs.init("44sQRxJOiepWwo5y8");
 
     this.contactForm = this.fb.group({
       firstName: ['', [Validators.required]],
@@ -35,16 +35,15 @@ export class PageForm {
       const formData = this.contactForm.value;
 
       const templateParams = {
-        firstName: formData.firstName,
-        lastName: formData.lastName,
+        firstName: formData.firstName + ' ' + formData.lastName,
         phone: formData.mobile,
         email: formData.email,
         message: formData.message
       };
 
       emailjs.send(
-        "service_xxxxxx",   
-        "template_xxxxxx",
+        'service_j8dl5uv',
+        'template_69zjg7a',
         templateParams
       )
         .then(() => {

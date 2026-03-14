@@ -16,7 +16,7 @@ export class Contact {
 
   ngOnInit() {
 
-    emailjs.init("YOUR_PUBLIC_KEY");
+    emailjs.init("44sQRxJOiepWwo5y8");
 
     this.contactForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(3)]],
@@ -50,8 +50,8 @@ export class Contact {
     };
 
     emailjs.send(
-      'service_xxxxxx',   
-      'template_xxxxxx',
+      'service_j8dl5uv',   
+      'template_69zjg7a',
       templateParams
     )
       .then(() => {

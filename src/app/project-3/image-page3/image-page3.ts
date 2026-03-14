@@ -1,10 +1,12 @@
 import { Component, HostListener, ViewChild, ElementRef, Input, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Location } from '@angular/common';
 // import gsap from 'gsap';
 // import ScrollTrigger from 'gsap/ScrollTrigger';
 // gsap.registerPlugin(ScrollTrigger);
 
 declare var pannellum: any;  // Declare pannellum to avoid TypeScript errors
+
 
 
 
@@ -16,7 +18,7 @@ declare var pannellum: any;  // Declare pannellum to avoid TypeScript errors
 })
 export class ImagePage3 {
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, private location: Location) { }
 
   plots = [
     {
@@ -85,57 +87,62 @@ export class ImagePage3 {
 
     // const Component = this;
 
-    
-      const hotspots = this.plots.map(plot => ({
-        pitch: plot.pitch,
-        yaw: plot.yaw,
-        type: 'custom',
-        cssClass: 'plot-marker',
-      
-        createTooltipFunc: (div: any) => {
-          div.innerHTML = `<img src="imgs/project-1/location.png">`;
-      
-          div.addEventListener("mouseenter", (e: MouseEvent) => {
-              this.tooltipTitle = plot.title;
-              this.tooltipDes = plot.des;
-              this.tooltipX = e.clientX;
-              this.tooltipY = e.clientY;
-          
-              this.tooltipVisible = true;
-          
-              this.cdr.detectChanges();
-          });
 
-          div.addEventListener("mousemove", (e: MouseEvent) => {
+    const hotspots = this.plots.map(plot => ({
+      pitch: plot.pitch,
+      yaw: plot.yaw,
+      type: 'custom',
+      cssClass: 'plot-marker',
 
-            this.tooltipX = e.clientX;
-              this.tooltipY = e.clientY;
-            this.cdr.detectChanges();
-          });
-      
-          div.addEventListener("mouseleave", () => {
-            this.tooltipVisible = false;
+      createTooltipFunc: (div: any) => {
+        div.innerHTML = `<img src="imgs/project-1/location.png">`;
 
-            this.cdr.detectChanges();
-          });
-        }
-      }));
-    
+        div.addEventListener("mouseenter", (e: MouseEvent) => {
+          this.tooltipTitle = plot.title;
+          this.tooltipDes = plot.des;
+          this.tooltipX = e.clientX;
+          this.tooltipY = e.clientY;
 
-   
+          this.tooltipVisible = true;
+
+          this.cdr.detectChanges();
+        });
+
+        div.addEventListener("mousemove", (e: MouseEvent) => {
+
+          this.tooltipX = e.clientX;
+          this.tooltipY = e.clientY;
+          this.cdr.detectChanges();
+        });
+
+        div.addEventListener("mouseleave", () => {
+          this.tooltipVisible = false;
+
+          this.cdr.detectChanges();
+        });
+      }
+    }));
+
+
+
 
     pannellum.viewer('panorama', {
-    
-        type: 'equirectangular',
-        panorama: '/imgs/project-1/weekend.jpeg',
-        autoLoad: true,
-        showZoomCtrl: true,
-        mouseZoom: true,
-    
-        hotSpots: hotspots
-    
-      });
-    };
+
+      type: 'equirectangular',
+      panorama: '/imgs/project-1/weekend.jpeg',
+      autoLoad: true,
+      showZoomCtrl: true,
+      mouseZoom: true,
+
+      hotSpots: hotspots
+
+    });
+  };
+
+  goBack() {
+    this.location.back();
+  }
+
 }
 
 
