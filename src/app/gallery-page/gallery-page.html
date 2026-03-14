@@ -1,0 +1,326 @@
+<div class="gallery-part">
+    <div class="banner-part">
+        <div class="banner-img">
+            <img src="/imgs/gallery-page/gallery-banner-img.png" alt="">
+        </div>
+
+        <div class="baner-content">
+            <div class="banner-heading">Our Gallery</div>
+            <div class="banner-para">Explore our curated collection of stunning visuals across different categories.
+                Each piece tells its own unique story.</div>
+        </div>
+    </div>
+
+    <div class="imgs-part">
+        <div class="nav-btns">
+
+            <button (click)="selectCategory('sandal')" [class.active]="selectedCategory === 'sandal'">
+                Sandal Valley
+            </button>
+
+            <button (click)="selectCategory('hillview')" [class.active]="selectedCategory === 'hillview'">
+                Hillview Farm
+            </button>
+
+            <button (click)="selectCategory('weekend')" [class.active]="selectedCategory === 'weekend'">
+                Weekend Village
+            </button>
+
+        </div>
+
+        <div class="imgs">
+
+            <!-- Sandal Valley -->
+            <div class="gallery sandal" *ngIf="selectedCategory === 'sandal'">
+
+                <div class="img-card" [hidden]="!(0 >= startIndex && 0 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/sandal-vlley-img-1.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(1 >= startIndex && 1 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/sandal-vlley-img-2.png">
+                </div>
+
+            </div>
+            <div class="gallery-resp sandal" *ngIf="selectedCategory === 'sandal'">
+
+
+                <div class="img-card" [hidden]="!(0 >= startIndex && 0 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-1.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(1 >= startIndex && 1 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-2.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(2 >= startIndex && 2 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-3.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(3 >= startIndex && 3 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-4.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(4 >= startIndex && 4 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-5.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(5 >= startIndex && 5 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-6.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(6 >= startIndex && 6 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-7.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(7 >= startIndex && 7 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-8.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(8 >= startIndex && 8 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-9.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(9 >= startIndex && 9 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-10.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(10 >= startIndex && 10 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-11.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(11 >= startIndex && 11 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-12.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(12 >= startIndex && 12 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-13.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(13 >= startIndex && 13 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-14.png">
+                </div>
+                <!-- <div class="img-card" [hidden]="!(14 >= startIndex && 14 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/san-15.png">
+                </div> -->
+
+
+            </div>
+
+
+            <!-- Hillview -->
+            <div class="gallery hillview" *ngIf="selectedCategory === 'hillview'">
+
+                <div class="img-card" [hidden]="!(0 >= startIndex && 0 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-img-1.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(1 >= startIndex && 1 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-img-2.png">
+                </div>
+
+            </div>
+            <div class="gallery-resp hillview" *ngIf="selectedCategory === 'hillview'">
+
+                <div class="img-card" [hidden]="!(0 >= startIndex && 0 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-1.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(1 >= startIndex && 1 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-2.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(2 >= startIndex && 2 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-3.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(3 >= startIndex && 3 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-4.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(4 >= startIndex && 4 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-5.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(5 >= startIndex && 5 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-6.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(6 >= startIndex && 6 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-7.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(7 >= startIndex && 7 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-8.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(8 >= startIndex && 8 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-9.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(9 >= startIndex && 9 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-10.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(10 >= startIndex && 10 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-11.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(11 >= startIndex && 11 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-12.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(12 >= startIndex && 12 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-13.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(13 >= startIndex && 13 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-14.png">
+                </div>
+                <!-- <div class="img-card" [hidden]="!(14 >= startIndex && 14 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/hill-view-1.png">
+                </div> -->
+
+
+            </div>
+
+
+            <!-- Weekend -->
+            <div class="gallery weekend" *ngIf="selectedCategory === 'weekend'">
+
+                <div class="img-card" [hidden]="!(0 >= startIndex && 0 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/weekend-img-1.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(1 >= startIndex && 1 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/weekend-img-2.png">
+                </div>
+                <div class="img-card" [hidden]="!(2 >= startIndex && 2 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/weekend-img-3.png">
+                </div>
+
+            </div>
+            <div class="gallery-resp weekend" *ngIf="selectedCategory === 'weekend'">
+
+                <div class="img-card" [hidden]="!(0 >= startIndex && 0 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-1.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(1 >= startIndex && 1 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-2.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(2 >= startIndex && 2 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-3.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(3 >= startIndex && 3 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-4.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(4 >= startIndex && 4 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-5.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(5 >= startIndex && 5 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-6.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(6 >= startIndex && 6 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-7.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(7 >= startIndex && 7 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-8.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(8 >= startIndex && 8 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-9.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(9 >= startIndex && 9 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-10.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(10 >= startIndex && 10 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-11.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(11 >= startIndex && 11 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-12.png">
+                </div>
+
+
+
+                <div class="img-card" [hidden]="!(12 >= startIndex && 12 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-13.png">
+                </div>
+
+                <div class="img-card" [hidden]="!(13 >= startIndex && 13 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-14.png">
+                </div>
+                <!-- <div class="img-card" [hidden]="!(14 >= startIndex && 14 < startIndex + imagesPerPage)">
+                    <img src="/imgs/gallery-page/week-img-1.png">
+                </div> -->
+
+
+            </div>
+
+        </div>
+        <div class="arrows">
+            <button (click)="prev()" [disabled]="isPrevDisabled()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M16.0603 21.5461C16.3416 21.2648 16.4995 20.8833 16.4995 20.4856C16.4995 20.0878 16.3416 19.7063 16.0603 19.425L8.63532 12L16.0603 4.57503C16.325 4.29075 16.469 3.9149 16.4622 3.52656C16.4554 3.13823 16.2982 2.76768 16.0237 2.49289C15.7492 2.2181 15.3788 2.06049 14.9905 2.05323C14.6021 2.04596 14.2261 2.18961 13.9416 2.45394L5.45485 10.9383C5.17362 11.2196 5.01563 11.6011 5.01563 11.9989C5.01563 12.3966 5.17362 12.7781 5.45485 13.0594L13.9392 21.5461C14.2205 21.8274 14.602 21.9854 14.9998 21.9854C15.3975 21.9854 15.779 21.8274 16.0603 21.5461Z"
+                        fill="white" />
+                </svg>
+            </button>
+
+            <button (click)="next()" [disabled]="isNextDisabled()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M7.93968 21.5461C7.65844 21.2648 7.50045 20.8833 7.50045 20.4856C7.50045 20.0878 7.65844 19.7063 7.93968 19.425L15.3647 12L7.93968 4.57503C7.67504 4.29075 7.53098 3.9149 7.53781 3.52657C7.54465 3.13823 7.70185 2.76768 7.97633 2.49289C8.25082 2.2181 8.62119 2.06049 9.00952 2.05323C9.39785 2.04596 9.77386 2.18961 10.0584 2.45394L18.5451 10.9383C18.8264 11.2196 18.9844 11.6011 18.9844 11.9989C18.9844 12.3966 18.8264 12.7781 18.5451 13.0594L10.0608 21.5461C9.77948 21.8274 9.398 21.9854 9.00023 21.9854C8.60246 21.9854 8.22097 21.8274 7.93968 21.5461Z"
+                        fill="white" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="form-part">
+        <div class="">
+            <app-page-form></app-page-form>
+        </div>
+
+        <div class="video">
+            <video src="/imgs/form-video.mp4" autoplay loop muted playinline></video>
+        </div>
+    </div>
+</div>

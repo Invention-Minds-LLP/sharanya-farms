@@ -3,10 +3,11 @@ import { Component, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PageForm } from "../page-form/page-form";
 import { Footer } from "../footer/footer";
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
-  imports: [CommonModule, FormsModule, PageForm, Footer],
+  imports: [CommonModule, FormsModule, PageForm, Footer, RouterModule],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
@@ -29,7 +30,12 @@ export class HomePage {
       image: '/imgs/home-page/img-3.png',
       title: 'Sustainable Farming',
       desc: 'We practice organic farming and drip irrigation.'
-    }
+    },
+    {
+      image: '/imgs/home-page/img-4.png',
+      title: 'Transparent Ownership',
+      desc: 'All plots come with clear legal titles, documentation, and full visibility on...'
+    },
   ];
   get leftIndex() {
     return (this.active - 1 + this.cards.length) % this.cards.length;
@@ -215,34 +221,74 @@ export class HomePage {
     {
       title: 'Sharanya Sandal valley Farms',
       desc: 'Sharanya Sandal Valley Farms represents a captivating blend of aesthetics, fostering a community-centric lifestyle within an eco-friendly expanse located on T Narasipura Road, near NH-Mysore-Malavali Road. Our vision is to reshape the essence of living and redefine the experience of acquiring real estate. Located off NH-Mysore-Malavali Road, near the prestigious World Heritage...',
-      image: '/imgs/home-page/Ellipse 3.png'
+      image: '/imgs/home-page/sandal-villey.png',
+      link: ''
     },
     {
       title: 'Sharanya Hillview Farms',
       desc: 'Sharanya Hillview Farms is a nature-friendly getaway near Mysore designed for those seeking peace, greenery, and value. With sandalwood plantations and lush surroundings, its an ideal destination for weekend retreats, remote working, or mindful farming...',
-      image: '/imgs/home-page/Ellipse 1.png'
+      image: '/imgs/home-page/hill-view.png',
+      link: '/hillview'
     },
     {
       title: 'Sharanya Weekend Village',
       desc: 'Sharanya Hillview Farms is a nature-friendly getaway near Mysore designed for those seeking peace, greenery, and value. With sandalwood plantations and lush surroundings, its an ideal destination for weekend retreats, remote working, or mindful farming...',
-      image: '/imgs/home-page/Ellipse 2.png'
+      image: '/imgs/home-page/weekend.png',
+      link: ''
     }
   ]
 
-  // current = 0
+  cardCurrent = 0;
+  cardAnimating = false;
 
-  direction = ''
-  get cardnextIndex() {
-    return (this.current + 1) % this.card.length
+  get cardNextIndex() {
+    return (this.cardCurrent + 1) % this.card.length;
+  }
+
+  get cardPrevIndex() {
+    return (this.cardCurrent - 1 + this.card.length) % this.card.length;
   }
 
   cardnext() {
-    this.current = (this.current + 1) % this.card.length
+
+    if (this.cardAnimating) return;
+
+    this.cardAnimating = true;
+
+    const section = document.querySelector('.farm-section');
+    section?.classList.add('slide-next');
+
+    setTimeout(() => {
+
+      this.cardCurrent = this.cardNextIndex;
+
+      section?.classList.remove('slide-next');
+      this.cardAnimating = false;
+
+    }, 600);
+
   }
 
   cardprev() {
-    this.current = (this.current - 1 + this.card.length) % this.card.length
+
+    if (this.cardAnimating) return;
+
+    this.cardAnimating = true;
+
+    const section = document.querySelector('.farm-section');
+    section?.classList.add('slide-prev');
+
+    setTimeout(() => {
+
+      this.cardCurrent = this.cardPrevIndex;
+
+      section?.classList.remove('slide-prev');
+      this.cardAnimating = false;
+
+    }, 600);
+
   }
+
 
   // activeStep = 0;
   isMobile = false;
@@ -290,5 +336,13 @@ export class HomePage {
 
     }
 
+  }
+
+  constructor(private router: Router) { }
+
+  goToImagePage(): void {
+
+    this.router.navigate(['/image-page3']);
+    console.log('clicking')
   }
 }

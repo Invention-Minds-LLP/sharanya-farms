@@ -7,17 +7,32 @@
             <img src="/imgs/register-form/star.svg" alt=""> <span>Premium Farmland Investment Event</span>
         </div>
 
-        <div class="main-heading">Celebrate Land. <span>Celebrate Life.</span></div>
+        <div class="main-heading">
+            Celebrate New Beginnings with Nature, <br><span>Tradition & Community</span>
+        </div>
 
         <div>
-            <div class="english-heading">Sharanya Utsava 2026</div>
-            <div class="kanada-heading">ಶರಣ್ಯ ಉತ್ಸವ 2026</div>
+            <div class="english-heading">Sharanya Ugadi Utsava 2026</div>
+            <div class="kanada-heading">ಶರಣ್ಯ ಉಗಾದಿ ಉತ್ಸವ 2026</div>
         </div>
 
         <div class="flex">
             <div class="line"></div>
-            <div class="banner-para">A One-Day Farm Experience Near Bangalore-Mysore Road.
-                Step into a day filled with nature, community, and conscious living.</div>
+            <div class="flex1">
+                <div class="banner-para">
+                    Join us for a memorable Ugadi celebration with your family at Sharanya Hillview Farms.
+                </div>
+                <div class="banner-para">
+                    Celebrate the festival of new beginnings in a peaceful farm setting surrounded by greenery,
+                    fresh
+                    air, and a vibrant community.
+                </div>
+                <div class="banner-para">
+                    This special event brings together culture, nature, and family experiences, making it a perfect
+                    way
+                    to celebrate Ugadi away from the city.
+                </div>
+            </div>
         </div>
 
         <div class="lists">
@@ -44,8 +59,17 @@
         </div>
 
 
-        <div class="limited"><img src="/imgs/register-form/time.svg" alt=""> <span>Limited Entry – Pre Registration
-                Required</span></div>
+        <div class="limited">
+            <div class="">
+                <img src="/imgs/register-form/time.svg">
+                <span>Limited Families Only – Pre-Registration Required</span>
+            </div>
+
+
+        </div>
+        <div class="para">To ensure a comfortable and enjoyable experience for all guests, this event is open to a
+            limited number of families. Kindly register in advance to confirm your participation.</div>
+
     </div>
 
     <div class="right-side">
@@ -58,53 +82,39 @@
                     <p class="form-subtitle">Sharanya Utsava – Free Entry</p>
                 </div>
 
-                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form-body" novalidate>
+                <form [formGroup]="registrationForm" (ngSubmit)="submitForm()" class="form-body">
 
-                    <!-- Full Name -->
+                    <!-- FULL NAME -->
+
                     <div class="field-group">
-                        <label class="field-label">FULL NAME <span class="required">*</span></label>
-                        <input type="text" formControlName="fullName" class="field-input"
-                            placeholder="Enter your full name" />
-
-                        <span class="error-msg" *ngIf="submitted && f['fullName'].errors">
-                            Full name is required
-                        </span>
+                        <label class="field-label">FULL NAME *</label>
+                        <input type="text" formControlName="fullName" class="field-input" placeholder="Enter your full name">
                     </div>
 
-            
+
                     <div class="field-row">
 
-                        <!-- Phone -->
                         <div class="field-group">
-                            <label class="field-label">PHONE <span class="required">*</span></label>
+                            <label class="field-label">PHONE *</label>
+
                             <div class="phone-wrap">
                                 <span class="phone-prefix">+91</span>
-                                <input type="tel" formControlName="phone" class="phone-input"
-                                    placeholder="Enter phone number" />
+                                <input type="tel" formControlName="phone" class="phone-input" placeholder="Enter phone number">
                             </div>
 
-                            <span class="error-msg" *ngIf="submitted && f['phone'].errors">
-                                Valid 10-digit phone required
-                            </span>
                         </div>
 
-                        <!-- Email -->
-                        <div class="field-group">
-                            <label class="field-label">EMAIL <span class="required">*</span></label>
-                            <input type="email" formControlName="email" class="field-input"
-                                placeholder="name@email.com" />
 
-                            <span class="error-msg" *ngIf="submitted && f['email'].errors">
-                                Valid email required
-                            </span>
+                        <div class="field-group">
+                            <label class="field-label">EMAIL *</label>
+                            <input type="email" formControlName="email" class="field-input" placeholder="name@email.com">
                         </div>
 
                     </div>
 
-                
+
                     <div class="field-row">
 
-                        <!-- City -->
                         <div class="field-group">
                             <label class="field-label">CITY</label>
                             <div class="select-wrap">
@@ -115,78 +125,79 @@
                                     <option value="others">Others</option>
                                 </select>
                             </div>
+
+
                         </div>
 
-                        <!-- Occupation -->
+
                         <div class="field-group">
-                            <label class="field-label">OCCUPATION</label>
-                            <div class="select-wrap">
-                                <select formControlName="occupation" class="field-select">
-                                    <option value="it">IT</option>
-                                    <option value="business">Business</option>
-                                    <option value="doctor">Doctor</option>
-                                    <option value="govt">Govt</option>
-                                    <option value="student">Other</option>
-                                </select>
-                            </div>
+                            <label class="field-label">FAMILY MEMBERS ATTENDING</label>
+                            <input type="number" formControlName="familyMembers" class="field-input"  placeholder="Enter number of members">
                         </div>
 
                     </div>
 
-                    <!-- Preference Box -->
-                    <div class="preference-box">
 
-                        <!-- Looking For -->
-                        <div class="field-group">
-                            <label class="field-label">LOOKING FOR:</label>
-                            <div class="radio-group">
+                    <div class="field-group">
 
-                                <label class="radio-label">
-                                    <input type="radio" formControlName="lookingFor" value="investment" />
-                                    <span class="radio-custom"></span>
-                                    <span>Investment</span>
-                                </label>
+                        <label class="field-label">ARE YOU AN EXISTING CO-FARMER?</label>
 
-                                <label class="radio-label">
-                                    <input type="radio" formControlName="lookingFor" value="lifestyle" />
-                                    <span class="radio-custom"></span>
-                                    <span>Lifestyle</span>
-                                </label>
+                        <div class="radio-group">
 
-                                <label class="radio-label">
-                                    <input type="radio" formControlName="lookingFor" value="both" />
-                                    <span class="radio-custom"></span>
-                                    <span>Both</span>
-                                </label>
+                            <label>
+                                <input type="radio" value="yes" formControlName="coFarmer"> Yes
+                            </label>
 
-                            </div>
-                        </div>
+                            <label>
+                                <input type="radio" value="no" formControlName="coFarmer"> No
+                            </label>
 
-                        <!-- Budget -->
-                        <div class="field-group">
-                            <label class="field-label">BUDGET RANGE</label>
-                            <div class="select-wrap">
-                                <select formControlName="budget" class="field-select">
-                                    <option value="5 Lakhs">5 Lakhs</option>
-                                    <option value="5-10">5 - 10 Lakhs</option>
-                                    <option value="10-25">10 - 25 Lakhs</option>
-                                    <option value="20 Lakhs">20 Lakhs</option>
-                                </select>
-                            </div>
                         </div>
 
                     </div>
 
-                    <!-- Submit -->
+
+                    <div class="field-group">
+
+                        <label class="field-label">Do you already own a plot in Sharanya Farms?</label>
+
+                        <div class="radio-group">
+
+                            <label>
+                                <input type="radio" value="yes" formControlName="ownPlot"> Yes
+                            </label>
+
+                            <label>
+                                <input type="radio" value="no" formControlName="ownPlot"> No
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label">PREFERRED TIME OF ARRIVAL</label>
+                        <input type="text" formControlName="arrivalTime" class="field-input" placeholder="Preferred Time of Arrival">
+                    </div>
+
+
+                    <div class="field-group">
+                        <label class="field-label">ANY SPECIAL REQUESTS (OPTIONAL)</label>
+                        <textarea formControlName="specialRequest" rows="3" class="field-input" placeholder="Write your request..."></textarea>
+                    </div>
+
+
                     <button type="submit" class="submit-btn">
                         REGISTER FOR FREE FARM VISIT
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
                             <path d="M12.175 9H0V7H12.175L6.575 1.4L8 0L16 8L8 16L6.575 14.6L12.175 9Z" fill="white" />
                         </svg>
                     </button>
 
                     <p class="consent-text">
-                        By registering, I agree to be contacted via call/WhatsApp regarding this event.
+                        After registration, our team will contact you to confirm your participation and share the
+                        event location and further details.
                     </p>
 
                 </form>
@@ -228,14 +239,30 @@
                     </div>
 
                     <div class="event-info">
+
                         <p><strong>Event Details</strong></p>
                         <p>Date: March 28, 2026</p>
-                        <p>Time: 9:00 AM – 5:00 PM</p>
-                        <a class="directions-link" href="https://maps.app.goo.gl/xsXvFAJnFyiCbiJm7?g_st=aw" target="_blank">Get Directions</a>
+                        <p>Event Inauguration: 10:30 AM</p>
+                        <p> Venue: Sharanya Hillview Farms
+                            Near Mysore – Malavalli Road
+                        </p>
+
+                        <a class="directions-link" href="https://maps.app.goo.gl/xsXvFAJnFyiCbiJm7?g_st=aw"
+                            target="_blank">
+
+                            Get Directions
+
+                        </a>
+
                     </div>
+
                 </div>
 
+                <div class="consent-text">
+                    We look forward to welcoming you and your family to celebrate Ugadi at Sharanya Farms.
+                </div>
             </div>
+
         </div>
     </div>
 </div>
