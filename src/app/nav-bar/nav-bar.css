@@ -59,13 +59,14 @@
 
 .projects-dropdown {
     position: absolute;
-    top: 80px;
+    top: 90px;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
     z-index: 9999;
 }
+
 
 .projects-container {
     width: 100%;
@@ -170,7 +171,7 @@
     right: -100%;
     width: 260px;
     height: 100%;
-    background: #1b1b1b;
+    background: #030303;
     display: flex;
     flex-direction: column;
     gap: 30px;

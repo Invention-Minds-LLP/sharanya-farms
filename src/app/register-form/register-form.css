@@ -1,8 +1,9 @@
+
 .register-form {
     display: grid;
     grid-template-columns: 60% 40%;
+    background: #FFF;
 }
-
 
 .logo img {
     width: 174px;
@@ -48,7 +49,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 60px;
-    width: 436.89px;
+    /* width: 436.89px; */
 }
 
 .main-heading span {
@@ -89,7 +90,7 @@
     font-style: normal;
     font-weight: 300;
     line-height: 28px;
-    width: 572.64px;
+    width: 622.64px;
 }
 
 .flex {
@@ -98,6 +99,16 @@
     gap: 10px;
     /* justify-content: center; */
     border-left: 4px solid #D4AF37;
+}
+
+.para {
+    color: #F3F4F6;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 142.857% */
 }
 
 .lists {
@@ -144,6 +155,12 @@
     border: 1px solid rgba(255, 255, 255, 0.20);
     background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(5px);
+}
+
+.flex1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .numer {
@@ -200,7 +217,7 @@
 .right-side {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 170px;
 }
 
 
@@ -313,6 +330,12 @@
     outline: none;
     transition: border-color .2s, box-shadow .2s;
     width: 100%;
+}
+
+.field-group textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px 20px;
 }
 
 .field-input::placeholder {
@@ -609,7 +632,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 0px;
+    background: #FFFF;
+    padding: 40px;
 }
 
 .bottom-sub-heading {
@@ -643,7 +668,7 @@
     /* margin-top: 20px; */
 }
 
-.heading-part{
+.heading-part {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -728,6 +753,10 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    .banner-para {
+        width: 582.64px;
+    }
 }
 
 @media(max-width:1023px) {
@@ -780,9 +809,11 @@
     .left-side {
         gap: 20px;
     }
-    .right-side{
+
+    .right-side {
         padding: 20px;
     }
+
     .limited {
         text-align: center;
     }

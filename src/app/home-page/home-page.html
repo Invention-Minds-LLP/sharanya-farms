@@ -115,26 +115,47 @@
         <!-- LEFT CONTENT -->
         <div class="left-circle">
 
-            <h1>{{card[current].title}}</h1>
+            <h1>{{card[cardCurrent].title}}</h1>
 
-            <p>{{card[current].desc}}</p>
+            <p>{{card[cardCurrent].desc}}</p>
 
-            <button class="know-btn">Know More</button>
+            <button class="know-btn" [routerLink]="card[cardCurrent].link">Know More</button>
 
         </div>
-        <!-- RIGHT IMAGE -->
-        <div class="right-circle">
-            <img [src]="card[current].image">
+
+        <!-- TOP RIGHT HIDDEN IMAGE -->
+        <div class="top-circle">
+            <img [src]="card[cardPrevIndex].image">
+        </div>
+        <div class="">
+            <!-- RIGHT CENTER (main image) -->
+            <div class="right-circle">
+                <img [src]="card[cardCurrent].image">
+            </div>
+            <div class="btns">
+                <button (click)="cardprev()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 20 20" fill="none">
+                        <path
+                            d="M13.3826 2.04473C13.617 2.27915 13.7486 2.59705 13.7486 2.92852C13.7486 3.26 13.617 3.5779 13.3826 3.81231L7.19512 9.99981L13.3826 16.1873C13.6032 16.4242 13.7232 16.7374 13.7175 17.061C13.7118 17.3846 13.5808 17.6934 13.3521 17.9224C13.1233 18.1514 12.8147 18.2828 12.4911 18.2888C12.1675 18.2949 11.8541 18.1752 11.617 17.9549L4.54473 10.8846C4.31037 10.6502 4.17871 10.3323 4.17871 10.0008C4.17871 9.66931 4.31037 9.35141 4.54473 9.117L11.615 2.04473C11.8495 1.81037 12.1674 1.67871 12.4988 1.67871C12.8303 1.67871 13.1482 1.81037 13.3826 2.04473Z"
+                            fill="white" />
+                    </svg></button>
+
+                <button (click)="cardnext()"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="17"
+                        viewBox="0 0 10 17" fill="none">
+                        <path
+                            d="M0.366399 0.366022C0.132035 0.600435 0.000376701 0.918337 0.000376701 1.24981C0.000376701 1.58129 0.132035 1.89919 0.366399 2.1336L6.5539 8.3211L0.366399 14.5086C0.145862 14.7455 0.0258121 15.0587 0.0315084 15.3823C0.0372047 15.7059 0.168203 16.0147 0.396942 16.2437C0.625681 16.4727 0.934325 16.604 1.25793 16.6101C1.58154 16.6162 1.89488 16.4965 2.13202 16.2762L9.20429 9.20586C9.43865 8.97145 9.57031 8.65355 9.57031 8.32207C9.57031 7.9906 9.43865 7.6727 9.20429 7.43829L2.13398 0.366022C1.89956 0.131659 1.58166 0 1.25019 0C0.918714 0 0.600811 0.131659 0.366399 0.366022Z"
+                            fill="white" />
+                    </svg></button>
+            </div>
         </div>
 
 
         <div class="btns-part">
-            <!-- BOTTOM IMAGE -->
+
+            <!-- BOTTOM LEFT (next image) -->
             <div class="bottom-circle">
-                <img [src]="card[nextIndex].image">
+                <img [src]="card[cardNextIndex].image">
             </div>
-
-
             <!-- ARROWS -->
             <div class="circle-arrows">
 
@@ -152,23 +173,8 @@
                             fill="white" />
                     </svg></button>
 
-
             </div>
-            <div class="btns">
-                <button (click)="cardprev()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        viewBox="0 0 20 20" fill="none">
-                        <path
-                            d="M13.3826 2.04473C13.617 2.27915 13.7486 2.59705 13.7486 2.92852C13.7486 3.26 13.617 3.5779 13.3826 3.81231L7.19512 9.99981L13.3826 16.1873C13.6032 16.4242 13.7232 16.7374 13.7175 17.061C13.7118 17.3846 13.5808 17.6934 13.3521 17.9224C13.1233 18.1514 12.8147 18.2828 12.4911 18.2888C12.1675 18.2949 11.8541 18.1752 11.617 17.9549L4.54473 10.8846C4.31037 10.6502 4.17871 10.3323 4.17871 10.0008C4.17871 9.66931 4.31037 9.35141 4.54473 9.117L11.615 2.04473C11.8495 1.81037 12.1674 1.67871 12.4988 1.67871C12.8303 1.67871 13.1482 1.81037 13.3826 2.04473Z"
-                            fill="white" />
-                    </svg></button>
 
-                <button (click)="cardnext()"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="17"
-                        viewBox="0 0 10 17" fill="none">
-                        <path
-                            d="M0.366399 0.366022C0.132035 0.600435 0.000376701 0.918337 0.000376701 1.24981C0.000376701 1.58129 0.132035 1.89919 0.366399 2.1336L6.5539 8.3211L0.366399 14.5086C0.145862 14.7455 0.0258121 15.0587 0.0315084 15.3823C0.0372047 15.7059 0.168203 16.0147 0.396942 16.2437C0.625681 16.4727 0.934325 16.604 1.25793 16.6101C1.58154 16.6162 1.89488 16.4965 2.13202 16.2762L9.20429 9.20586C9.43865 8.97145 9.57031 8.65355 9.57031 8.32207C9.57031 7.9906 9.43865 7.6727 9.20429 7.43829L2.13398 0.366022C1.89956 0.131659 1.58166 0 1.25019 0C0.918714 0 0.600811 0.131659 0.366399 0.366022Z"
-                            fill="white" />
-                    </svg></button>
-            </div>
         </div>
 
     </div>
@@ -204,47 +210,63 @@
             <div class="steps-wrapper">
 
                 <!-- STEP NUMBERS -->
-                <div class="step step1" (mouseenter)="onHover(1)" (mouseleave)="onLeave()" (click)="onStepClick(1)">1
+                <div class="step step1" (mouseenter)="onHover(4)" (mouseleave)="onLeave()" (click)="onStepClick(4)">4
                 </div>
 
-                <div class="step step2" (mouseenter)="onHover(2)" (mouseleave)="onLeave()" (click)="onStepClick(2)">2
+                <div class="step step2" (mouseenter)="onHover(3)" (mouseleave)="onLeave()" (click)="onStepClick(3)">3
                 </div>
 
-                <div class="step step3" (mouseenter)="onHover(3)" (mouseleave)="onLeave()" (click)="onStepClick(3)">3
+                <div class="step step3" (mouseenter)="onHover(2)" (mouseleave)="onLeave()" (click)="onStepClick(2)">2
                 </div>
 
-                <div class="step step4" (mouseenter)="onHover(4)" (mouseleave)="onLeave()" (click)="onStepClick(4)">4
+                <div class="step step4" (mouseenter)="onHover(1)" (mouseleave)="onLeave()" (click)="onStepClick(1)">1
                 </div>
 
             </div>
-            <!-- STEP 1 CARD -->
-            <div class="info-card right1" [class.active]="activeStep==1">
-                <img src="/imgs/home-page/right-line.svg" class="arrow arrow1">
-                <h2>Schedule a Visit</h2>
-                <p>Book a guided tour to explore our farmland projects and understand the layout.</p>
-            </div>
-
-            <!-- STEP 2 CARD -->
-            <div class="info-card right2" [class.active]="activeStep==2">
-                <img src="/imgs/home-page/right-line.svg" class="arrow arrow2">
-                <h2>Choose Your Plot</h2>
-                <p>Select from legally clear plots of various sizes based on your budget.</p>
-            </div>
-
-            <!-- STEP 3 CARD -->
-            <div class="info-card left1" [class.active]="activeStep==3">
-                <img src="/imgs/home-page/leftline-1.svg" class="arrow arrow3">
-                <h2>Registration & Handover</h2>
-                <p>Complete documentation and registration with full transparency.</p>
-            </div>
-
             <!-- STEP 4 CARD -->
-            <div class="info-card left2" [class.active]="activeStep==4">
-                <img src="/imgs/home-page/left-line-2.svg" class="arrow arrow4">
+            <div class="info-card right1 card1" [class.active]="activeStep==4">
+                <img src="/imgs/home-page/right-line.svg" class="arrow arrow1">
                 <h2>Farm Management Begins</h2>
                 <p>Our team plants, maintains, and harvests your farmland.</p>
             </div>
 
+            <!-- STEP 3 CARD -->
+            <div class="info-card right2 card1" [class.active]="activeStep==3">
+                <img src="/imgs/home-page/right-line.svg" class="arrow arrow2">
+                <h2>Registration & Handover</h2>
+                <p>Complete documentation and registration with full transparency.</p>
+            </div>
+
+            <!-- STEP 2 CARD -->
+            <div class="info-card left1" [class.active]="activeStep==2">
+                <img src="/imgs/home-page/leftline-1.svg" class="arrow arrow3">
+                <h2>Choose Your Plot</h2>
+                <p>Select from legally clear plots of various sizes based on your budget.</p>
+            </div>
+
+            <!-- STEP 1 CARD -->
+            <div class="info-card left2" [class.active]="activeStep==1">
+                <img src="/imgs/home-page/left-line-2.svg" class="arrow arrow4">
+
+                <h2>Schedule a Visit</h2>
+                <p>Book a guided tour to explore our farmland projects and understand the layout.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="map">
+        <div class="banner-image" #bgImage>
+            <!-- <img src="imgs/project-1/Rectangle 55.png" alt="banner"/> -->
+        </div>
+
+        <div class="banner-content" data-aos="zoom-in-up">
+            <h2>A Symphony Of Nature’s Bounty.</h2>
+            <p>Where Nature’s Wisdom Embraces Us And The Land Blooms With Abundance</p>
+            <button class="cta-btn white" (click)="goToImagePage()">
+                Discover it in real time
+                <span><img src="imgs/project-1/arrow.png" alt=""></span>
+            </button>
         </div>
     </div>
 
@@ -253,7 +275,7 @@
         </div>
 
         <div class="farm-bg next" [class.active]="farmAnimate"
-            [style.backgroundImage]="'url(' + slides[nextFarmIndex].image + ')'">
+            [style.background-image]="'url(' + slides[farmIndex].image + ')'">
         </div>
 
         <div class="farm-slider-part">
@@ -332,7 +354,9 @@
     <div class="form">
         <app-page-form></app-page-form>
     </div>
-    <div class="video"></div>
+    <div class="video">
+        <video src="/imgs/form-video.mp4" autoplay loop muted playinline></video>
+    </div>
 </div>
 
 <!-- <div class="footer">
