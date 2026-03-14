@@ -1,16 +1,59 @@
-.plot-tooltip{
-  position:absolute;
-  /* top:20px; */
-  /* left:20px; */
-  background:white;
-  color: black;
-  padding:10px;
-  border-radius:8px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+.layout-container{
+  position: relative;
+  width: 100%;
 }
 
-.plot-marker img{
-  cursor:pointer;
+.layout-image{
+  width: 100%;
+  display: block;
+}
+
+.plot{
+  position: absolute;
+  width: 24px;
+  height: 27px;
+  border-radius: 50%;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  background-image: url('/imgs/project-1/location.png');
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.tooltip{
+  position: absolute;
+  transform: translate(-50%, -120%);
+  background: black;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  z-index: 1000;
+  padding: 8px 16px;
+  border: none;
+  /* glass background */
+  background: #E7CC01;
+
+  /* blur effect */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  /* glass border */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  /* soft glow */
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 

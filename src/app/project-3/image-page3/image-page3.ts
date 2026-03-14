@@ -21,56 +21,69 @@ export class ImagePage3 {
   constructor(private cdr: ChangeDetectorRef, private location: Location) { }
 
   plots = [
-    {
-      // 1
-      pitch: -65,
-      yaw: 20,
-      title: 'Plot 1',
-      des: 'testing plots'
-    },
-    {
-      // 2
-      pitch: -65,
-      yaw: -35,
-      title: 'Plot 2',
-      des: 'testing plots'
-    },
+    { pitch: -69, yaw: 18, title: 'Plot-82', des: '8-G' },
+    { pitch: -71, yaw: 10, title: 'Plot-83', des: '8-G' },
+    { pitch: -59, yaw: 16, title: 'Plot-14', des: '8-G' },
+    { pitch: -50, yaw: -9, title: 'Plot-25', des: '10-G' },
     {
       // 3
       pitch: -55,
-      yaw: 30,
-      title: 'Plot 3',
-      des: 'testing plots'
+      yaw: 27,
+      title: 'Plot-46',
+      des: '9.5-G'
     },
     {
       // 4
-      pitch: -40,
-      yaw: 15,
+      pitch: -43,
+      yaw: 11,
       id: 14,
-      title: 'Plot 4',
-      des: 'testing plots'
+      title: 'Plot-30',
+      des: '10-G'
     },
     {
       // 5
-      pitch: -60,
+      pitch: -62,
       yaw: -20,
-      title: 'Plot 5',
-      des: 'testing plots'
+      title: 'Plot-40',
+      des: '10-G'
     },
     {
       // 6
-      pitch: -50,
-      yaw: 0,
-      title: 'Plot 6',
-      des: 'testing plots'
+      pitch: -46,
+      yaw: 25,
+      title: 'Plot-63',
+      des: '9-G'
+    },
+
+    {
+      // 6
+      pitch: -43,
+      yaw: 39,
+      title: 'Plot-67',
+      des: '10-G'
     },
     {
       // 7
-      pitch: -45,
+      pitch: -55,
       yaw: -40,
-      title: 'Plot 7',
-      des: 'testing plots'
+      title: 'Plot-9',
+      des: '10-G'
     },
+    { pitch: -48, yaw: -32, title: 'Plot 5', des: '5-G' },
+    { pitch: -50, yaw: -23, title: 'Plot 22', des: '10-G' },
+    { pitch: -55, yaw: -28, title: 'Plot 10', des: '10-G' },
+    { pitch: -59, yaw: -30, title: 'Plot 39', des: '10-G' },
+    { pitch: -58, yaw: -10, title: 'Plot 12', des: '10-G' },
+    { pitch: -44, yaw: -20, title: 'Plot 38', des: '10-G' },
+    { pitch: -60, yaw: 29, title: 'Plot 45', des: '10-G' },
+    { pitch: -66, yaw: -24, title: 'Plot 86', des: '6.5-G' },
+    { pitch: -46, yaw: -2, title: 'Plot-33', des: '10-G' },
+    { pitch: -43, yaw: -2, title: 'Plot-34', des: '10-G' },
+    { pitch: -50, yaw: -1, title: 'Plot-26', des: '10-G' },
+    { pitch: -43, yaw: 5, title: 'Plot-31', des: '10-G' },
+    { pitch: -49, yaw: 20, title: 'Plot-48', des: '7-G' },
+    { pitch: -53, yaw: -1, title: 'Plot-19', des: '10-G' },
+
   ]
 
 

@@ -1,5 +1,6 @@
 import { Component, HostListener, ViewChild, ElementRef, Input, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Location } from '@angular/common';
 // import gsap from 'gsap';
 // import ScrollTrigger from 'gsap/ScrollTrigger';
 // gsap.registerPlugin(ScrollTrigger);
@@ -16,129 +17,28 @@ declare var pannellum: any;  // Declare pannellum to avoid TypeScript errors
 })
 export class ImagePage2 {
 
-  constructor(private cdr: ChangeDetectorRef) {}
+
+  constructor(private cdr: ChangeDetectorRef, private location: Location) { }
 
   plots = [
-    {
-      // 1
-      pitch: 0,
-      yaw: 20,
-      title: 'Plot 1',
-      des: 'testing plots'
-    },
-    {
-      // 2
-      pitch:3,
-      yaw: -35,
-      title: 'Plot 2',
-      des: 'testing plots'
-    },
-    {
-      // 3
-      pitch: -10,
-      yaw: 30,
-      title: 'Plot 3',
-      des: 'testing plots'
-    },
-    {
-      // 4
-      pitch: -10,
-      yaw: 65,
-      id: 14,
-      title: 'Plot 4',
-      des: 'testing plots'
-    },
-    {
-      // 5
-      pitch: 4,
-      yaw: -80,
-      title: 'Plot 5',
-      des: 'testing plots'
-    },
-    {
-      // 6
-      pitch: 0,
-      yaw: 0,
-      title: 'Plot 6',
-      des: 'testing plots'
-    },
-    {
-      // 7
-      pitch: -15,
-      yaw: -80,
-      title: 'Plot 7',
-      des: 'testing plots'
-    },
-  ]
+    { name: 'Plot 1', description: '1200 sqft', top: 35, left: 30 },
+    { name: 'Plot 2', description: '1500 sqft', top: 50, left: 55 },
+    { name: 'Plot 3', description: '1800 sqft', top: 25, left: 70 }
+  ];
+
+  activePlot: any = null;
+
+  hoverPlot(plot:any){
+    this.activePlot = plot;
+  }
+
+  leavePlot(){
+    this.activePlot = null;
+  }
 
 
-  tooltipVisible = false;
-  tooltipTitle = '';
-  tooltipDes = '';
+  goBack() {
+    this.location.back();
+  }
 
-  tooltipX = 0;
-  tooltipY = 0;
-
-
-
-  ngAfterViewInit() {
-
-    // const Component = this;
-
-    
-      const hotspots = this.plots.map(plot => ({
-        pitch: plot.pitch,
-        yaw: plot.yaw,
-        type: 'custom',
-        cssClass: 'plot-marker',
-      
-        createTooltipFunc: (div: any) => {
-          div.innerHTML = `<img src="imgs/project-1/location.png">`;
-      
-          div.addEventListener("mouseenter", (e: MouseEvent) => {
-              this.tooltipTitle = plot.title;
-              this.tooltipDes = plot.des;
-              this.tooltipX = e.clientX;
-              this.tooltipY = e.clientY;
-          
-              this.tooltipVisible = true;
-          
-              this.cdr.detectChanges();
-          });
-
-          div.addEventListener("mousemove", (e: MouseEvent) => {
-
-            this.tooltipX = e.clientX;
-              this.tooltipY = e.clientY;
-            this.cdr.detectChanges();
-          });
-      
-          div.addEventListener("mouseleave", () => {
-            this.tooltipVisible = false;
-
-            this.cdr.detectChanges();
-          });
-        }
-      }));
-    
-
-   
-
-    pannellum.viewer('panorama', {
-    
-        type: 'equirectangular',
-        panorama: 'imgs/project-1/hillview.png',
-        autoLoad: true,
-        showZoomCtrl: true,
-        mouseZoom: true,
-    
-        hotSpots: hotspots
-    
-      });
-    };
 }
-
-
-
-
-
