@@ -11,7 +11,8 @@
         </div>
 
 
-        <a class="links" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="" (click)="closeProjects()">
+        <a class="links" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink=""
+            (click)="closeProjects()">
             HOME
         </a>
 
@@ -19,10 +20,10 @@
             ABOUT
         </a>
 
-        <a class="links" routerLinkActive="active" routerLink="/projects" (click)="toggleProjects()" > 
+        <a class="links" routerLinkActive="active" routerLink="/projects" (click)="toggleProjects()">
             PROJECTS
         </a>
-        <div class="projects-dropdown" *ngIf="showProjects">
+        <div class="projects-dropdown dropdown-overlay" *ngIf="showProjects">
 
             <div class="projects-container">
 
@@ -33,7 +34,7 @@
 
                 <div class="right-projects">
 
-                    <div class="project-card small" (click)="closeProjects()"  routerLink="/hillview">
+                    <div class="project-card small" (click)="closeProjects()" routerLink="/hillview">
                         <img src="/imgs/hill-view.png">
                         <div class="project-title">Sharanya Hillview Farms</div>
                     </div>
@@ -55,7 +56,7 @@
             GALLERY
         </a>
 
-        <a class="links" routerLinkActive="active" routerLink="/blogs">
+        <a class="links" href="https://www.sharanyafarms.com/blogs/" target="_blank" routerLinkActive="active">
             BLOGS
         </a>
 
@@ -98,7 +99,10 @@
 
     </div>
     <a routerLink="/gallery" (click)="toggleMenu()">GALLERY</a>
-    <a routerLink="/blogs" (click)="toggleMenu()">BLOGS</a>
+    <a  href="https://www.sharanyafarms.com/blogs/" target="_blank" routerLinkActive="active"
+        (click)="toggleMenu()">
+        BLOGS
+    </a>
     <a routerLink="/contact" (click)="toggleMenu()">CONTACT US</a>
 
 </div>

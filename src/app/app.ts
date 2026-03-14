@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { Contact } from "./contact/contact";
 import { RegisterForm } from "./register-form/register-form";
 import { Footer } from './footer/footer';
@@ -17,13 +17,33 @@ import { ImagePage3 } from './project-3/image-page3/image-page3';
 
 
 
+import { GalleryPage } from './gallery-page/gallery-page';
+import { CommonModule } from '@angular/common';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, Footer, NavBar],
+  imports: [RouterOutlet, RouterLink, Footer, NavBar, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('sharanya-forms');
+
+   showLayout = true;
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+
+        let currentRoute = this.route.firstChild;
+        while (currentRoute?.firstChild) {
+          currentRoute = currentRoute.firstChild;
+        }
+
+        this.showLayout = !currentRoute?.snapshot.data['hideLayout'];
+      });
+    }
 }
