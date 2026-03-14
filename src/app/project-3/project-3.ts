@@ -6,6 +6,7 @@ import { AfterViewInit } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { Router } from '@angular/router';
 import { ImagePage3 } from './image-page3/image-page3';
+import { PageForm } from '../page-form/page-form';
 
 
 
@@ -25,7 +26,7 @@ interface AmenitySlide {
 @Component({
   selector: 'app-project-3',
   standalone: true,
-  imports: [CommonModule, RouterLink,ImagePage3],
+  imports: [CommonModule, RouterLink,ImagePage3, PageForm],
   templateUrl: './project-3.html',
   styleUrl: './project-3.css',
 })

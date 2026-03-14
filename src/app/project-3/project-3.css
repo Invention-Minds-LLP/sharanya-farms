@@ -260,7 +260,7 @@
 }
 
 .banner-image {
-  background-image: url('/imgs/project-1/Rectangle55.png');
+  background-image: url('/imgs/project-1/weekend.jpeg');
   position: absolute;
   inset: 0;
   width: 100%;
@@ -317,8 +317,17 @@
   justify-content: space-around;
   align-items: center;
   border-radius: 40px;
-  background: rgba(255, 255, 255, 0.1);
   width: 80%;
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.35),
+      inset 0 1px rgba(255, 255, 255, 0.2);
 }
 
 .stat-item {
@@ -1112,6 +1121,19 @@
   background: #2ecc71; /* green */
   border-radius: 10px;
   transition: width 0.5s ease; /* smooth movement */
+}
+
+
+.form-part{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+
+.video {
+  width: 100%;
+  height: 595px;
+  background: white;
 }
 
 @media (max-width: 1439px) {
