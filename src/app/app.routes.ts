@@ -18,7 +18,7 @@ export const routes: Routes = [
     { path: '', component: HomePage },
     { path: 'contact', component: Contact },
     { path: 'about', component: AboutPage },
-    { path: 'hillview', component: Project1},
+    // { path: 'hillview', component: Project1},
     { path: 'gallery', component: GalleryPage},
     { path: 'registration-link', component: RegisterForm},
     { path: 'sandalvalley', component: Project1},
