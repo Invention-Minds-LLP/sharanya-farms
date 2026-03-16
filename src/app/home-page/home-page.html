@@ -2,6 +2,9 @@
     <div class="banner-video">
         <video src="/imgs/home-page/home-page-banner-video.mp4" autoplay loop muted playinline></video>
     </div>
+    <div class="res-video">
+        <video src="/imgs/home-page/mix_mob.mp4" autoplay loop muted playinline></video>
+    </div>
 
     <div class="benefits-part">
         <div class="benefits-heading">4 Benefits in One Investment</div>
@@ -119,7 +122,7 @@
 
             <p>{{card[cardCurrent].desc}}</p>
 
-            <button class="know-btn" [routerLink]="card[cardCurrent].link">Know More</button>
+            <!-- <button class="know-btn" [routerLink]="card[cardCurrent].link">Know More</button> -->
 
         </div>
 
@@ -256,17 +259,17 @@
     </div>
 
     <div class="map">
-        <div class="banner-image" #bgImage>
+        <div class="banner-image">
             <!-- <img src="imgs/project-1/Rectangle 55.png" alt="banner"/> -->
         </div>
 
         <div class="banner-content" data-aos="zoom-in-up">
             <h2>A Symphony Of Nature’s Bounty.</h2>
             <p>Where Nature’s Wisdom Embraces Us And The Land Blooms With Abundance</p>
-            <button class="cta-btn white" (click)="goToImagePage()">
+            <!-- <button class="cta-btn white" (click)="goToImagePage()">
                 Discover it in real time
                 <span><img src="imgs/project-1/arrow.png" alt=""></span>
-            </button>
+            </button> -->
         </div>
     </div>
 

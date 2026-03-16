@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { NavigationEnd, Router, RouterModule,RouterLink } from '@angular/router';
+import { NavigationEnd, Router, RouterModule, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Component({
@@ -64,12 +64,11 @@ export class NavBar {
   @HostListener('window:scroll', [])
   onScroll() {
 
-    const scrollY = window.scrollY;
-
-    this.isScrolled = scrollY > 50;
-
-    this.isBanner = scrollY < 600;
-
+    if (window.scrollY > 50) {
+      this.isScrolled = true;
+    } else {
+      this.isScrolled = false;
+    }
   }
 
-}
+  }

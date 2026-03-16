@@ -2,17 +2,23 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import emailjs from '@emailjs/browser';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+
 @Component({
   selector: 'app-contact',
-  imports: [ReactiveFormsModule, CommonModule, FormsModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, ToastModule],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
 export class Contact {
+
   contactForm!: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder) { }
+  loading = false;       // 🔹 loading state
+
+  constructor(private fb: FormBuilder, private messageService : MessageService) { }
 
   ngOnInit() {
 
@@ -27,7 +33,6 @@ export class Contact {
 
   }
 
-
   get f() {
     return this.contactForm.controls;
   }
@@ -36,9 +41,9 @@ export class Contact {
 
     this.submitted = true;
 
-    if (this.contactForm.invalid) {
-      return;
-    }
+    if (this.contactForm.invalid) return;
+
+    this.loading = true;
 
     const formData = this.contactForm.value;
 
@@ -50,24 +55,34 @@ export class Contact {
     };
 
     emailjs.send(
-      'service_j8dl5uv',   
+      'service_j8dl5uv',
       'template_69zjg7a',
       templateParams
     )
       .then(() => {
 
-        alert('Message sent successfully!');
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: 'Message sent successfully'
+        });
+
         this.contactForm.reset();
         this.submitted = false;
 
       })
-      .catch((error) => {
+      .catch(() => {
 
-        console.log('EmailJS Error:', error);
-        alert('Failed to send message.');
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to send message'
+        });
 
+      })
+      .finally(() => {
+        this.loading = false;
       });
-
   }
 
 }

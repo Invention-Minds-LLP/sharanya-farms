@@ -1,3 +1,4 @@
+
 <div class="contact-part">
     <img src="/imgs/contact/contact-img.png" alt="" class="banner">
     <div class="contact-content">
@@ -85,9 +86,15 @@
                     </small>
                 </div>
 
-                <button type="submit">Submit</button>
+                <button type="submit" [disabled]="loading">
+                    <span *ngIf="!loading">Send Message</span>
+
+                    <span *ngIf="loading">Sending... <span *ngIf="loading" class="loader"></span></span>
+                </button>
 
             </form>
+
         </div>
     </div>
+    
 </div>

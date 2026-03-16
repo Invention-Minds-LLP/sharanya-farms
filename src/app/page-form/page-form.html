@@ -49,7 +49,11 @@
                 </small>
             </div>
 
-            <button type="submit" class="submit-btn">Submit</button>
+            <button type="submit" [disabled]="loading" class="submit-btn">
+                <span *ngIf="!loading">Send Message</span>
+
+                <span *ngIf="loading">Sending... <span *ngIf="loading" class="loader"></span></span>
+            </button>
 
         </form>
     </div>
