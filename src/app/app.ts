@@ -20,10 +20,11 @@ import { ImagePage3 } from './project-3/image-page3/image-page3';
 import { GalleryPage } from './gallery-page/gallery-page';
 import { CommonModule } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, Footer, NavBar, CommonModule],
+  imports: [RouterOutlet, RouterLink, Footer, NavBar, CommonModule, ToastModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
