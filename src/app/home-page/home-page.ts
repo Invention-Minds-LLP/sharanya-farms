@@ -197,7 +197,7 @@ export class HomePage {
     },
     {
       img: '/imgs/about/chan-2.png',
-      name: 'PUBLIC TV'
+      name: 'DECCAN HERALD'
     },
     {
       img: '/imgs/about/chan-3.png',
@@ -220,7 +220,7 @@ export class HomePage {
   card = [
     {
       title: 'Sharanya Sandal valley Farms',
-      desc: 'Sharanya Sandal Valley Farms represents a captivating blend of aesthetics, fostering a community-centric lifestyle within an eco-friendly expanse located on T Narasipura Road, near NH-Mysore-Malavali Road. Our vision is to reshape the essence of living and redefine the experience of acquiring real estate. Located off NH-Mysore-Malavali Road, near the prestigious World Heritage...',
+      desc: 'Sharanya Sandal Valley Farms represents a captivating blend of aesthetics, fostering a community-centric lifestyle within an eco-friendly expanse located on T Narasipura Road, near Bangalore - Mysore road near Malavali. Our vision is to reshape the essence of living and redefine the experience of acquiring real estate. Located off Bangalore - Mysore road near Malavali, near the prestigious World Heritage...',
       image: '/imgs/home-page/sandal-villey.png',
       link: '/sandalvalley'
     },

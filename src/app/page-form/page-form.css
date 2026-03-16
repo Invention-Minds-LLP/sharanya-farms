@@ -27,7 +27,7 @@
 
 .form input {
     display: flex;
-    width: 235px;
+    width: 100%;
     padding: 10px 20px;
     align-items: center;
     gap: 10px;
@@ -203,6 +203,7 @@ textarea.ng-invalid.ng-touched {
 
     .flex {
         flex-wrap: wrap;
+        flex-direction: column;
         gap: 10px;
         justify-content: center;
     }
@@ -234,7 +235,7 @@ textarea.ng-invalid.ng-touched {
     .form input,
     .form textarea,
     .submit-btn {
-        width: 275px;
+        width: 100%;
     }
 
 }
