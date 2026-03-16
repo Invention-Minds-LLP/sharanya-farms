@@ -6,6 +6,7 @@ import { AfterViewInit } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { Router } from '@angular/router';
 import { ImagePage2 } from './image-page2/image-page2';
+import { PageForm } from '../page-form/page-form';
 
 
 
@@ -25,21 +26,21 @@ interface AmenitySlide {
 @Component({
   selector: 'app-project-2',
   standalone: true,
-  imports: [CommonModule, RouterLink,ImagePage2],
+  imports: [CommonModule, RouterLink,ImagePage2, PageForm],
   templateUrl: './project-2.html',
   styleUrl: './project-2.css',
 })
 export class Project2 {
   mobileMenuOpen = false;
 
-  navItems = [
-    { label: 'HOME', link: '#home' },
-    { label: 'ABOUT', link: '#about' },
-    { label: 'PROJECTS', link: '#projects' },
-    { label: 'GALLERY', link: '#gallery' },
-    { label: 'BLOGS', link: '#blogs' },
-    { label: 'CONTACT US', link: '#contact' }
-  ];
+  // navItems = [
+  //   { label: 'HOME', link: '#home' },
+  //   { label: 'ABOUT', link: '#about' },
+  //   { label: 'PROJECTS', link: '#projects' },
+  //   { label: 'GALLERY', link: '#gallery' },
+  //   { label: 'BLOGS', link: '#blogs' },
+  //   { label: 'CONTACT US', link: '#contact' }
+  // ];
 
   highlights: HighlightCard[] = [
     {

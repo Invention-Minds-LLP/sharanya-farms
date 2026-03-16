@@ -1,11 +1,28 @@
+<button class="back-btn" (click)="goBack()">← Back</button>
 
-<div id="panorama" style="width:100%; height:600px;"></div>
+<div class="layout-container">
 
-<!-- for tooltip -->
-<div class="plot-tooltip" *ngIf="tooltipVisible" [style.left.px]="tooltipX"
-[style.top.px]="tooltipY">
-    <h3>{{tooltipTitle}}</h3>
-    <p>{{tooltipDes}}</p>
-</div>
-
-
+    <img src="imgs/project-1/hillview.png" class="layout-image">
+  
+    <div
+      class="plot"
+      *ngFor="let plot of plots"
+      [style.top.%]="plot.top"
+      [style.left.%]="plot.left"
+      (mouseenter)="hoverPlot(plot)"
+      (mouseleave)="leavePlot()"
+    >
+    </div>
+  
+    <!-- Tooltip -->
+    <div 
+      class="tooltip" 
+      *ngIf="activePlot"
+      [style.top.%]="activePlot.top"
+      [style.left.%]="activePlot.left"
+    >
+      <strong>{{activePlot.name}}</strong><br>
+      {{activePlot.description}}
+    </div>
+  
+  </div>

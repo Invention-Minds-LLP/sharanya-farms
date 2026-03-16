@@ -81,6 +81,10 @@
   object-fit: cover;
 }
 
+.home-page-video-mob{
+  display: none;
+}
+
 .about {
   background: #002f1c;
   padding: 50px 120px 80px;
@@ -100,7 +104,7 @@
   font-style: Bold;
   font-size: 40px;
   leading-trim: NONE;
-  line-height: 100%;
+  line-height: normal;
   letter-spacing: 0px;
   vertical-align: middle;
   text-transform: capitalize;
@@ -118,7 +122,8 @@
   text-transform: capitalize;
 }
 
-.cta-btn {
+.cta-btn-1,
+.cta-btn-2 {
   width: 208;
   height: 56;
   top: 1016px;
@@ -143,6 +148,10 @@
   margin-bottom: 40px;
 }
 
+.cta-btn-2 {
+  display: none;
+}
+
 .cta-btn.white {
   display: inline-flex;
   align-items: center;
@@ -153,7 +162,13 @@
   leading-trim: NONE;
   line-height: 100%;
   letter-spacing: 0%;
+  border-radius: 40px;
+  border: #fff;
   color: #227546;
+  padding-top: 16px;
+  padding-right: 40px;
+  padding-bottom: 16px;
+  padding-left: 40px;
 }
 
 .about-cards {
@@ -260,7 +275,7 @@
 }
 
 .banner-image {
-  background-image: url('/imgs/project-1/Rectangle55.png');
+  background-image: url('/imgs/project-1/hillview.png');
   position: absolute;
   inset: 0;
   width: 100%;
@@ -303,9 +318,9 @@
   letter-spacing: 0px;
   vertical-align: middle;
   text-transform: capitalize;
-  margin-top: 14px;
-}
+  padding: 14px 0px 40px 0px;
 
+}
 .stats-bar {
   position: absolute;
   left: 50%;
@@ -317,8 +332,17 @@
   justify-content: space-around;
   align-items: center;
   border-radius: 40px;
-  background: rgba(255, 255, 255, 0.1);
   width: 80%;
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px rgba(255, 255, 255, 0.2);
 }
 
 .stat-item {
@@ -472,7 +496,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 17px;
+  gap: 12px;
 }
 
 .card-head {
@@ -544,7 +568,7 @@
   opacity: 1;
   border-radius: 14px;
   gap: 4px;
-
+  padding: 10px;
   background: #ffffff99;
   display: flex;
   flex-direction: column;
@@ -563,6 +587,10 @@
   font-size: 14px;
   text-align: center;
   width: 100%;
+}
+
+.box {
+  padding: 10px;
 }
 
 .future-box span {
@@ -821,6 +849,7 @@
   vertical-align: middle;
   text-transform: capitalize;
   color: #ffffff;
+  margin-left: 20px;
 }
 
 .amenity-thumbs {
@@ -837,20 +866,26 @@
   display: flex;
   gap: 16px;
   align-items: center;
-  margin-top: 16px;
+  /* margin-top: 16px; */
 }
 
 .amenity-pagination button {
   border: 0;
   background: transparent;
   color: #fff;
-  font-size: 22px;
-  font-weight: 800;
-  cursor: pointer;
-  opacity: 0.85;
+  font-size: 40px;
+  font-weight: 700;
+  /* cursor: pointer; */
+  /* opacity: 0.85; */
 }
 
 .amenity-pagination button.active {
+  color: #eab308;
+  font-family: Syne;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
   color: #ffc734;
   opacity: 1;
 }
@@ -1100,11 +1135,12 @@
 
 .progress-container {
   width: 220px;
-  height: 4px;
+  height: 2px;
   background: rgba(255, 255, 255, 0.3); /* gray line */
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 15px;
+  /* margin-top: 15px; */
+  margin-left: 30px;
 }
 
 .progress-bar {
@@ -1112,6 +1148,17 @@
   background: #2ecc71; /* green */
   border-radius: 10px;
   transition: width 0.5s ease; /* smooth movement */
+}
+
+.form-part {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+
+.video video {
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 1439px) {
@@ -1146,8 +1193,8 @@
   }
 
   /* .slider-arrow {
-      display: none;
-    } */
+        display: none;
+      } */
 
   .recommended-card {
     transform: none;
@@ -1267,9 +1314,15 @@
   .amenity-main-caption {
     font-size: 24px;
   }
+
+  .form-part{
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 767px) {
+
+
   .about-top {
     gap: 0px;
   }
@@ -1283,10 +1336,22 @@
     font-size: 16px;
     line-height: 22px;
     text-align: center;
+    padding-top: 10px;
   }
 
-  .cta-btn {
+  .cta-btn-1 {
+    display: none;
+  }
+
+  .cta-btn-2 {
+    display: block;
+  }
+
+  .cta-btn-2 {
     font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
   }
 
   .card img {
@@ -1299,6 +1364,7 @@
 
   .banner-content h2 {
     font-size: 46px;
+    padding-top: 105px;
   }
 
   .banner-content p {
@@ -1308,6 +1374,7 @@
 
   .cta-btn.white {
     font-size: 16px;
+    padding: 10px 20px;
   }
 
   .card .img {
@@ -1422,5 +1489,19 @@
     text-transform: capitalize;
     color: #ffffff;
     padding: 20px;
+  }
+
+  .form-part {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .home-page-video {
+    display: none;
+  }
+
+  .home-page-video-mob{
+    display: block;
+    width: 100%;
   }
 }
