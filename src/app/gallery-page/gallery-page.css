@@ -152,6 +152,10 @@
         width: 100%;
         padding: 20px;
     }
+
+    .imgs-part {
+        margin-top: -151px;
+    }
 }
 
 @media(max-width:1023px) {
@@ -165,15 +169,18 @@
         flex-wrap: wrap;
         align-items: center;
     }
+
+
 }
 
 @media(max-width:767px) {
     .nav-btns {
         flex-wrap: wrap;
         align-items: center;
+        margin-top: 40px;
     }
 
-    .nav-btns button{
+    .nav-btns button {
         font-size: 18px;
     }
 
@@ -212,5 +219,5 @@
     .imgs-part {
         margin-top: -200px;
     }
-    
+
 }

@@ -2,17 +2,23 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import emailjs from '@emailjs/browser';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+
 
 @Component({
   selector: 'app-page-form',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, ToastModule],
   templateUrl: './page-form.html',
   styleUrl: './page-form.css',
 })
 export class PageForm {
   contactForm: FormGroup;
+  submitted = false;
 
-  constructor(private fb: FormBuilder) {
+  loading = false;
+
+  constructor(private fb: FormBuilder, private messageService: MessageService) {
 
 
     emailjs.init("44sQRxJOiepWwo5y8");
@@ -28,44 +34,93 @@ export class PageForm {
   }
 
 
+  // submitForm() {
+
+  //   if (this.contactForm.valid) {
+
+  //     const formData = this.contactForm.value;
+
+  //     this.loading = true
+
+  //     const templateParams = {
+  //       firstName: formData.firstName + ' ' + formData.lastName,
+  //       phone: formData.mobile,
+  //       email: formData.email,
+  //       message: formData.message
+  //     };
+
+  //     emailjs.send(
+  //       'service_j8dl5uv',
+  //       'template_69zjg7a',
+  //       templateParams
+  //     )
+  //       .then(() => {
+
+  //         alert("Message sent successfully!");
+
+  //         this.contactForm.reset();
+
+  //       })
+  //       .catch((error) => {
+
+  //         console.error("EmailJS Error:", error);
+
+  //         alert("Failed to send message");
+
+  //       });
+
+  //   } else {
+
+  //     this.contactForm.markAllAsTouched();
+
+  //   }
+
+  // }
+
   submitForm() {
 
-    if (this.contactForm.valid) {
+    this.submitted = true;
 
-      const formData = this.contactForm.value;
+    if (this.contactForm.invalid) return;
 
-      const templateParams = {
-        firstName: formData.firstName + ' ' + formData.lastName,
-        phone: formData.mobile,
-        email: formData.email,
-        message: formData.message
-      };
+    this.loading = true;
 
-      emailjs.send(
-        'service_j8dl5uv',
-        'template_69zjg7a',
-        templateParams
-      )
-        .then(() => {
+    const formData = this.contactForm.value;
 
-          alert("Message sent successfully!");
+    const templateParams = {
+      firstName: formData.firstName + ' ' + formData.lastName,
+      phone: formData.mobile,
+      email: formData.email,
+      message: formData.message
+    };
+    emailjs.send(
+      'service_j8dl5uv',
+      'template_69zjg7a',
+      templateParams
+    )
+      .then(() => {
 
-          this.contactForm.reset();
-
-        })
-        .catch((error) => {
-
-          console.error("EmailJS Error:", error);
-
-          alert("Failed to send message");
-
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: 'Message sent successfully'
         });
 
-    } else {
+        this.contactForm.reset();
+        this.submitted = false;
 
-      this.contactForm.markAllAsTouched();
+      })
+      .catch(() => {
 
-    }
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Failed to send message'
+        });
 
+      })
+      .finally(() => {
+        this.loading = false;
+      });
   }
 }

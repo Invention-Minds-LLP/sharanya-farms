@@ -1450,7 +1450,7 @@
 
   .amenities-slider {
     grid-template-columns: 1fr;
-    justify-item: center;
+    justify-items: center;
     position: relative;
     padding: 0px 40px 60px 40px;
   }

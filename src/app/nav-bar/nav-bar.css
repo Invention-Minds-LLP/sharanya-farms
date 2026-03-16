@@ -10,6 +10,11 @@
     transition: all .4s ease;
 }
 
+
+.nav.scrolled {
+    margin-top: 0;
+}
+
 .nav-bar {
     display: flex;
     align-items: center;
@@ -20,6 +25,12 @@
     border: 1px solid #5B7F4A;
     background: #FFF;
     transition: all .4s ease;
+    z-index: 9999;
+
+}
+
+.nav-bar img{
+    cursor: pointer;
 }
 
 .links {
@@ -29,10 +40,17 @@
     font-weight: 700;
     cursor: pointer;
     text-decoration: none;
+    position: relative;
 }
 
-.active {
-    text-decoration: underline;
+.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
 }
 
 .logo {
@@ -49,7 +67,7 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid #5B7F4A;
 
     box-shadow:
         0 8px 32px rgba(0, 0, 0, 0.35),
@@ -64,24 +82,17 @@
     right: 0;
     display: flex;
     justify-content: center;
-    z-index: 9999;
+    z-index: 10001;
 }
 
 
 .projects-container {
     width: 100%;
     max-width: 860px;
-    background: rgba(255, 255, 255, 0.08);
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    border: 1px solid rgba(255, 255, 255, 0.25);
-
-    box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.35),
-        inset 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
+    border-radius: 40px;
+    border: 1px solid #5B7F4A;
+    background: rgba(255, 255, 255, 0.10);
+    /* border-radius: 25px; */
     padding: 30px;
     display: flex;
     gap: 20px;
@@ -158,7 +169,10 @@
     display: block;
 }
 
-.nav.scrolled .menu-icon span {
+/* .nav.scrolled .menu-icon span {
+    background: white;
+} */
+.menu-icon span {
     background: white;
 }
 
@@ -201,6 +215,13 @@
 }
 
 
+.page-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 9998;
+}
+
 /* RESPONSIVE */
 
 @media (max-width:1023px) {
@@ -209,11 +230,26 @@
         display: none;
     }
 
+    .nav {
+        margin-top: 10px;
+    }
+
     .nav-bar {
         width: 90%;
         justify-content: space-between;
         padding: 18px 25px;
         flex-direction: row-reverse;
+        background: rgba(255, 255, 255, 0.08);
+
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        border: 1px solid rgba(255, 255, 255, 0.25);
+
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.35),
+            inset 0 1px rgba(255, 255, 255, 0.2);
+        /* border-radius: 25px; */
     }
 
     .menu-icon {

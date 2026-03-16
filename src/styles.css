@@ -18,7 +18,9 @@
   --error: #dc2626;
 }
 
-
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
 @import 'aos/dist/aos.css';
 
 html {

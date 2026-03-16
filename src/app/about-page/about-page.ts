@@ -33,7 +33,7 @@ export class AboutPage {
     },
     {
       img: '/imgs/about/chan-2.png',
-      name: 'PUBLIC TV'
+      name: 'DECCAN HERALD'
     },
     {
       img: '/imgs/about/chan-3.png',
