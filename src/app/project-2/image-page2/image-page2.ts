@@ -64,16 +64,29 @@ export class ImagePage2 {
     { name: 'Plot 42', description: '5.5 Guntas', top: 53, left: 80 },
     { name: 'Plot 43', description: '5.5 Guntas', top: 53, left: 82 },
     { name: 'Plot 44', description: '5.5 Guntas', top: 53, left: 84.5 },
+    { name: 'Plot 46', description: '6.5 Guntas', top: 51, left: 90 },
     { name: 'Plot 45', description: '5.5 Guntas', top: 53, left: 87 },
-
+    { name: 'Plot 47', description: '7 Guntas', top: 51, left: 88 },
+    { name: 'Plot 48', description: '7 Guntas', top: 51, left: 86.5 },
+    { name: 'Plot 49', description: '7.5 Guntas', top: 51, left: 84 },
+    { name: 'Plot 50', description: '8 Guntas', top: 51, left: 81 },
+    { name: 'Plot 51', description: '8 Guntas', top: 51, left: 78.5 },
+    { name: 'Plot 52', description: '8 Guntas', top: 51, left: 76.5 },
+    { name: 'Plot 53', description: '8 Guntas', top: 51, left: 74 },
 
     { name: 'Plot 58', description: '7 Guntas', top: 50, left: 62 },
     { name: 'Plot 59', description: '8 Guntas', top: 50, left: 64.5 },
     { name: 'Plot 60', description: '8 Guntas', top: 50, left: 67 },
     { name: 'Plot 61', description: '8 Guntas', top: 50, left: 70 },
     { name: 'Plot 62', description: '8 Guntas', top: 50, left: 73 },
+    { name: 'Plot 63', description: '8 Guntas', top: 50, left: 75.5 },
+    { name: 'Plot 64', description: '8 Guntas', top: 50, left: 77.5 },
+    { name: 'Plot 65', description: '8 Guntas', top: 50, left: 80 },
+    { name: 'Plot 66', description: '8 Guntas', top: 50, left: 83 },
+    { name: 'Plot 67', description: '6 Guntas', top: 50, left: 85.5 },
+    { name: 'Plot 68', description: '6 Guntas', top: 50, left: 88 },
+    { name: 'Plot 69', description: '6 Guntas', top: 50, left: 90 },
     { name: 'Plot 70', description: '7 Guntas', top: 49.5, left:92  },
-    
     { name: 'Plot 71', description: '6 Guntas', top: 48.5, left: 89 },
     { name: 'Plot 72', description: '6 Guntas', top: 47.5, left: 90 },
     { name: 'Plot 73', description: '6 Guntas', top: 47, left: 88.5 },
@@ -83,7 +96,6 @@ export class ImagePage2 {
     { name: 'Plot 77', description: '6.5 Guntas', top: 47.5, left: 87 },
     { name: 'Plot 78', description: '6 Guntas', top: 48.5, left: 87 },
     { name: 'Plot 79', description: '5.5 Guntas', top: 46.5, left: 81 },
-
     { name: 'Plot 80', description: '5.5 Guntas', top: 47, left: 82 },
     { name: 'Plot 81', description: '5.5 Guntas', top: 47.5, left: 83 },
     { name: 'Plot 82', description: '5.5 Guntas', top: 48, left: 84 },
@@ -96,8 +108,6 @@ export class ImagePage2 {
     { name: 'Plot 89', description: '8.5 Guntas', top: 48.7, left: 68 },
     { name: 'Plot 90', description: '8.5 Guntas', top: 48.8, left: 65 },
     { name: 'Plot 91', description: '5.5 Guntas', top: 49, left: 62 },
-
-
 
     { name: 'Plot 83', description: '6.5 Guntas', top: 57.5, left: 80 },
 
@@ -198,8 +208,18 @@ export class ImagePage2 {
     { name: 'Plot 76', description: '6 Guntas', top: 52, left: 22 },
     { name: 'Plot 77', description: '6 Guntas', top: 52, left: 20 },
     { name: 'Plot 78', description: '6 Guntas', top: 52, left: 18},
+    { name: 'Plot 94', description: '7 Guntas', top: 48.5, left: 29 },
     { name: 'Plot 79', description: '5.5 Guntas', top: 52, left: 16 },
-
+    { name: 'Plot 80', description: '7.25 Guntas', top: 50.5, left: 19 },
+    { name: 'Plot 81', description: '7 Guntas', top: 50.5, left: 21 },
+    { name: 'Plot 82', description: '7 Guntas', top: 50.5, left: 23.5 },
+    { name: 'Plot 83', description: '6 Guntas', top: 51, left: 25 },
+    { name: 'Plot 84', description: '6 Guntas', top: 51, left: 27 },
+    { name: 'Plot 85', description: '6 Guntas', top: 49.5, left: 28 },
+    { name: 'Plot 86', description: '6 Guntas', top: 49.5, left: 26.5 },
+    { name: 'Plot 87', description: '6 Guntas', top: 49.5, left: 24.5 },
+    { name: 'Plot 88', description: '6.5 Guntas', top: 49.5, left: 23 },
+    { name: 'Plot 89', description: '6.5 Guntas', top: 49.5, left: 21 },
     { name: 'Plot 90', description: '5.25 Guntas', top: 48.5, left: 23 },
     { name: 'Plot 91', description: '5.5 Guntas', top: 48.5, left: 24.5 },
     { name: 'Plot 92', description: '6 Guntas', top: 48.5, left: 26 },
