@@ -1,43 +1,25 @@
-import { Component, HostListener, ViewChild, ElementRef, Input, AfterViewInit, ChangeDetectorRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { Location } from '@angular/common';
-// import gsap from 'gsap';
-// import ScrollTrigger from 'gsap/ScrollTrigger';
-// gsap.registerPlugin(ScrollTrigger);
-
-declare var pannellum: any;  // Declare pannellum to avoid TypeScript errors
 
 
-
+declare var pannellum: any;
 
 @Component({
-  selector: 'app-image-page3',
-  imports: [CommonModule],
-  templateUrl: './image-page3.html',
-  styleUrl: './image-page3.css',
+  selector: 'app-weekend-village',
+  imports: [],
+  templateUrl: './weekend-village.html',
+  styleUrl: './weekend-village.css',
 })
-export class ImagePage3 {
+export class WeekendVillage {
 
   constructor(private cdr: ChangeDetectorRef, private location: Location) { }
 
   plots = [
     { pitch: -69, yaw: 18, title: 'Plot-82', des: '8-G' },
     { pitch: -70, yaw: 7, title: 'Plot-83', des: '8-G' },
-    {
-      // 6
-      pitch: -46,
-      yaw: 25,
-      title: 'Plot-63',
-      des: '9-G'
-    },
+    { pitch: -46, yaw: 25, title: 'Plot-63', des: '9-G' },
+    { pitch: -43, yaw: 39, title: 'Plot-67', des: '10-G' },
 
-    {
-      // 6
-      pitch: -43,
-      yaw: 39,
-      title: 'Plot-67',
-      des: '10-G'
-    },
     { pitch: -42, yaw: -27, title: 'Plot 1', des: '5.5-G' },
     { pitch: -44, yaw: -25, title: 'Plot 2', des: '5-G' },
     { pitch: -46, yaw: -30, title: 'Plot 4', des: '5-G' },
@@ -89,6 +71,9 @@ export class ImagePage3 {
     { pitch: -70, yaw: -4, title: 'Plot 84', des: '8-G' },
     { pitch: -70, yaw: -11, title: 'Plot 85', des: '8-G' },
     { pitch: -66, yaw: -24, title: 'Plot 86', des: '6.5-G' },
+
+
+
 
   ]
 
@@ -163,8 +148,3 @@ export class ImagePage3 {
   }
 
 }
-
-
-
-
-

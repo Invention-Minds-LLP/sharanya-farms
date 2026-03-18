@@ -4,7 +4,7 @@
   
   <!-- HERO -->
   <section class="hero" data-aos="zoom-in">
-    <video src="/imgs/project-1/hill-view.mp4" autoplay loop muted playinline
+    <video src="/imgs/project-1/sharanya_weekend_bannervid_1.mp4" autoplay loop muted playinline
       class="home-page-video"></video>
       
       <video src="/imgs/project-1/sharanya_weekend_bannervid_mob.mp4" autoplay loop muted playinline
@@ -17,7 +17,7 @@
       <div class="about-top">
         <div class="about-left" data-aos="fade-right">
           <h2>Managed Farmplots<br />With Private Sandal Valley</h2>
-          <button class="cta-btn-1">Get Started</button>
+          <button class="cta-btn-1" (click)="scrollToForm()">Get Started</button>
         </div>
 
         <div class="about-right" data-aos="fade-left">
@@ -238,7 +238,7 @@
 
    <!-- FORMS -->
 <section class="forms">
-  <div class="form-part">
+  <div class="form-part" id="form-section">
     <div class="form">
       <app-page-form></app-page-form>
     </div>

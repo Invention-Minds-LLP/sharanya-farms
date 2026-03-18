@@ -12,10 +12,10 @@ declare var pannellum: any;  // Declare pannellum to avoid TypeScript errors
 @Component({
   selector: 'app-image-page',
   imports: [CommonModule],
-  templateUrl: './image-page.html',
-  styleUrl: './image-page.css',
+  templateUrl: './sandal-valley.html',
+  styleUrl: './sandal-valley.css',
 })
-export class ImagePage {
+export class SandalValley {
 
 
   constructor(private cdr: ChangeDetectorRef, private location: Location) { }
@@ -103,7 +103,8 @@ export class ImagePage {
     { name: 'Plot 80', description: 'Guntas-10', top: 38, left: 44 },
     { name: 'Plot 81', description: 'Guntas-10', top: 39, left: 47.5 },
     { name: 'Plot 82', description: 'Guntas-10', top: 40, left: 51},
-    { name: 'Site Office', description: '', top: 41, left: 55 },
+    { name: 'Site Office', description: '', top: 45, left: 56 },
+    { name: 'Entrance Arch', description: '', top: 84, left: 59 },
   ];
 
   activePlot: any = null;

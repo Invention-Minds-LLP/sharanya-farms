@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImagePage } from './image-page';
+import { WeekendVillage } from './weekend-village';
 
-describe('ImagePage', () => {
-  let component: ImagePage;
-  let fixture: ComponentFixture<ImagePage>;
+describe('WeekendVillage', () => {
+  let component: WeekendVillage;
+  let fixture: ComponentFixture<WeekendVillage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ImagePage],
+      imports: [WeekendVillage],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ImagePage);
+    fixture = TestBed.createComponent(WeekendVillage);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
