@@ -11,10 +11,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Project1 } from './project-1/project-1';
 import { Project2 } from './project-2/project-2';
 import { Project3 } from './project-3/project-3';
-import { ImagePage } from './project-1/image-page/image-page';
-import { ImagePage2 } from './project-2/image-page2/image-page2';
-import { ImagePage3 } from './project-3/image-page3/image-page3';
-
+import { HillView } from './project-2/hill-view/hill-view';
+import { SandalValley } from './project-1/sandal-valley/sandal-valley';
+import { WeekendVillage } from './project-3/weekend-village/weekend-village';
 
 
 import { GalleryPage } from './gallery-page/gallery-page';

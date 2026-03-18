@@ -275,7 +275,7 @@
 }
 
 .banner-image {
-  background-image: url('/imgs/project-1/hillview.png');
+  background-image: url('/imgs/project-1/sandal.png');
   position: absolute;
   inset: 0;
   width: 100%;
@@ -346,31 +346,41 @@
 }
 
 .stat-item {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 33px 0px;
+  gap: 7px;
 }
 
 .stat-item h3 {
-  font-family: Syne;
+  font-family: Inter;
   font-weight: 600;
   font-style: SemiBold;
-  font-size: 48px;
+  font-size: 18px;
   leading-trim: NONE;
-  line-height: 48px;
+  /* line-height: 48px; */
   letter-spacing: 0px;
-  color: #eab308;
+  /* color: #eab308; */
   text-align: center;
 }
 
 .stat-item p {
   font-family: Inter;
-  font-weight: 600;
-  font-style: Semi Bold;
+  font-weight: 200;
+  /* font-style: Semi Bold; */
   font-size: 18px;
   leading-trim: NONE;
-  line-height: 28px;
+  /* line-height: 28px; */
   letter-spacing: 0px;
   text-align: center;
+}
+
+.stat-item img{
+  width: 24px;
+height: 24px;
+flex-shrink: 0;
 }
 
 .highlights {
@@ -410,19 +420,29 @@
 }
 
 .highlight-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 30px;
-  padding: 0px 165px 80px 165px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 325px;
 }
 
 .highlight-card {
-  background: #dde5d8;
-  color: #121b14;
-  border-radius: 14px;
-  padding: 22px;
-  min-height: 225px;
-  width: 100%;
+  border-radius: 16px;
+  border: 0.8px solid rgba(91, 127, 74, 0.20);
+  background: linear-gradient(135deg, #C5DCBB 0%, #FFF 100%);
+  padding: 26px 36px 25px 30px;
+  width: 350px;
+height: 263px;
+aspect-ratio: 173/130;
+}
+
+.icon-head{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .highlight-icon {
@@ -437,6 +457,11 @@
   margin-bottom: 18px;
 }
 
+.highlight-icon img{
+  width: 28px;
+  height: 28px;
+}
+
 .highlight-card small {
   color: #152f09;
   font-family: Poppins;
@@ -449,25 +474,31 @@
 }
 
 .highlight-card h3 {
+  color: #0E2F1F;
   font-family: Syne;
+  font-size: 20px;
+  font-style: normal;
   font-weight: 400;
-  font-style: Regular;
-  font-size: 24px;
-  leading-trim: NONE;
-  line-height: 32px;
-  letter-spacing: 0px;
-  color: #152f09;
+  line-height: 32px; /* 160% */
 }
 
-.highlight-card p {
+.highlight-card p{
+  color: rgba(14, 47, 31, 0.70);
   font-family: Syne;
-  font-weight: 400;
-  font-style: Regular;
   font-size: 16px;
-  leading-trim: NONE;
-  line-height: 24px;
-  letter-spacing: 0px;
-  color: #0e2f1fb2;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+ .highlight-card ul {
+  color: rgba(14, 47, 31, 0.70);
+  font-family: Syne;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  /* padding: 12px 36px 25px 36px; */
 }
 
 .pricing-section {
@@ -651,22 +682,29 @@
 
 .big {
   display: flex;
-  width: 100%;
+  width: 588px;
+  height: 303px;
 }
 
 .content-align {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 60%;
+  width: 100%;
+  padding: 0px 0px 20px 24px;
 }
 
+.content-align li{
+  color: #000;
+}
+
+
 .card img {
-  width: 100%;
-  height: 340px;
+  width: 150%;
+  height: 346px;
   position: relative;
   bottom: 20px;
-  left: 37px;
+  left: 38px;
 }
 
 .card .img {
@@ -1320,7 +1358,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 769px) {
   .about-top {
     gap: 0px;
   }

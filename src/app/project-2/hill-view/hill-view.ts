@@ -1,23 +1,16 @@
-import { Component, HostListener, ViewChild, ElementRef, Input, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Location } from '@angular/common';
-// import gsap from 'gsap';
-// import ScrollTrigger from 'gsap/ScrollTrigger';
-// gsap.registerPlugin(ScrollTrigger);
-
-declare var pannellum: any;  // Declare pannellum to avoid TypeScript errors
-
-
 
 @Component({
-  selector: 'app-image-page2',
+  selector: 'app-hill-view',
   imports: [CommonModule],
-  templateUrl: './image-page2.html',
-  styleUrl: './image-page2.css',
+  templateUrl: './hill-view.html',
+  styleUrl: './hill-view.css',
 })
-export class ImagePage2 {
+export class HillView {
 
-
+  
   constructor(private cdr: ChangeDetectorRef, private location: Location) { }
 
   plots = [

@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImagePage2 } from './image-page2';
+import { SandalValley } from './sandal-valley';
 
-describe('ImagePage2', () => {
-  let component: ImagePage2;
-  let fixture: ComponentFixture<ImagePage2>;
+describe('SandalValley', () => {
+  let component: SandalValley;
+  let fixture: ComponentFixture<SandalValley>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ImagePage2],
+      imports: [SandalValley],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ImagePage2);
+    fixture = TestBed.createComponent(SandalValley);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

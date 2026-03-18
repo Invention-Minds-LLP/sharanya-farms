@@ -5,8 +5,8 @@ import { Viewer } from 'photo-sphere-viewer';
 import { AfterViewInit } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { Router } from '@angular/router';
-import { ImagePage3 } from './image-page3/image-page3';
 import { PageForm } from '../page-form/page-form';
+import { WeekendVillage } from './weekend-village/weekend-village';
 
 
 
@@ -26,7 +26,7 @@ interface AmenitySlide {
 @Component({
   selector: 'app-project-3',
   standalone: true,
-  imports: [CommonModule, RouterLink,ImagePage3, PageForm],
+  imports: [CommonModule, RouterLink, WeekendVillage, PageForm],
   templateUrl: './project-3.html',
   styleUrl: './project-3.css',
 })
@@ -158,12 +158,16 @@ export class Project3 {
     ];
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   goToImagePage(): void {
 
-    this.router.navigate(['/image-page3']);
+    this.router.navigate(['/weekendvillage-map']);
     console.log('clicking')
-}
+  }
+
+  scrollToForm(): void{
+    document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' });
+  }
 
 }

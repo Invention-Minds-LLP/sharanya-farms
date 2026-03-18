@@ -5,7 +5,7 @@ import { Viewer } from 'photo-sphere-viewer';
 import { AfterViewInit } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { Router } from '@angular/router';
-import { ImagePage2 } from './image-page2/image-page2';
+import { HillView } from './hill-view/hill-view';
 import { PageForm } from '../page-form/page-form';
 
 
@@ -26,7 +26,7 @@ interface AmenitySlide {
 @Component({
   selector: 'app-project-2',
   standalone: true,
-  imports: [CommonModule, RouterLink,ImagePage2, PageForm],
+  imports: [CommonModule, RouterLink, HillView, PageForm],
   templateUrl: './project-2.html',
   styleUrl: './project-2.css',
 })
@@ -158,13 +158,17 @@ export class Project2 {
     ];
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   goToImagePage(): void {
 
-    this.router.navigate(['/image-page2']);
+    this.router.navigate(['/hillview-map']);
     console.log('clicking')
-}
+  }
+
+  scrollToForm(): void {
+    document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' });
+
+  }
 
 }
-
