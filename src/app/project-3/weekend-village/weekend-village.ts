@@ -1,12 +1,12 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { Location } from '@angular/common';
-
+import { CommonModule } from '@angular/common';
 
 declare var pannellum: any;
 
 @Component({
   selector: 'app-weekend-village',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './weekend-village.html',
   styleUrl: './weekend-village.css',
 })
@@ -15,10 +15,6 @@ export class WeekendVillage {
   constructor(private cdr: ChangeDetectorRef, private location: Location) { }
 
   plots = [
-    { pitch: -69, yaw: 18, title: 'Plot-82', des: '8-G' },
-    { pitch: -70, yaw: 7, title: 'Plot-83', des: '8-G' },
-    { pitch: -46, yaw: 25, title: 'Plot-63', des: '9-G' },
-    { pitch: -43, yaw: 39, title: 'Plot-67', des: '10-G' },
 
     { pitch: -42, yaw: -27, title: 'Plot 1', des: '5.5-G' },
     { pitch: -44, yaw: -25, title: 'Plot 2', des: '5-G' },
@@ -49,31 +45,58 @@ export class WeekendVillage {
     { pitch: -50, yaw: 15, title: 'Plot 28', des: '7.5-G' },
     { pitch: -46, yaw: 12, title: 'Plot 29', des: '10-G' },
     { pitch: -43, yaw: 11, title: 'Plot-30', des: '10-G' },
-
     { pitch: -43, yaw: 5, title: 'Plot 31', des: '10-G' },
     { pitch: -46, yaw: 5, title: 'Plot 32', des: '10-G' },
     { pitch: -46, yaw: -2, title: 'Plot 33', des: '10-G' },
     { pitch: -43, yaw: -2, title: 'Plot 34', des: '10-G' },
-
+    { pitch: -46, yaw: -8, title: 'Plot 35', des: '3-G' },
+    { pitch: -45, yaw: -10, title: 'Plot 36', des: '7-G' },
+    { pitch: -46, yaw: -14, title: 'Plot 37', des: '6.5-G' },
     { pitch: -44, yaw: -20, title: 'Plot 38', des: '10-G' },
     { pitch: -59, yaw: -30, title: 'Plot 39', des: '10-G' },
-    { pitch: -62, yaw: -20, title: 'Plot-40', des: '10-G' },
-    { pitch: -63, yaw: -8, title: 'Plot-41', des: '10-G' },
-    { pitch: -63, yaw: 3, title: 'Plot-42', des: '9.25-G' },
-    { pitch: -63, yaw: 15, title: 'Plot-43', des: '8.5-G' },
-    { pitch: -62, yaw: 22, title: 'Plot-44', des: '8.5-G' },
-    { pitch: -60, yaw: 29, title: 'Plot 45', des: '10-G' },
+    { pitch: -62, yaw: -20, title: 'Plot 40', des: '10-G' },
+    { pitch: -63, yaw: -8, title: 'Plot 41', des: '10-G' },
+    { pitch: -63, yaw: 3, title: 'Plot 42', des: '9.25-G' },
+    { pitch: -63, yaw: 15, title: 'Plot 43', des: '8.5-G' },
+    { pitch: -62, yaw: 22, title: 'Plot 44', des: '8.5-G' },
+    { pitch: -60, yaw: 32, title: 'Plot 45', des: '10-G' },
     { pitch: -55, yaw: 27, title: 'Plot 46', des: '9.5-G' },
     { pitch: -52, yaw: 22.5, title: 'Plot 47', des: '8.5-G' },
     { pitch: -49, yaw: 20, title: 'Plot 48', des: '7-G' },
-
-
+    { pitch: -46, yaw: 17.5, title: 'Plot 49', des: '2.5-G' },
+    { pitch: -44, yaw: 17, title: 'Plot 50', des: '5.25-G' },
+    { pitch: -41, yaw: 15, title: 'Plot 51', des: '8-G' },
+    { pitch: -41, yaw: 19, title: 'Plot 52', des: '8-G' },
+    { pitch: -40, yaw: 23, title: 'Plot 53', des: '8-G' },
+    { pitch: -39, yaw: 27, title: 'Plot 54', des: '5.5-G' },
+    { pitch: -38, yaw: 31, title: 'Plot 56', des: '10-G' },
+    { pitch: -37, yaw: 36, title: 'Plot 57', des: '10-G' },
+    { pitch: -39, yaw: 39, title: 'Plot 58', des: '7.5-G' },
+    { pitch: -40, yaw: 35, title: 'Plot 59', des: '10-G' },
+    { pitch: -42, yaw: 32, title: 'Plot 60', des: '8.5-G' },
+    { pitch: -43, yaw: 28, title: 'Plot 61', des: '10-G' },
+    { pitch: -43, yaw: 22, title: 'Plot 62', des: '6-G' },
+    { pitch: -46, yaw: 25, title: 'Plot 63', des: '9-G' },
+    { pitch: -46, yaw: 29, title: 'Plot 64', des: '6.25-G' },
+    { pitch: -45, yaw: 32, title: 'Plot 65', des: '5.5-G' },
+    { pitch: -44, yaw: 35, title: 'Plot 66', des: '5.5-G' },
+    { pitch: -43, yaw: 39, title: 'Plot 67', des: '10-G' },
+    { pitch: -41, yaw: 43, title: 'Plot 68', des: '10-G' },
+    { pitch: -45, yaw: 42, title: 'Plot 69', des: '5.5-G' },
+    { pitch: -47, yaw: 40, title: 'Plot 70', des: '10-G' },
+    { pitch: -49, yaw: 38, title: 'Plot 71', des: '10-G' },
+    { pitch: -48, yaw: 34, title: 'Plot 72', des: '10-G' },
+    { pitch: -50, yaw: 28, title: 'Plot 73', des: '10-G' },
+    { pitch: -52, yaw: 31, title: 'Plot 74', des: '8.5-G' },
+    { pitch: -57, yaw: 38, title: 'Plot 75', des: '8.5-G' },
+    
+    { pitch: -69, yaw: 18, title: 'Plot 82', des: '8-G' },
+    { pitch: -70, yaw: 7, title: 'Plot 83', des: '8-G' },
     { pitch: -70, yaw: -4, title: 'Plot 84', des: '8-G' },
-    { pitch: -70, yaw: -11, title: 'Plot 85', des: '8-G' },
+    { pitch: -70, yaw: -13, title: 'Plot 85', des: '8-G' },
     { pitch: -66, yaw: -24, title: 'Plot 86', des: '6.5-G' },
 
-
-
+    { pitch: -41, yaw: -18, title: 'Club House', des: '' },
 
   ]
 
