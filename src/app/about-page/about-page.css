@@ -10,7 +10,7 @@
     height: 725px;
 }
 
-.banner-imgs-resp{
+.banner-imgs-resp {
     display: none;
 }
 
@@ -24,6 +24,7 @@
 .col:nth-child(odd) {
     animation: scrollUp 40s linear infinite;
 }
+
 .col1:nth-child(odd) {
     animation: scrollUp 90s linear infinite;
 }
@@ -31,14 +32,15 @@
 .col:nth-child(even) {
     animation: scrollDown 40s linear infinite;
 }
+
 .col1:nth-child(even) {
     animation: scrollDown 90s linear infinite;
 }
 
 .col img,
 .col1 img {
-    width: 250px;
-    height: 250px;
+    width: 255px;
+    height: auto;
     aspect-ratio: 1/1;
     /* object-fit: cover; */
     /* border-radius: 15px; */
@@ -392,7 +394,7 @@
         top: 320px;
     } */
 
-    .banner-heading{
+    .banner-heading {
         font-size: 54px;
     }
 
@@ -400,7 +402,7 @@
         padding: 0;
     }
 
-    .left-side{
+    .left-side {
         padding-left: 50px;
     }
 }
@@ -414,16 +416,22 @@
         font-size: 44px;
     }
 
-    .banner-imgs{
+    .banner-imgs {
         display: none;
     }
 
-    .banner-imgs-resp{
+    .col1 img {
+        width: 260px;
+        height: auto;
+    }
+
+    .banner-imgs-resp {
         display: block;
         display: flex;
         align-items: center;
         overflow: hidden;
         height: 725px;
+        justify-content: center;
     }
 
     .banner-content {
@@ -478,22 +486,23 @@
         font-size: 22px;
     }
 
-    .banner-wrapper{
+    .banner-wrapper {
         top: -650px;
         height: 650px;
     }
 
-    .banner-imgs-resp{
-        height:stretch;
+    .banner-imgs-resp {
+        height: stretch;
+        justify-content:flex-start
     }
 
-    .banner-part{
+    .banner-part {
         height: 500px;
     }
 
     .col img,
     .col1 img {
-        width: 160px;
+        width: 142px;
         height: auto;
     }
 
@@ -509,7 +518,7 @@
         font-size: 16px;
     }
 
-    .news-part{
+    .news-part {
         height: auto;
         padding: 10px;
     }
@@ -554,7 +563,7 @@
         padding: 20px;
     }
 
-    .areas-content{
+    .areas-content {
         top: 600px;
         padding: 20px;
     }

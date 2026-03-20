@@ -8,7 +8,7 @@ import { PageForm } from '../page-form/page-form';
 interface HighlightCard {
   icon: string;
   label: string;
-  description?:string;  //? to indicate that this property is optional
+  description?: string;  //? to indicate that this property is optional
   points?: string[];
 }
 
@@ -40,8 +40,8 @@ export class Project1 {
     {
       icon: '/imgs/project-1/location.png',
       label: 'Infrastructure Details',
-      points:['25 feet and 20 Feet internal roads',
-        'Rain water storms drains Drainage',
+      points: ['30 feet and 20 Feet internal roads',
+        'Rain water storms drains/Drainage',
         'Underground Pipeline for water',
         'Entrance arch',
         '10 feet Compound wall boundary',
@@ -50,7 +50,7 @@ export class Project1 {
     {
       icon: 'imgs/project-1/water.png',
       label: 'Water and drip irrigation',
-      points: ['6 Borewells',
+      points: ['8 Borewells',
         'Underground pipeline connection to all the plots for domestic usage',
         'Drip irrigation set up for the farming activities',
       ]
@@ -58,12 +58,12 @@ export class Project1 {
     {
       icon: 'imgs/project-1/electric.png',
       label: 'Electricity',
-      description: 'Overhead across the property'
+      description: 'Not provided for all the plots'
     },
     {
       icon: 'imgs/project-1/security.png',
       label: 'Security',
-      description: 'Security Guards, Compound wall boundary, CCTV cameras, Management, team at the farm 24*7'
+      description: ' Security Guards, Compound wall boundary, CCTV cameras, Management team at the farm 24*7.'
     },
   ];
 
@@ -109,18 +109,23 @@ export class Project1 {
     this.mobileMenuOpen = false;
   }
 
-  prevAmenity(): void {
-    this.currentAmenityIndex =
-      this.currentAmenityIndex === 0
-        ? this.amenities.length - 1
-        : this.currentAmenityIndex - 1;
+  cardWidth = 276; // 260 + gap (16)
+  visibleCount = 4;
+
+  nextAmenity() {
+    if (this.currentAmenityIndex < this.amenities.length - this.visibleCount) {
+      this.currentAmenityIndex++;
+    }
   }
 
-  nextAmenity(): void {
-    this.currentAmenityIndex =
-      this.currentAmenityIndex === this.amenities.length - 1
-        ? 0
-        : this.currentAmenityIndex + 1;
+  prevAmenity() {
+    if (this.currentAmenityIndex > 0) {
+      this.currentAmenityIndex--;
+    }
+  }
+
+  get translateX() {
+    return this.currentAmenityIndex * this.cardWidth;
   }
 
   // get progressWidth(): number {
@@ -167,9 +172,12 @@ export class Project1 {
     console.log('clicking')
   }
 
-  scrollToForm(): void {
-    // this.router.navigate(['/page-form']);
-    document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' });
-    console.log('clicking')
+
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
