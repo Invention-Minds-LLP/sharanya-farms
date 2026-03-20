@@ -20,9 +20,9 @@
             ABOUT
         </a>
 
-        <!-- <a class="links" routerLinkActive="active" routerLink="/projects" (click)="toggleProjects()">
+        <a class="links" routerLinkActive="active" routerLink="/projects" (click)="toggleProjects()">
             PROJECTS
-        </a> -->
+        </a>
 
         <div class="projects-dropdown dropdown-overlay" *ngIf="showProjects">
 
@@ -51,17 +51,21 @@
 
         </div>
 
-        
+        <img src="/imgs/nav-logo.png" routerLink="">
+
 
         <a class="links" routerLinkActive="active" routerLink="/gallery">
             GALLERY
         </a>
 
-        <img src="/imgs/nav-logo.png" routerLink="">
+
 
         <a class="links" href="https://www.sharanyafarms.com/blogs/" target="_blank" routerLinkActive="active">
             BLOGS
         </a>
+        <!-- <a class="links" routerLink="/blog" routerLinkActive="active">
+            BLOGS
+        </a> -->
 
         <a class="links" routerLinkActive="active" [routerLink]="['/contact']">
             CONTACT US
@@ -81,9 +85,9 @@
 
     <a routerLink="" (click)="toggleMenu()">HOME</a>
     <a routerLink="/about" (click)="toggleMenu()">ABOUT</a>
-    <!-- <a class="mobile-projects" (click)="toggleMobileProjects()">
+    <a class="mobile-projects" (click)="toggleMobileProjects()">
         PROJECTS
-    </a> -->
+    </a>
 
     <div class="mobile-project-dropdown" *ngIf="showMobileProjects">
 

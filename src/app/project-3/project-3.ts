@@ -13,13 +13,15 @@ import { WeekendVillage } from './weekend-village/weekend-village';
 interface HighlightCard {
   icon: string;
   label: string;
-  title: string;
-  description: string;
+  // title: string;
+  description?: string;
+  points?: string[];
+
 }
 
 
 interface AmenitySlide {
-  title: string;
+  // title: string;
   image: string;
 }
 
@@ -32,61 +34,59 @@ interface AmenitySlide {
 })
 export class Project3 {
   mobileMenuOpen = false;
-
-  navItems = [
-    { label: 'HOME', link: '#home' },
-    { label: 'ABOUT', link: '#about' },
-    { label: 'PROJECTS', link: '#projects' },
-    { label: 'GALLERY', link: '#gallery' },
-    { label: 'BLOGS', link: '#blogs' },
-    { label: 'CONTACT US', link: '#contact' }
-  ];
-
   highlights: HighlightCard[] = [
     {
       icon: '/imgs/project-1/location.png',
-      label: 'Prime Location',
-      title: '45 km from City Center',
-      description: 'Well-connected via national highway with easy access to urban amenities'
+      label: 'Infrastructure Details',
+      points: ['25 feet and 20 Feet internal roads',
+        'Rain water storms drains Drainage',
+        'Underground Pipeline for water',
+        'Entrance arch',
+        '10 feet Compound wall boundary',
+      ]
     },
     {
-      icon: 'imgs/project-1/scale.png',
-      label: 'Plot Sizes',
-      title: '1200 - 5000 sq.ft',
-      description: 'Flexible plot options to match your investment goals'
+      icon: 'imgs/project-1/water.png',
+      label: 'Water and drip irrigation',
+      points: ['6 Borewells',
+        'Underground pipeline connection to all the plots for domestic usage',
+        'Drip irrigation set up for the farming activities',
+      ]
     },
     {
-      icon: 'imgs/project-1/money.png',
-      label: 'Starting Price',
-      title: '₹25 Lakhs onwards',
-      description: 'Competitive pricing with easy EMI options available'
+      icon: 'imgs/project-1/electric.png',
+      label: 'Electricity',
+      description: 'Overhead across the property'
     },
     {
-      icon: 'imgs/project-1/doc.png',
-      label: 'Legal Approvals',
-      title: 'RERA & DTCP',
-      description: 'Fully approved with clear title and documentation'
+      icon: 'imgs/project-1/security.png',
+      label: 'Security',
+      description: 'Security Guards, Compound wall boundary, CCTV cameras, Management, team at the farm 24*7'
     },
-    {
-      icon: 'imgs/project-1/land.png',
-      label: 'Plantation',
-      title: 'Pre-landscaped',
-      description: 'Premium saplings and mature trees included'
-    },
-    {
-      icon: 'imgs/project-1/home.png',
-      label: 'Amenities',
-      title: 'Resort-style',
-      description: 'Clubhouse, security, and modern infrastructure'
-    }
   ];
+
+  // isArray(value: string | string[]): value is string[] {
+  //   return Array.isArray(value);
+  // }
+
 
 
   amenities: AmenitySlide[] = [
-    { title: 'Landscape', image: 'imgs/project-1/Rectangle51.png' },
-    { title: 'Gated Community', image: 'imgs/project-1/Rectangle52.png' },
-    { title: 'Plantation', image: 'imgs/project-1/Rectangle53.png' },
-    { title: 'Landscape', image: 'imgs/project-1/Rectangle54.png' },
+    { image: '/imgs/gallery-page/week-img-1.png' },
+    { image: '/imgs/gallery-page/week-img-2.png' },
+    { image: '/imgs/gallery-page/week-img-3.png' },
+    { image: '/imgs/gallery-page/week-img-4.png' },
+    { image: '/imgs/gallery-page/week-img-5.png' },
+    { image: '/imgs/gallery-page/week-img-6.png' },
+    { image: '/imgs/gallery-page/week-img-7.png' },
+    { image: '/imgs/gallery-page/week-img-8.png' },
+    { image: '/imgs/gallery-page/week-img-9.png' },
+    { image: '/imgs/gallery-page/week-img-10.png' },
+    { image: '/imgs/gallery-page/week-img-11.png' },
+    { image: '/imgs/gallery-page/week-img-12.png' },
+    { image: '/imgs/gallery-page/week-img-13.png' },
+    { image: '/imgs/gallery-page/week-img-14.png' },
+
   ];
 
   currentAmenityIndex = 0;
@@ -108,55 +108,60 @@ export class Project3 {
     this.mobileMenuOpen = false;
   }
 
-  prevAmenity(): void {
-    this.currentAmenityIndex =
-      this.currentAmenityIndex === 0
-        ? this.amenities.length - 1
-        : this.currentAmenityIndex - 1;
+  cardWidth = 276; // 260 + gap (16)
+  visibleCount = 4;
+
+  nextAmenity() {
+    if (this.currentAmenityIndex < this.amenities.length - this.visibleCount) {
+      this.currentAmenityIndex++;
+    }
   }
 
-  nextAmenity(): void {
-    this.currentAmenityIndex =
-      this.currentAmenityIndex === this.amenities.length - 1
-        ? 0
-        : this.currentAmenityIndex + 1;
+  prevAmenity() {
+    if (this.currentAmenityIndex > 0) {
+      this.currentAmenityIndex--;
+    }
   }
 
-  get progressWidth(): number {
-    return ((this.currentAmenityIndex + 1) / this.amenities.length) * 100;
+  get translateX() {
+    return this.currentAmenityIndex * this.cardWidth;
   }
 
-  goToAmenity(index: number): void {
-    this.currentAmenityIndex = index;
-  }
+  // get progressWidth(): number {
+  //   return ((this.currentAmenityIndex + 1) / this.amenities.length) * 100;
+  // }
 
-  get currentAmenity(): AmenitySlide {
-    return this.amenities[this.currentAmenityIndex];
-  }
+  // goToAmenity(index: number): void {
+  //   this.currentAmenityIndex = index;
+  // }
 
-  get leftAmenity(): AmenitySlide {
-    return this.amenities[
-      this.currentAmenityIndex === 0
-        ? this.amenities.length - 1
-        : this.currentAmenityIndex - 1
-    ];
-  }
+  // get currentAmenity(): AmenitySlide {
+  //   return this.amenities[this.currentAmenityIndex];
+  // }
 
-  get rightAmenity(): AmenitySlide {
-    return this.amenities[
-      this.currentAmenityIndex === this.amenities.length - 1
-        ? 0
-        : this.currentAmenityIndex + 1
-    ];
-  }
+  // get leftAmenity(): AmenitySlide {
+  //   return this.amenities[
+  //     this.currentAmenityIndex === 0
+  //       ? this.amenities.length - 1
+  //       : this.currentAmenityIndex - 1
+  //   ];
+  // }
 
-  get nextRightAmenity(): AmenitySlide {
-    return this.amenities[
-      this.currentAmenityIndex >= this.amenities.length - 2
-        ? (this.currentAmenityIndex + 2) % this.amenities.length
-        : this.currentAmenityIndex + 2
-    ];
-  }
+  // get rightAmenity(): AmenitySlide {
+  //   return this.amenities[
+  //     this.currentAmenityIndex === this.amenities.length - 1
+  //       ? 0
+  //       : this.currentAmenityIndex + 1
+  //   ];
+  // }
+
+  // get nextRightAmenity(): AmenitySlide {
+  //   return this.amenities[
+  //     this.currentAmenityIndex >= this.amenities.length - 2
+  //       ? (this.currentAmenityIndex + 2) % this.amenities.length
+  //       : this.currentAmenityIndex + 2
+  //   ];
+  // }
 
   constructor(private router: Router) { }
 
@@ -166,8 +171,12 @@ export class Project3 {
     console.log('clicking')
   }
 
-  scrollToForm(): void{
-    document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' });
-  }
 
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

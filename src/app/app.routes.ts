@@ -15,19 +15,18 @@ import { WeekendVillage } from './project-3/weekend-village/weekend-village';
 
 export const routes: Routes = [
     { path: '', component: HomePage },
-    { path: '', component: HomePage },
     { path: 'contact', component: Contact },
     { path: 'about', component: AboutPage },
     // { path: 'hillview', component: Project1},
     { path: 'page-form', component: PageForm},
     { path: 'gallery', component: GalleryPage},
-    { path: 'registration-link', component: RegisterForm},
+    { path: 'registration-link', component: RegisterForm,data: { hideLayout: true }},
     { path: 'sandalvalley', component: Project1},
     { path: 'hillview', component: Project2},
     { path: 'weekendvillage', component: Project3},
-    { path: 'hillview-map', component: HillView},
-    { path: 'sandalvalley-map', component: SandalValley},
-    { path: 'weekendvillage-map', component: WeekendVillage}
+    { path: 'hillview-map', component: HillView, data: { hideLayout: true }},
+    { path: 'sandalvalley-map', component: SandalValley, data: { hideLayout: true }},
+    { path: 'weekendvillage-map', component: WeekendVillage,data: { hideLayout: true }}
 ];
 
 
