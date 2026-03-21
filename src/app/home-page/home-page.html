@@ -373,10 +373,7 @@
 
 <div class="popup-overlay" *ngIf="showPopup">
     <div class="popup-box">
-
-        
-
-        <app-register-form-popup></app-register-form-popup>
+        <app-register-form-popup  (closePopupEvent)="closePopup()"></app-register-form-popup>
     </div>
 </div>
 
