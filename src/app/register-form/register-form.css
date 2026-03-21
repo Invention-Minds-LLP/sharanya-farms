@@ -196,7 +196,6 @@
 }
 
 .back{
-    width: 12%;
     padding: 9px;
     border-radius: 50px;
     border: none;
@@ -206,6 +205,22 @@
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+.back{
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    z-index: 1000;
+    padding: 8px 16px;
+    border: none;
+    background: #E7CC01;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px rgba(255, 255, 255, 0.2);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 
@@ -843,4 +858,5 @@
     .bootom-card {
         width: 100%;
     }
+
 }

@@ -1099,9 +1099,10 @@
     z-index: 9999;
   }
   
-  .popup-box {
-    position: relative;
-    top: 65px;
+  .popup-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
 
@@ -1294,11 +1295,6 @@
     .farm-section.slide-next .top-circle {
         transform: translate(-300px, 590px);
         transition: transform .6s ease;
-    }
-
-    .popup-box {
-        width: 60%;
-        top: 70px;
     }
 }
 
@@ -1551,10 +1547,6 @@
     .farm-section.slide-prev .bottom-circle {
         transform: translate(430px, -335px);
         transition: transform 1.0s ease;
-    }
-
-    .popup-box{
-        top: 45px;
     }
 }
 

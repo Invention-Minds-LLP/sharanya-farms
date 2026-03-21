@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import emailjs from 'emailjs-com';
 
@@ -13,11 +13,14 @@ export class RegisterFormPopup {
 
   showUtsavaPopup = true;
 
-  constructor(private router: Router) {}
 
-  closePopup(): void {
-    this.showUtsavaPopup = false;
+  @Output() closePopupEvent = new EventEmitter<void>();
+
+  closePopup() {
+    this.closePopupEvent.emit();
   }
+
+  constructor(private router: Router) {}
 
   goToRegistration(): void {
     this.closePopup();

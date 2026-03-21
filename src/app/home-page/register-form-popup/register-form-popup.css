@@ -11,6 +11,7 @@
 
 /* MAIN CARD */
 .utsava-popup {
+  position: relative;
   width: 100%;
   max-width: 500px;
   border-radius: 20px;
@@ -19,10 +20,12 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.08);
   animation: popupUp 0.35s ease;
+  margin: 20px;
 }
 
 /* CONTENT */
 .popup-content {
+  position: relative;
   padding: 40px 28px;
   text-align: center;
 }
@@ -101,7 +104,7 @@
 
 .popup-close {
     position: absolute;
-    top: 12px;
+    top: 14px;
     right: 14px;
     width: 32px;
     height: 32px;
@@ -116,3 +119,35 @@
     display: block;
     pointer-events: none;
   }
+
+  @media (max-width: 1439px){
+
+    .popup-close{
+      top: 15px;
+      right: 0px;
+    }
+  }
+
+  @media (max-width: 767px){
+
+    .join-btn{
+      width: 70%;
+    }
+
+    .utsava-popup{
+      width: 100%;
+      max-width: 90%;
+      position: relative;
+      top: 10px;
+    }
+  }
+
+  @media (max-width: 360px){
+    .utsava-popup{
+      width: 100%;
+      max-width: 90%;
+      position: relative;
+      top: 50px;
+    }
+  }
+  
