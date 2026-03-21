@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PageForm } from "../page-form/page-form";
 import { Footer } from "../footer/footer";
 import { Router, RouterModule } from '@angular/router';
+import { RegisterForm } from "../register-form/register-form";
+import { RegisterFormPopup } from "./register-form-popup/register-form-popup";
 
 @Component({
   selector: 'app-home-page',
-  imports: [CommonModule, FormsModule, PageForm, Footer, RouterModule],
+  imports: [CommonModule, FormsModule, PageForm, Footer, RouterModule, RegisterForm, RegisterFormPopup],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
@@ -293,8 +295,22 @@ export class HomePage {
   // activeStep = 0;
   isMobile = false;
 
+
+  showPopup: boolean = false;
+
+  constructor(private cdr: ChangeDetectorRef, private router: Router) {}
+
   ngOnInit() {
     this.checkScreen();
+
+    setTimeout(() => {
+      this.showPopup = true;
+      this.cdr.detectChanges(); // 🔥 important fix
+    }, 0);
+  }
+
+  closePopup() {
+    this.showPopup = false;
   }
 
   checkScreen() {
@@ -338,11 +354,11 @@ export class HomePage {
 
   }
 
-  constructor(private router: Router) { }
 
   goToImagePage(): void {
 
     this.router.navigate(['/image-page3']);
     console.log('clicking')
   }
+
 }

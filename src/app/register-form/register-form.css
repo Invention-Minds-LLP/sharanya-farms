@@ -195,6 +195,19 @@
     animation: moveUpDown 2s ease-in-out infinite;
 }
 
+.back{
+    width: 12%;
+    padding: 9px;
+    border-radius: 50px;
+    border: none;
+    background: #d6b35a;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
 
 @keyframes moveUpDown {
     0% {
