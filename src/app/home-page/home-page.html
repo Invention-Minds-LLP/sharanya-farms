@@ -362,6 +362,24 @@
     </div>
 </div>
 
+<!-- <div class="popup-overlay" *ngIf="isPopupOpen">
+    <div class="popup-container">
+        <div class="popup-header">
+            <span class="close-btn" (click)="closePopup()">✖</span>
+        </div>
+        <app-register-form-popup></app-register-form-popup>
+    </div>
+</div> -->
+
+<div class="popup-overlay" *ngIf="showPopup">
+    <div class="popup-box">
+
+        
+
+        <app-register-form-popup></app-register-form-popup>
+    </div>
+</div>
+
 <!-- <div class="footer">
     <app-footer></app-footer>
 </div> -->

@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import emailjs from 'emailjs-com';
 
 @Component({
   selector: 'app-register-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './register-form.html',
   styleUrl: './register-form.css',
 })
@@ -15,7 +16,7 @@ export class RegisterForm implements OnInit {
   registrationForm!: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router:Router) { }
 
   list = [
     {
@@ -130,6 +131,11 @@ export class RegisterForm implements OnInit {
       }
     );
 
+  }
+
+
+  goToHome(): void {  
+    this.router.navigate(['/']);
   }
 
 }

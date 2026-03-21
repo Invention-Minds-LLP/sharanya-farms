@@ -17,7 +17,6 @@ export const routes: Routes = [
     { path: '', component: HomePage },
     { path: 'contact', component: Contact },
     { path: 'about', component: AboutPage },
-    // { path: 'hillview', component: Project1},
     { path: 'page-form', component: PageForm},
     { path: 'gallery', component: GalleryPage},
     { path: 'registration-link', component: RegisterForm,data: { hideLayout: true }},

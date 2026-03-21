@@ -1,0 +1,37 @@
+<div class="utsava-popup-backdrop" *ngIf="showUtsavaPopup" (click)="closePopup()">
+    <div class="utsava-popup" (click)="$event.stopPropagation()">
+
+        <span class="popup-close" (click)="closePopup()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.5" d="m7 7l10 10M7 17L17 7" />
+            </svg>
+        </span>
+        
+      <div class="popup-content">
+  
+        <h2 class="popup-title">🌿 ಶರಣ್ಯ ಯುಗಾದಿ ಉತ್ಸವ 2026</h2>
+  
+        <p class="popup-subtitle">
+          A one-day curated farm experience near Bangalore
+        </p>
+  
+        <div class="popup-meta">
+          <span>28th March</span>
+          <span>Free Entry</span>
+          <span>Pre-registration Required</span>
+        </div>
+  
+        <p class="popup-description">
+          Celebrate Ugadi amidst nature with a thoughtfully curated farm experience
+          inspired by peace, greenery, and mindful living.
+        </p>
+  
+        <div class="popup-actions">
+          <button class="join-btn" (click)="goToRegistration()">
+            Join the Utsava
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
