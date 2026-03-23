@@ -22,7 +22,7 @@ export class Contact {
 
   ngOnInit() {
 
-    emailjs.init("44sQRxJOiepWwo5y8");
+    emailjs.init("W_ip_8Elr8F2ydGtM"); //Public Key
 
     this.contactForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(3)]],
@@ -55,8 +55,8 @@ export class Contact {
     };
 
     emailjs.send(
-      'service_j8dl5uv',
-      'template_69zjg7a',
+      'service_rurc7vt', //Service ID
+      'template_vdfnfuq', //Template ID
       templateParams
     )
       .then(() => {

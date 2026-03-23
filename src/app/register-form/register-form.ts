@@ -16,7 +16,7 @@ export class RegisterForm implements OnInit {
   registrationForm!: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder, private router:Router) { }
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   list = [
     {
@@ -92,7 +92,7 @@ export class RegisterForm implements OnInit {
 
   ngOnInit(): void {
 
-    emailjs.init("44sQRxJOiepWwo5y8");
+    emailjs.init("W_ip_8Elr8F2ydGtM"); //Public Key
 
     this.registrationForm = this.fb.group({
       fullName: ['', Validators.required],
@@ -118,8 +118,8 @@ export class RegisterForm implements OnInit {
     const formData = this.registrationForm.value;
 
     emailjs.send(
-      "service_j8dl5uv",
-      "template_2xk3ave",
+      "service_rurc7vt", //Service ID
+      "template_rol3xqs",//Template ID
       formData
     ).then(
       () => {
@@ -134,7 +134,7 @@ export class RegisterForm implements OnInit {
   }
 
 
-  goToHome(): void {  
+  goToHome(): void {
     this.router.navigate(['/']);
   }
 
