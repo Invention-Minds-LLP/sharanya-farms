@@ -1,12 +1,45 @@
 <div class="page-shell">
 
   <!-- HERO -->
-  <section class="hero" data-aos="zoom-in">
+  <!-- <section class="hero" data-aos="zoom-in">
     <video src="/imgs/project-1/hill-view.mp4" autoplay loop muted playinline class="home-page-video"></video>
 
     <video src="/imgs/project-1/sharanya_hillview_bannervid_mob.mp4" autoplay loop muted playinline
       class="home-page-video-mob"></video>
-  </section>
+  </section> -->
+  <div class="banner-video">
+    <ng-container *ngIf="showBannerVideo; else bannerPoster">
+      <div class="video-wrapper">
+        <video #desktopVideo src="/imgs/project-1/hill-view.mp4" autoplay loop muted playsinline preload="auto"
+          poster="/imgs/project-1/hill-view-poster-img.png">
+        </video>
+
+        <button (click)="toggleMute(desktopVideo)" class="mute-btn">
+          {{ desktopVideo?.muted ? '🔇' : '🔊' }}
+        </button>
+      </div>
+    </ng-container>
+
+    <ng-template #bannerPoster>
+      <img src="/imgs/project-1/hill-view-poster-img.png" alt="Banner" class="banner-img" />
+    </ng-template>
+  </div>
+
+  <div class="res-video">
+    <ng-container *ngIf="showMobileVideo; else mobilePoster">
+      <video #mobileVideo src="/imgs/project-1/sharanya_hillview_bannervid_mob.mp4" autoplay loop muted playsinline
+        preload="auto" poster="/imgs/home-page/we-are-part-bg.png" class="home-page-video-mob">
+      </video>
+
+      <button (click)="toggleMute(mobileVideo)" class="mute-btn">
+        {{ mobileVideo?.muted ? '🔇' : '🔊' }}
+      </button>
+    </ng-container>
+
+    <ng-template #mobilePoster>
+      <img src="/imgs/home-page/we-are-part-bg.png" alt="Mobile banner" class="res-banner-img" />
+    </ng-template>
+  </div>
 
   <!-- ABOUT -->
   <section class="about" id="about">
@@ -146,7 +179,7 @@
 
 
     <!-- AMENITIES -->
-    <div class="amenities-slider" >
+    <div class="amenities-slider">
       <button class="slider-arrow left" (click)="prevAmenity()" [disabled]="currentAmenityIndex === 0">
         ‹
       </button>

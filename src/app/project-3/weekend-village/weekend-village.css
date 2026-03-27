@@ -54,4 +54,8 @@
     .layout-image{
       height: 100vh;
     }
+
+     .plot{
+       background-image: url('/imgs/project-1/humbleicons--location.svg');
+    }
   }

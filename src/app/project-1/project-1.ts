@@ -20,6 +20,7 @@ interface AmenitySlide {
 
 @Component({
   selector: 'app-project-1',
+  standalone: true,
   imports: [CommonModule, PageForm],
   templateUrl: './project-1.html',
   styleUrl: './project-1.css',
@@ -91,15 +92,80 @@ export class Project1 {
   ];
 
   currentAmenityIndex = 0;
+  showBannerVideo = false;
+  showMobileVideo = false;
+  showFormVideo = false;
+  isMobile = false;
 
-  ngAfterViewInit(): void {
-    AOS.init({
-      duration: 900,
-      once: true,
-      offset: 60,
-      easing: 'ease-out-cubic'
-    });
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    this.checkScreen();
+    this.loadBannerVideo();
+
+    setTimeout(() => {
+      this.showFormVideo = true;
+    }, 1000);
   }
+
+  checkScreen() {
+    this.isMobile = window.innerWidth <= 767;
+  }
+
+  loadBannerVideo() {
+    this.showBannerVideo = false;
+    this.showMobileVideo = false;
+
+    setTimeout(() => {
+      if (this.isMobile) {
+        this.showMobileVideo = true;
+      } else {
+        this.showBannerVideo = true;
+      }
+    }, 50);
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    const oldValue = this.isMobile;
+    this.checkScreen();
+
+    if (oldValue !== this.isMobile) {
+      this.loadBannerVideo();
+    }
+  }
+
+  toggleMute(video: HTMLVideoElement) {
+    video.muted = !video.muted;
+    if (!video.muted) {
+      video.play();
+    }
+  }
+
+  ngAfterViewInit() {
+    const section = document.querySelector('.form-part');
+
+    if (section) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          this.showFormVideo = true;
+          // this.cdr.detectChanges();
+          observer.disconnect();
+        }
+      }, { threshold: 0.2 });
+
+      observer.observe(section);
+    }
+  }
+
+  // ngAfterViewInit(): void {
+  //   AOS.init({
+  //     duration: 900,
+  //     once: true,
+  //     offset: 60,
+  //     easing: 'ease-out-cubic'
+  //   });
+  // }
 
   toggleMobileMenu(): void {
     this.mobileMenuOpen = !this.mobileMenuOpen;
@@ -164,7 +230,7 @@ export class Project1 {
   //   ];
   // }
 
-  constructor(private router: Router) { }
+  // constructor(private router: Router) { }
 
   goToImagePage(): void {
 
@@ -180,4 +246,5 @@ export class Project1 {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
 }

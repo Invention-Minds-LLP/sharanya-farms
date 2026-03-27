@@ -9,6 +9,7 @@ import { RegisterFormPopup } from "./register-form-popup/register-form-popup";
 
 @Component({
   selector: 'app-home-page',
+  standalone: true,
   imports: [CommonModule, FormsModule, PageForm, Footer, RouterModule, RegisterForm, RegisterFormPopup],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
@@ -293,35 +294,124 @@ export class HomePage {
 
 
   // activeStep = 0;
-  isMobile = false;
 
 
   showPopup: boolean = false;
 
-  constructor(private cdr: ChangeDetectorRef, private router: Router) {}
+  constructor(private cdr: ChangeDetectorRef, private router: Router) { }
+
+  isMobile = false;
+
+  showBannerVideo = false;
+  showMobileVideo = false;
+  showFormVideo = false;
+
+  resizeTimeout: any;
 
   ngOnInit() {
     this.checkScreen();
+    this.loadBannerVideo();
 
+    // form video delay
+    setTimeout(() => {
+      this.showFormVideo = true;
+    }, 1000);
+
+    // ✅ popup show
     setTimeout(() => {
       this.showPopup = true;
-      this.cdr.detectChanges(); // 🔥 important fix
-    }, 0);
+      this.cdr.detectChanges();
+    }, 500);
   }
 
-  closePopup() {
-    this.showPopup = false;
-  }
-
+  // ✅ SCREEN CHECK
   checkScreen() {
     this.isMobile = window.innerWidth <= 1023;
   }
 
-  @HostListener('window:resize')
-  onResize() {
-    this.checkScreen();
+  // ✅ LOAD VIDEO (MAIN FIX)
+  loadBannerVideo() {
+    this.showBannerVideo = false;
+    this.showMobileVideo = false;
+
+    setTimeout(() => {
+      if (this.isMobile) {
+        this.showMobileVideo = true;
+
+        setTimeout(() => {
+          const video = document.querySelector('.home-page-video-mob') as HTMLVideoElement;
+          this.playVideo(video);
+        }, 100);
+
+      } else {
+        this.showBannerVideo = true;
+
+        setTimeout(() => {
+          const video = document.querySelector('.video-wrapper video') as HTMLVideoElement;
+          this.playVideo(video);
+        }, 100);
+      }
+    }, 50);
   }
 
+  // ✅ FORCE VIDEO PLAY
+  playVideo(video?: HTMLVideoElement) {
+    if (!video) return;
+
+    video.muted = true;
+    video.playsInline = true;
+    video.load();
+
+    const playPromise = video.play();
+    if (playPromise) {
+      playPromise.catch(() => { });
+    }
+  }
+
+  // ✅ RESIZE FIX
+  @HostListener('window:resize')
+  onResize() {
+    clearTimeout(this.resizeTimeout);
+
+    this.resizeTimeout = setTimeout(() => {
+      const oldValue = this.isMobile;
+
+      this.checkScreen();
+
+      if (oldValue !== this.isMobile) {
+        this.loadBannerVideo();
+      }
+    }, 150);
+  }
+
+  // ✅ MUTE TOGGLE
+  toggleMute(video: HTMLVideoElement) {
+    video.muted = !video.muted;
+
+    if (!video.muted) {
+      video.play();
+    }
+  }
+
+
+  ngAfterViewInit() {
+    const section = document.querySelector('.form-part');
+
+    if (section) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          this.showFormVideo = true;
+          this.cdr.detectChanges();
+          observer.disconnect();
+        }
+      }, { threshold: 0.2 });
+
+      observer.observe(section);
+    }
+  }
+  closePopup() {
+    this.showPopup = false;
+  }
 
   /* Desktop hover */
 
@@ -357,8 +447,9 @@ export class HomePage {
 
   goToImagePage(): void {
 
-    this.router.navigate(['/image-page3']);
+    this.router.navigate(['/weekendvillage-map']);
     console.log('clicking')
   }
+
 
 }
