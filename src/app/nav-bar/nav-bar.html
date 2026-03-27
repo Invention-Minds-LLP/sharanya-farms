@@ -20,9 +20,11 @@
             ABOUT
         </a>
 
+
         <a class="links" routerLinkActive="active" routerLink="/projects" (click)="toggleProjects()">
             PROJECTS
         </a>
+
 
         <div class="projects-dropdown dropdown-overlay" *ngIf="showProjects">
 
@@ -86,7 +88,13 @@
     <a routerLink="" (click)="toggleMenu()">HOME</a>
     <a routerLink="/about" (click)="toggleMenu()">ABOUT</a>
     <a class="mobile-projects" (click)="toggleMobileProjects()">
-        PROJECTS
+        <span>PROJECTS</span>
+        <span class="arrow" [class.open]="showMobileProjects"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                    d="M17.9543 6.61738C17.7199 6.38301 17.402 6.25136 17.0705 6.25136C16.739 6.25136 16.4211 6.38301 16.1867 6.61738L9.99921 12.8049L3.81171 6.61738C3.57481 6.39684 3.2616 6.27679 2.93799 6.28249C2.61438 6.28818 2.30559 6.41918 2.0766 6.64792C1.8476 6.87666 1.71626 7.1853 1.71021 7.50891C1.70415 7.83252 1.82386 8.14586 2.04413 8.383L9.11445 15.4553C9.34886 15.6896 9.66676 15.8213 9.99824 15.8213C10.3297 15.8213 10.6476 15.6896 10.882 15.4553L17.9543 8.38495C18.1887 8.15054 18.3203 7.83264 18.3203 7.50117C18.3203 7.16969 18.1887 6.85179 17.9543 6.61738Z"
+                    fill="white" />
+            </svg></span>
     </a>
 
     <div class="mobile-project-dropdown" *ngIf="showMobileProjects">

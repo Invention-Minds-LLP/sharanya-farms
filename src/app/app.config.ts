@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideRouter, withInMemoryScrolling } from '@angular/router';
+import { provideRouter, withInMemoryScrolling, withPreloading, PreloadAllModules } from '@angular/router';
 
 import { routes } from './app.routes';
 import { MessageService } from 'primeng/api';
@@ -12,9 +12,10 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideRouter(routes,
       withInMemoryScrolling({
-        scrollPositionRestoration:'top'
+        scrollPositionRestoration: 'top'
       }),
-      
+      withPreloading(PreloadAllModules)
+
     )
 
   ]

@@ -1,9 +1,36 @@
 <div class="home-page">
     <div class="banner-video">
-        <video src="/imgs/home-page/home-page-banner-video.mp4" autoplay loop muted playinline></video>
+        <ng-container *ngIf="showBannerVideo; else bannerPoster">
+            <div class="video-wrapper">
+                <video #desktopVideo src="/imgs/home-page/home-page-banner-video.mp4" autoplay loop muted playsinline
+                    preload="auto" poster="/imgs/home-page/poster-img.png">
+                </video>
+                <button (click)="toggleMute(desktopVideo)" class="mute-btn">
+                    {{ desktopVideo?.muted ? '🔇' : '🔊' }}
+                </button>
+
+            </div>
+        </ng-container>
+
+        <ng-template #bannerPoster>
+            <img src="/imgs/home-page/poster-img.png" alt="Banner" class="banner-img" />
+        </ng-template>
     </div>
+
     <div class="res-video">
-        <video src="/imgs/home-page/mix_mob.mp4" autoplay loop muted playinline></video>
+        <ng-container *ngIf="showMobileVideo; else mobilePoster">
+            <video #mobileVideo src="/imgs/home-page/mix_mob.mp4" autoplay loop muted playsinline preload="auto"
+                poster="/imgs/home-page/res-poster-img.png">
+            </video>
+
+            <button (click)="toggleMute(mobileVideo)" class="mute-btn">
+                {{ mobileVideo?.muted ? '🔇' : '🔊' }}
+            </button>
+        </ng-container>
+
+        <ng-template #mobilePoster>
+            <img src="/imgs/home-page/res-poster-img.png" alt="Mobile banner" class="res-banner-img" />
+        </ng-template>
     </div>
 
     <div class="benefits-part">
@@ -357,8 +384,10 @@
     <div class="form">
         <app-page-form></app-page-form>
     </div>
+
     <div class="video">
-        <video src="/imgs/form-video.mp4" autoplay loop muted playinline></video>
+        <video src="/imgs/form-video.mp4" autoplay loop muted playsinline preload="metadata">
+        </video>
     </div>
 </div>
 
@@ -373,7 +402,7 @@
 
 <div class="popup-overlay" *ngIf="showPopup">
     <div class="popup-box">
-        <app-register-form-popup  (closePopupEvent)="closePopup()"></app-register-form-popup>
+        <app-register-form-popup (closePopupEvent)="closePopup()"></app-register-form-popup>
     </div>
 </div>
 
