@@ -100,17 +100,23 @@
     <div class="mobile-project-dropdown" *ngIf="showMobileProjects">
 
         <div class="mobile-project-card" (click)="toggleMenu()" routerLink="/sandalvalley">
-            <img src="/imgs/sandal-valley.png">
+            <div class="img">
+                <img src="/imgs/sandal-valley.png">
+            </div>
             <span>Sharanya Sandal Valley Farms</span>
         </div>
 
         <div class="mobile-project-card" (click)="toggleMenu()" routerLink="/hillview">
-            <img src="/imgs/hill-view.png">
+          <div class="img">
+              <img src="/imgs/hill-view.png">
+          </div>
             <span>Sharanya Hillview Farms</span>
         </div>
 
         <div class="mobile-project-card" (click)="toggleMenu()" routerLink="/weekendvillage">
-            <img src="/imgs/weekend-village.png">
+           <div class="img">
+             <img src="/imgs/weekend-village.png">
+           </div>
             <span>Sharanya Weekend Village</span>
         </div>
 

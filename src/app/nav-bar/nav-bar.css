@@ -194,6 +194,10 @@
     z-index: 20000;
 }
 
+.img {
+    width: 60px;
+}
+
 .mobile-menu a {
     color: white;
     font-size: 18px;
