@@ -28,7 +28,7 @@
   <div class="res-video">
     <ng-container *ngIf="showMobileVideo; else mobilePoster">
       <video #mobileVideo src="/imgs/project-1/sharanya_hillview_bannervid_mob.mp4" autoplay loop muted playsinline
-        preload="auto" poster="/imgs/home-page/we-are-part-bg.png" class="home-page-video-mob">
+        preload="auto" poster="/imgs/project-1/hill-view-poster-res-img.png" class="home-page-video-mob">
       </video>
 
       <button (click)="toggleMute(mobileVideo)" class="mute-btn">
@@ -37,7 +37,7 @@
     </ng-container>
 
     <ng-template #mobilePoster>
-      <img src="/imgs/home-page/we-are-part-bg.png" alt="Mobile banner" class="res-banner-img" />
+      <img src="/imgs/project-1/hill-view-poster-res-img.png" alt="Mobile banner" class="res-banner-img" />
     </ng-template>
   </div>
 
