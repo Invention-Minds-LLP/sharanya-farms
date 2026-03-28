@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import emailjs from '@emailjs/browser';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
@@ -18,7 +19,23 @@ export class PageForm {
 
   loading = false;
 
-  constructor(private fb: FormBuilder, private messageService: MessageService) {
+  @Input() addressData!: {
+    text: string;
+    mapLink: string;
+    embedMapLink: string;
+  };
+
+  safeMapUrl!: SafeResourceUrl;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.addressData?.embedMapLink) {
+      this.safeMapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+        this.addressData.embedMapLink
+      );
+    }
+  }
+
+  constructor(private fb: FormBuilder, private messageService: MessageService, private sanitizer: DomSanitizer) {
 
 
     emailjs.init("44sQRxJOiepWwo5y8");

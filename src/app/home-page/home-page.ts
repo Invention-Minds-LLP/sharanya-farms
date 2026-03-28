@@ -252,7 +252,7 @@ export class HomePage {
     },
     {
       title: 'Sharanya Weekend Village',
-      desc: 'Sharanya Hillview Farms is a nature-friendly getaway near Mysore designed for those seeking peace, greenery, and value. With sandalwood plantations and lush surroundings, its an ideal destination for weekend retreats, remote working, or mindful farming...',
+      desc: 'We love nature and are unified as a team to preserve it. At Sharanya Farms, we believe that nature should be an integral part of our everyday lives and in the lives of future generations. We have developed farmland properties and the infrastructure for you to enjoy your time in the thick of nature near your farmhouse. We feel delighted in providing people with an opportunity to connect with nature at Sharanya Farms.',
       image: '/imgs/home-page/weekend.png',
       link: '/weekend-village-farms',
       alt: 'Weekend village farmland with natural surroundings and farmhouse lifestyle'

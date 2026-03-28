@@ -316,7 +316,7 @@
 }
 
 .banner-image {
-  background-image: url('/imgs/project-1/sandal.png');
+  background-image: url('/imgs/project-1/hillview.png');
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1531,6 +1531,10 @@
 
   .content-align {
     width: 100%;
+  }
+
+  .banner-img{
+    display: none;
   }
 
   .mute-btn {
