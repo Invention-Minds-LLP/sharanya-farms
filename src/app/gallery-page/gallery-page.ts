@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { PageForm } from "../page-form/page-form";
 
+import { Meta, Title } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-gallery-page',
   imports: [CommonModule, PageForm],
@@ -9,6 +11,24 @@ import { PageForm } from "../page-form/page-form";
   styleUrl: './gallery-page.css',
 })
 export class GalleryPage {
+
+  constructor(private title: Title, private meta: Meta) {
+
+    this.title.setTitle('Sharanya Farms Gallery | Managed Farmland Views');
+
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Explore Sharanya Farms gallery showcasing managed farmland, lush landscapes, and sustainable agricultural projects near Bangalore.'
+    });
+
+    this.meta.updateTag({
+      name: 'keywords',
+      content: 'Sharanya Farms gallery, managed farmland images, farmland near Bangalore photos, agricultural land projects, sustainable farming images, farmland views India'
+    });
+
+  }
+
+
   selectedCategory = 'sandal';
 
   startIndex = 0;

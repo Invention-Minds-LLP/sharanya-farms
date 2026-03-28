@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { HillView } from './hill-view/hill-view';
 import { PageForm } from '../page-form/page-form';
 
-
+import { Meta, Title } from '@angular/platform-browser';
 
 interface HighlightCard {
   icon: string;
@@ -21,6 +21,7 @@ interface HighlightCard {
 interface AmenitySlide {
   // title: string;
   image: string;
+  alt: string
 }
 
 @Component({
@@ -75,20 +76,62 @@ export class Project2 {
 
 
   amenities: AmenitySlide[] = [
-    { image: '/imgs/gallery-page/hill-view-1.png' },
-    { image: '/imgs/gallery-page/hill-view-2.png' },
-    { image: '/imgs/gallery-page/hill-view-3.png' },
-    { image: '/imgs/gallery-page/hill-view-4.png' },
-    { image: '/imgs/gallery-page/hill-view-5.png' },
-    { image: '/imgs/gallery-page/hill-view-6.png' },
-    { image: '/imgs/gallery-page/hill-view-7.png' },
-    { image: '/imgs/gallery-page/hill-view-8.png' },
-    { image: '/imgs/gallery-page/hill-view-9.png' },
-    { image: '/imgs/gallery-page/hill-view-10.png' },
-    { image: '/imgs/gallery-page/hill-view-11.png' },
-    { image: '/imgs/gallery-page/hill-view-12.png' },
-    { image: '/imgs/gallery-page/hill-view-13.png' },
-    { image: '/imgs/gallery-page/hill-view-14.png' },
+    { 
+      image: '/imgs/gallery-page/hill-view-1.png', 
+      alt: 'Entrance area with landscaping at Sharanya Hill View Farms' 
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-2.png', 
+      alt: 'Internal road with greenery in Hill View Farms project'  
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-3.png', 
+      alt: 'Tree plantation area in Sharanya Hill View farmland' 
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-4.png', 
+      alt: 'Coconut and palm trees in Hill View farmland project' 
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-5.png', 
+      alt: 'Green farmland area with trees in Hill View Farms' 
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-6.png', 
+      alt: 'Garden arch and seating area in Hill View Farms' 
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-7.png', 
+      alt: 'Farmhouse building in Sharanya Hill View Farms project'  
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-8.png', 
+      alt: 'Open farmland with boundary and greenery in Hill View' 
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-9.png', 
+      alt: 'Night view of farmhouse in Hill View Farms project' 
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-10.png', 
+      alt: 'Landscaped garden area in Sharanya Hill View farmland' 
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-11.png', 
+      alt: 'Walkway with grass and trees in Hill View Farms' 
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-12.png', 
+      alt: 'Farmland area with plantation and soil base in Hill View' 
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-13.png', 
+      alt: 'Indoor living space in farmhouse at Hill View Farms' 
+    },
+    { 
+      image: '/imgs/gallery-page/hill-view-14.png', 
+      alt: 'Swimming pool facility in Sharanya Hill View Farms project' 
+    },
   ];
 
   currentAmenityIndex = 0;
@@ -97,7 +140,7 @@ export class Project2 {
   showFormVideo = false;
   isMobile = false;
 
-  constructor(private router: Router) {}
+  // constructor(private router: Router) {}
 
   ngOnInit() {
     this.checkScreen();
@@ -213,7 +256,19 @@ export class Project2 {
   //   ];
   // }
 
-  // constructor(private router: Router) { }
+  constructor(private router: Router, private title: Title, private meta: Meta) { 
+    this.title.setTitle('Sharanya Hill View Farms | Scenic Farmland Investment');
+
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Explore Sharanya Hill View Farms offering scenic managed farmland with natural surroundings. Ideal for secure investment, peaceful living, and long-term value.'
+    });
+
+    this.meta.updateTag({
+      name: 'keywords',
+      content: 'Sharanya Hill View Farms, scenic farmland investment, managed farmland projects, hill view farmland India, farmland investment projects, Sharanya Farms projects'
+    });
+  }
 
   goToImagePage(): void {
 

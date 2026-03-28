@@ -5,6 +5,9 @@ import emailjs from '@emailjs/browser';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 
+import { Meta, Title } from '@angular/platform-browser';
+
+
 @Component({
   selector: 'app-contact',
   imports: [ReactiveFormsModule, CommonModule, FormsModule, ToastModule],
@@ -18,7 +21,19 @@ export class Contact {
 
   loading = false;       // 🔹 loading state
 
-  constructor(private fb: FormBuilder, private messageService : MessageService) { }
+  constructor(private fb: FormBuilder, private messageService : MessageService, private title: Title, private meta: Meta) { 
+    this.title.setTitle('Contact Sharanya Farms | Farmland Enquiry');
+
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Get in touch with Sharanya Farms for managed farmland enquiries. Call, visit, or connect with our team for investment details and site visits.'
+    });
+
+    this.meta.updateTag({
+      name: 'keywords',
+      content: 'contact Sharanya Farms, farmland enquiry, managed farmland contact, farmland investment enquiry, book site visit farmland, agricultural land enquiry India'
+    });
+  }
 
   ngOnInit() {
 

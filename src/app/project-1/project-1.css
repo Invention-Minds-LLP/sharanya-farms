@@ -126,7 +126,7 @@
   margin-bottom: 28px;
 }
 
-.about-left h2 {
+.about-left h1 {
   font-family: Syne;
   font-weight: 700;
   font-style: Bold;
@@ -1466,7 +1466,7 @@
     gap: 0px;
   }
 
-  .about-left h2 {
+  .about-left h1 {
     font-size: 22px;
     text-align: center;
   }

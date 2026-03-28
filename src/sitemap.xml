@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://www.sharanyafarms.com/</loc>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://www.sharanyafarms.com/about</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.sharanyafarms.com/contact</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.sharanyafarms.com/gallery</loc>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.sharanyafarms.com/sandal-valley-farms</loc>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://www.sharanyafarms.com/hill-view-farms</loc>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://www.sharanyafarms.com/weekend-village-farms</loc>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Optional / Hidden Pages -->
+    <url>
+        <loc>https://www.sharanyafarms.com/page-form</loc>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://www.sharanyafarms.com/registration</loc>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Map Pages (Optional – include only if public) -->
+    <url>
+        <loc>https://www.sharanyafarms.com/hillview-map</loc>
+        <priority>0.4</priority>
+    </url>
+
+    <url>
+        <loc>https://www.sharanyafarms.com/sandalvalley-map</loc>
+        <priority>0.4</priority>
+    </url>
+
+    <url>
+        <loc>https://www.sharanyafarms.com/weekendvillage-map</loc>
+        <priority>0.4</priority>
+    </url>
+
+</urlset>

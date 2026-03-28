@@ -41,7 +41,7 @@
 
                 <div class="feature-item">
                     <div class="icon-wrap">
-                        <img src="/imgs/home-page/benefits-img-1.png" alt="">
+                        <img src="/imgs/home-page/benefits-img-1.png" alt="Own valuable farmland asset at Sharanya Farms investment project">
                     </div>
                     <p class="feature-label">Own a Valuable<br>Land Asset</p>
                 </div>
@@ -49,7 +49,7 @@
 
                 <div class="feature-item">
                     <div class="icon-wrap">
-                        <img src="/imgs/home-page/benefits-img-2.png" alt="">
+                        <img src="/imgs/home-page/benefits-img-2.png" alt="Own valuable farmland asset at Sharanya Farms investment project">
                     </div>
                     <p class="feature-label">Enjoy Your Personal<br>Weekend Retreat</p>
                 </div>
@@ -57,14 +57,14 @@
 
                 <div class="feature-item">
                     <div class="icon-wrap">
-                        <img src="/imgs/home-page/benefits-img-3.png" alt="">
+                        <img src="/imgs/home-page/benefits-img-3.png" alt="Earn income from managed farmland investment at Sharanya Farms">
                     </div>
                     <p class="feature-label">Earn Potential<br>Income from<br>Your Farm</p>
                 </div>
 
                 <div class="feature-item">
                     <div class="icon-wrap">
-                        <img src="/imgs/home-page/benefits-img-4.png" alt="">
+                        <img src="/imgs/home-page/benefits-img-4.png" alt="Professionally managed farmland services by Sharanya Farms">
                     </div>
                     <p class="feature-label">Professionally<br>Managed Farmland</p>
                 </div>
@@ -77,12 +77,12 @@
         <div class="second-part">
             <div class="second-part-para">At Sharanya Farms, we believe in creating meaningful, lasting connections
                 between people and nature through responsible land ownership and eco-conscious living.</div>
-            <img src="/imgs/home-page/tree-img.png" alt="">
+            <img src="/imgs/home-page/tree-img.png" alt="Tree plantation symbolizing sustainable farming at Sharanya Farms">
         </div>
 
         <div class="we-are-part">
             <div class="we-are-bg">
-                <img src="/imgs/home-page/we-are-part-bg.png" alt="">
+                <img src="/imgs/home-page/we-are-part-bg.png" alt="Natural farmland background representing Sharanya Farms vision">
             </div>
 
             <div class="we-are-content">
@@ -100,7 +100,7 @@
 
                     <!-- LEFT CARD -->
                     <div class="card left" (click)="prev()">
-                        <img [src]="cards[leftIndex].image">
+                        <img [src]="cards[leftIndex].image" [alt]="cards[leftIndex].alt">
                         <div class="overlay">
                             <h3>{{cards[leftIndex].title}}</h3>
                             <p>{{cards[leftIndex].desc}}</p>
@@ -109,12 +109,12 @@
 
                     <!-- CENTER CARD -->
                     <div class="card center">
-                        <img [src]="cards[active].image">
+                        <img [src]="cards[active].image" [alt]="cards[active].alt">
                     </div>
 
                     <!-- RIGHT CARD -->
                     <div class="card right" (click)="next()">
-                        <img [src]="cards[rightIndex].image">
+                        <img [src]="cards[rightIndex].image" [alt]="cards[rightIndex].alt">
                         <div class="overlay">
                             <h3>{{cards[rightIndex].title}}</h3>
                             <p>{{cards[rightIndex].desc}}</p>
@@ -155,12 +155,12 @@
 
         <!-- TOP RIGHT HIDDEN IMAGE -->
         <div class="top-circle">
-            <img [src]="card[cardPrevIndex].image">
+            <img [src]="card[cardPrevIndex].image" [alt]="card[cardPrevIndex].alt">
         </div>
         <div class="">
             <!-- RIGHT CENTER (main image) -->
             <div class="right-circle">
-                <img [src]="card[cardCurrent].image">
+                <img [src]="card[cardCurrent].image" [alt]="card[cardCurrent].alt">
             </div>
             <div class="btns">
                 <button (click)="cardprev()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -184,7 +184,7 @@
 
             <!-- BOTTOM LEFT (next image) -->
             <div class="bottom-circle">
-                <img [src]="card[cardNextIndex].image">
+                <img [src]="card[cardNextIndex].image" [alt]="card[cardNextIndex].alt">
             </div>
             <!-- ARROWS -->
             <div class="circle-arrows">
@@ -214,16 +214,16 @@
         <div class="news-track">
 
             <div class="channels" *ngFor="let chan of channels">
-                <img src="/imgs/about/dot.png" alt="">
+                <img src="/imgs/about/dot.png" alt="Decorative separator dot in news section">
 
-                <img [src]="chan.img">
+                <img [src]="chan.img" [alt]="chan.alt">
                 <div class="chanel-name">{{chan.name}}</div>
             </div>
 
             <div class="channels" *ngFor="let chan of channels">
-                <img src="/imgs/about/dot.png" alt="">
+                <img src="/imgs/about/dot.png" alt="Decorative separator dot in news section">
 
-                <img [src]="chan.img">
+                <img [src]="chan.img" [alt]="chan.alt">
                 <div class="chanel-name">{{chan.name}}</div>
             </div>
 
@@ -234,7 +234,7 @@
     <div class="steps-section">
         <div class="step-heading">SIMPLE STEPS TO OWN YOUR FARMLAND</div>
 
-        <img src="/imgs/home-page/step-img.png" class="plant">
+        <img src="/imgs/home-page/step-img.png" class="Steps to own farmland illustrated in Sharanya Farms process">
 
         <div class="">
             <div class="steps-wrapper">
@@ -255,28 +255,28 @@
             </div>
             <!-- STEP 4 CARD -->
             <div class="info-card right1 card1" [class.active]="activeStep==4">
-                <img src="/imgs/home-page/right-line.svg" class="arrow arrow1">
+                <img src="/imgs/home-page/right-line.svg" alt="Right arrow indicator for step navigation" class="arrow arrow1">
                 <h2>Farm Management Begins</h2>
                 <p>Our team plants, maintains, and harvests your farmland.</p>
             </div>
 
             <!-- STEP 3 CARD -->
             <div class="info-card right2 card1" [class.active]="activeStep==3">
-                <img src="/imgs/home-page/right-line.svg" class="arrow arrow2">
+                <img src="/imgs/home-page/right-line.svg" alt="Right arrow showing process flow direction" class="arrow arrow2">
                 <h2>Registration & Handover</h2>
                 <p>Complete documentation and registration with full transparency.</p>
             </div>
 
             <!-- STEP 2 CARD -->
             <div class="info-card left1" [class.active]="activeStep==2">
-                <img src="/imgs/home-page/leftline-1.svg" class="arrow arrow3">
+                <img src="/imgs/home-page/leftline-1.svg" alt="Left arrow indicator for step navigation" class="arrow arrow3">
                 <h2>Choose Your Plot</h2>
                 <p>Select from legally clear plots of various sizes based on your budget.</p>
             </div>
 
             <!-- STEP 1 CARD -->
             <div class="info-card left2" [class.active]="activeStep==1">
-                <img src="/imgs/home-page/left-line-2.svg" class="arrow arrow4">
+                <img src="/imgs/home-page/left-line-2.svg" alt="Left arrow showing process flow direction" class="arrow arrow4">
 
                 <h2>Schedule a Visit</h2>
                 <p>Book a guided tour to explore our farmland projects and understand the layout.</p>
@@ -295,7 +295,7 @@
             <p>Where Nature’s Wisdom Embraces Us And The Land Blooms With Abundance</p>
             <button class="cta-btn white" (click)="goToImagePage()">
                 Discover it in real time
-                <span><img src="imgs/project-1/arrow.png" alt=""></span>
+                <span><img src="imgs/project-1/arrow.png" alt="Arrow icon to explore Sharanya Farms project details"></span>
             </button>
         </div>
     </div>
@@ -362,14 +362,14 @@
             </div>
             <div class="right-side-part2">
                 <div class="line"></div>
-                <img src="/imgs/home-page/x.png" alt="">
+                <img src="/imgs/home-page/x.png" alt="Social media icon for Sharanya Farms updates">
                 <a href="https://www.facebook.com/Sharanyafarmland" target="_blank"><img
-                        src="/imgs/home-page/face-book.png" alt=""></a>
+                        src="/imgs/home-page/face-book.png" alt="Facebook icon for Sharanya Farms page"></a>
                 <a href="https://www.instagram.com/sharanya_farms?igsh=NjV5djdhM2IycGRo" target="_blank">
-                    <img src="/imgs/home-page/insta.png" alt="">
+                    <img src="/imgs/home-page/insta.png" alt="Instagram icon for Sharanya Farms profile">
                 </a>
                 <a href="https://youtube.com/@sharanyafarms1073?si=uLpeMTdg_mvt2tQS" target="_blank">
-                    <img src="/imgs/home-page/youtube.png" alt="">
+                    <img src="/imgs/home-page/youtube.png" alt="YouTube icon for Sharanya Farms channel">
                 </a>
                 <div class="follow">follow us</div>
             </div>

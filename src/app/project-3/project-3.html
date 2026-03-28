@@ -47,7 +47,7 @@
     <div class="container">
       <div class="about-top">
         <div class="about-left" data-aos="fade-right">
-          <h2>Managed Farmplots<br />With Private Weekend Village</h2>
+          <h1>Managed Farmplots<br />With Private Weekend Village</h1>
           <button class="cta-btn-1" (click)="scrollToSection('contact')">Get Started</button>
         </div>
 
@@ -84,7 +84,7 @@
           </div>
 
           <div class="img">
-            <img src="imgs/project-1/plant.png" alt="plant">
+            <img src="imgs/project-1/plant.png" alt="Mango and coconut plantation at Sharanya Weekend Village farmland">
           </div>
         </div>
 
@@ -116,13 +116,13 @@
       <p>Where Nature’s Wisdom Embraces Us And The Land Blooms With Abundance</p>
       <button class="cta-btn white" (click)="goToImagePage()">
         Discover it in real time
-        <span><img src="imgs/project-1/arrow.png" alt=""></span>
+        <span><img src="imgs/project-1/arrow.png" alt="Arrow icon to explore Weekend Village farmland project"></span>
       </button>
     </div>
 
     <div class="stats-bar" data-aos="fade-up">
       <div class="stat-item">
-        <img src="/imgs/project-1/land.png" alt="land">
+        <img src="/imgs/project-1/land.png" alt="Total farmland area in Sharanya Weekend Village project">
         <div class="para">
           <p>Total Land</p>
         </div>
@@ -131,24 +131,24 @@
         </div>
       </div>
       <div class="stat-item">
-        <img src="/imgs/project-1/home.png" alt="">
+        <img src="/imgs/project-1/home.png" alt="Total farmland area in Sharanya Weekend Village project">
         <p>Premium Plots</p>
         <h3>86</h3>
       </div>
       <div class="stat-item">
-        <img src="/imgs/project-1/scale.png" alt="">
+        <img src="/imgs/project-1/scale.png" alt="Premium farmland plots in Weekend Village project">
         <p>Plot Sizes</p>
 
         <h3>5989 - 10890 sq.ft</h3>
       </div>
       <div class="stat-item">
-        <img src="/imgs/project-1/right.png" alt="">
+        <img src="/imgs/project-1/right.png" alt="Plot size details for Weekend Village farmland investment">
         <p>Plot Sold</p>
 
         <h3>66</h3>
       </div>
       <div class="stat-item">
-        <img src="/imgs/project-1/lock.png" alt="">
+        <img src="/imgs/project-1/lock.png" alt="Sold plots count in Sharanya Weekend Village farmland">
         <p>Available</p>
         <h3>20</h3>
       </div>
@@ -168,7 +168,7 @@
         <div class="highlight-card" *ngFor="let card of highlights; let i = index" data-aos="fade-up"
           [attr.data-aos-delay]="i * 80">
           <div class="icon-head">
-            <div class="highlight-icon"><img [src]="card.icon" alt="icon"></div>
+            <div class="highlight-icon"><img [src]="card.icon" [alt]="card.alt"></div>
             <small>{{ card.label }}</small>
           </div>
           <p *ngIf="(card.description)">{{ card.description }}</p>
@@ -189,7 +189,7 @@
       <div class="slider-window">
         <div class="slides" [style.transform]="'translateX(-' + translateX + 'px)'">
           <div class="slide" *ngFor="let item of amenities">
-            <img [src]="item.image" />
+            <img [src]="item.image" [alt]="item.alt" />
           </div>
         </div>
       </div>

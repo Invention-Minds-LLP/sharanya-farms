@@ -7,6 +7,8 @@ import { Router, RouterModule } from '@angular/router';
 import { RegisterForm } from "../register-form/register-form";
 import { RegisterFormPopup } from "./register-form-popup/register-form-popup";
 
+import { Meta, Title } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-home-page',
   standalone: true,
@@ -15,6 +17,9 @@ import { RegisterFormPopup } from "./register-form-popup/register-form-popup";
   styleUrl: './home-page.css',
 })
 export class HomePage {
+
+
+  
   active = 1;
   activeStep = 0;
 
@@ -22,22 +27,26 @@ export class HomePage {
     {
       image: '/imgs/home-page/img-1.png',
       title: 'Fully Managed Model',
-      desc: 'We handle everything from cultivation to maintenance.'
+      desc: 'We handle everything from cultivation to maintenance.',
+      alt: 'Fully managed farmland model with plantation and maintenance services'
     },
     {
       image: '/imgs/home-page/img-2.png',
       title: 'Nature-First Philosophy',
-      desc: 'Every farmland is curated with a deep respect for nature, ensuring ecological balance and sustainable growth.'
+      desc: 'Every farmland is curated with a deep respect for nature, ensuring ecological balance and sustainable growth.',
+      alt: 'Nature first farmland with greenery and sustainable ecosystem design'
     },
     {
       image: '/imgs/home-page/img-3.png',
       title: 'Sustainable Farming',
-      desc: 'We practice organic farming and drip irrigation.'
+      desc: 'We practice organic farming and drip irrigation.',
+       alt: 'Organic farming practices with drip irrigation in managed farmland'
     },
     {
       image: '/imgs/home-page/img-4.png',
       title: 'Transparent Ownership',
-      desc: 'All plots come with clear legal titles, documentation, and full visibility on...'
+      desc: 'All plots come with clear legal titles, documentation, and full visibility on...',
+      alt: 'Clear land ownership with legal documentation in farmland investment'
     },
   ];
   get leftIndex() {
@@ -196,27 +205,33 @@ export class HomePage {
   channels = [
     {
       img: '/imgs/about/chan-1.png',
-      name: 'PUBLIC TV'
+      name: 'PUBLIC TV',
+      alt: 'Sharanya Farms featured on Public TV news coverage'
     },
     {
       img: '/imgs/about/chan-2.png',
-      name: 'DECCAN HERALD'
+      name: 'DECCAN HERALD',
+      alt: 'Sharanya Farms featured in Deccan Herald newspaper'
     },
     {
       img: '/imgs/about/chan-3.png',
-      name: 'SUVARNA news'
+      name: 'SUVARNA news',
+      alt: 'Sharanya Farms coverage on Suvarna News channel'
     },
     {
       img: '/imgs/about/chan-4.png',
-      name: 'KARNATAKA TV9'
+      name: 'KARNATAKA TV9',
+      alt: 'Sharanya Farms featured on TV9 Karnataka news channel'
     },
     {
       img: '/imgs/about/chan-5.png',
-      name: 'No.1 VIJAYAVANI KANNADA DAILY'
+      name: 'No.1 VIJAYAVANI KANNADA DAILY',
+      alt: 'Sharanya Farms featured in Vijayavani Kannada daily news'
     },
     {
       img: '/imgs/about/chan-6.png',
-      name: 'VIJAY KARNATAKA'
+      name: 'VIJAY KARNATAKA',
+      alt: 'Sharanya Farms coverage in Vijay Karnataka publication'
     },
   ]
 
@@ -225,19 +240,22 @@ export class HomePage {
       title: 'Sharanya Sandal valley Farms',
       desc: 'Sharanya Sandal Valley Farms represents a captivating blend of aesthetics, fostering a community-centric lifestyle within an eco-friendly expanse located on T Narasipura Road, near Bangalore - Mysore road near Malavali. Our vision is to reshape the essence of living and redefine the experience of acquiring real estate. Located off Bangalore - Mysore road near Malavali, near the prestigious World Heritage...',
       image: '/imgs/home-page/sandal-villey.png',
-      link: '/sandalvalley'
+      link: '/sandal-valley-farms',
+      alt: 'Sandalwood plantation farmland at Sharanya Sandal Valley Farms project'
     },
     {
       title: 'Sharanya Hillview Farms',
       desc: 'Sharanya Hillview Farms is a nature-friendly getaway near Mysore designed for those seeking peace, greenery, and value. With sandalwood plantations and lush surroundings, its an ideal destination for weekend retreats, remote working, or mindful farming...',
       image: '/imgs/home-page/hill-view.png',
-      link: '/hillview'
+      link: '/hill-view-farms',
+      alt: 'Scenic hill view farmland with greenery at Sharanya Hillview Farms'
     },
     {
       title: 'Sharanya Weekend Village',
       desc: 'Sharanya Hillview Farms is a nature-friendly getaway near Mysore designed for those seeking peace, greenery, and value. With sandalwood plantations and lush surroundings, its an ideal destination for weekend retreats, remote working, or mindful farming...',
       image: '/imgs/home-page/weekend.png',
-      link: '/weekendvillage'
+      link: '/weekend-village-farms',
+      alt: 'Weekend village farmland with natural surroundings and farmhouse lifestyle'
     }
   ]
 
@@ -298,7 +316,24 @@ export class HomePage {
 
   showPopup: boolean = false;
 
-  constructor(private cdr: ChangeDetectorRef, private router: Router) { }
+  constructor(private cdr: ChangeDetectorRef, private router: Router, private title: Title, private meta: Meta) {
+    // Title
+    this.title.setTitle('Best Managed Farmland Near Bangalore | Sharanya Farms');
+
+    // Meta Description
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Own managed farmland near Bangalore with Sharanya Farms. Premium agricultural land with expert care, sustainable practices, and long-term investment value.'
+    });
+
+    // Meta Keywords
+    this.meta.updateTag({
+      name: 'keywords',
+      content: 'managed farmland near Bangalore, farmland investment near Bangalore, buy farmland near Bangalore, managed agricultural land Karnataka, farmland investment India, sustainable farmland projects'
+    });
+
+  }
+  // constructor(private cdr: ChangeDetectorRef, private router: Router) { }
 
   isMobile = false;
 

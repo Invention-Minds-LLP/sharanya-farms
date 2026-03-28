@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { PageForm } from '../page-form/page-form';
 import { WeekendVillage } from './weekend-village/weekend-village';
 
-
+import { Meta, Title } from '@angular/platform-browser';
 
 interface HighlightCard {
   icon: string;
@@ -16,6 +16,7 @@ interface HighlightCard {
   // title: string;
   description?: string;
   points?: string[];
+  alt: string
 
 }
 
@@ -23,6 +24,7 @@ interface HighlightCard {
 interface AmenitySlide {
   // title: string;
   image: string;
+  alt: string
 }
 
 @Component({
@@ -43,7 +45,8 @@ export class Project3 {
         'Underground Pipeline for water',
         'Entrance arch',
         '10 feet Compound wall boundary',
-      ]
+      ],
+      alt: 'Infrastructure layout including roads and drainage in Weekend Village farmland',
     },
     {
       icon: 'imgs/project-1/water.png',
@@ -51,17 +54,20 @@ export class Project3 {
       points: ['6 Borewells',
         'Underground pipeline connection to all the plots for domestic usage',
         'Drip irrigation set up for the farming activities',
-      ]
+      ],
+      alt: 'Infrastructure layout including roads and drainage in Weekend Village farmland',
     },
     {
       icon: 'imgs/project-1/electric.png',
       label: 'Electricity',
-      description: 'Overhead across the property'
+      description: 'Overhead across the property',
+      alt: 'Water supply and drip irrigation system in Weekend Village farmland',
     },
     {
       icon: 'imgs/project-1/security.png',
       label: 'Security',
-      description: 'Security Guards, Compound wall boundary, CCTV cameras, Management, team at the farm 24*7'
+      description: 'Security Guards, Compound wall boundary, CCTV cameras, Management, team at the farm 24*7',
+      alt: 'Electricity infrastructure available across Weekend Village farmland project',
     },
   ];
 
@@ -72,20 +78,62 @@ export class Project3 {
 
 
   amenities: AmenitySlide[] = [
-    { image: '/imgs/gallery-page/week-img-1.png' },
-    { image: '/imgs/gallery-page/week-img-2.png' },
-    { image: '/imgs/gallery-page/week-img-3.png' },
-    { image: '/imgs/gallery-page/week-img-4.png' },
-    { image: '/imgs/gallery-page/week-img-5.png' },
-    { image: '/imgs/gallery-page/week-img-6.png' },
-    { image: '/imgs/gallery-page/week-img-7.png' },
-    { image: '/imgs/gallery-page/week-img-8.png' },
-    { image: '/imgs/gallery-page/week-img-9.png' },
-    { image: '/imgs/gallery-page/week-img-10.png' },
-    { image: '/imgs/gallery-page/week-img-11.png' },
-    { image: '/imgs/gallery-page/week-img-12.png' },
-    { image: '/imgs/gallery-page/week-img-13.png' },
-    { image: '/imgs/gallery-page/week-img-14.png' },
+    { 
+      image: '/imgs/gallery-page/week-img-1.png',
+      alt: 'Entrance of Sharanya Weekend Village farmland project'
+    },
+    { 
+      image: '/imgs/gallery-page/week-img-2.png' ,
+      alt: 'Entrance of Sharanya Weekend Village farmland project'
+    },
+    { 
+      image: '/imgs/gallery-page/week-img-3.png',
+      alt: 'Green plants and trees in Weekend Village farmland'
+    },
+    { 
+      image: '/imgs/gallery-page/week-img-4.png',
+      alt: 'Coconut plantation in Sharanya Weekend Village farmland'
+    },
+    { 
+      image: '/imgs/gallery-page/week-img-5.png',
+      alt: 'Brick building structure in Weekend Village project area' 
+    },
+    { 
+      image: '/imgs/gallery-page/week-img-6.png',
+      alt: 'Corridor inside farmhouse in Weekend Village farmland'
+    },
+    { 
+      image: '/imgs/gallery-page/week-img-7.png',
+      alt: 'Indoor room setup in Weekend Village farmhouse'
+    },
+    { 
+      image: '/imgs/gallery-page/week-img-8.png' ,
+      alt: 'Wooden farmhouse in Sharanya Weekend Village farmland'
+    },
+    { 
+      image: '/imgs/gallery-page/week-img-9.png',
+      alt: 'Green leaves and plants in Weekend Village landscape'
+    },
+    { 
+      image: '/imgs/gallery-page/week-img-10.png',
+      alt: 'Green leaves and plants in Weekend Village landscape'
+    },
+    { 
+      image: '/imgs/gallery-page/week-img-11.png',
+      alt: 'Flower plant blooming in Weekend Village farmland project'
+    },
+    { 
+      image: '/imgs/gallery-page/week-img-12.png',
+      alt: 'Palm trees and greenery in Weekend Village farmland'
+    },
+    { 
+      image: '/imgs/gallery-page/week-img-13.png',
+      alt: 'Open farmland area with trees in Weekend Village project'
+     },
+    { 
+      image: '/imgs/gallery-page/week-img-14.png' ,
+      alt: 'Tree plantation area in Weekend Village farmland'
+    },
 
   ];
 
@@ -95,7 +143,7 @@ export class Project3 {
   showFormVideo = false;
   isMobile = false;
 
-  constructor(private router: Router) { }
+  // constructor(private router: Router) { }
 
   ngOnInit() {
     this.checkScreen();
@@ -230,7 +278,19 @@ export class Project3 {
   //   ];
   // }
 
-  // constructor(private router: Router) { }
+  constructor(private router: Router, private title: Title, private meta: Meta) {
+    this.title.setTitle('Sharanya Weekend Village | Farmland & Nature Living');
+
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Experience Sharanya Weekend Village with managed farmland and serene surroundings. Ideal for weekend living, relaxation, and long-term investment value.'
+    });
+
+    this.meta.updateTag({
+      name: 'keywords',
+      content: 'Sharanya Weekend Village, weekend farmland project, managed farmland living, weekend getaway farmland, farmland investment India, Sharanya Farms projects'
+    });
+   }
 
   goToImagePage(): void {
 

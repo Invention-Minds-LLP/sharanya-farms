@@ -21,6 +21,9 @@ import { CommonModule } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import { ToastModule } from 'primeng/toast';
 
+import { SeoSchema } from './SEO/seo-schema'; // adjust path if needed
+import { SCHEMA_MAP } from './SEO/schema-map';
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink, Footer, NavBar, CommonModule, ToastModule],
@@ -32,7 +35,7 @@ export class App {
 
    showLayout = true;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute, private schemaService: SeoSchema) {
 
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
@@ -46,4 +49,24 @@ export class App {
         this.showLayout = !currentRoute?.snapshot.data['hideLayout'];
       });
     }
+
+    ngOnInit(): void {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+
+        // Get clean path (remove query params)
+        const path = this.router.url.split('?')[0];
+
+        // Get schema from map
+        const schema = SCHEMA_MAP[path];
+
+        if (schema) {
+          this.schemaService.setSchema(schema);
+        } else {
+          // Optional: remove schema if not found
+          this.schemaService.setSchema({});
+        }
+      });
+  }
 }
