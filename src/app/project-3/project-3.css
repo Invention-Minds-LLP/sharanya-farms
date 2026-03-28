@@ -1558,6 +1558,10 @@
     display: none;
   }
 
+  .banner-img{
+    display: none;
+  }
+
   .about {
     padding: 30px;
     margin-top: -45px;

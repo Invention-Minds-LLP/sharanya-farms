@@ -201,7 +201,11 @@
 
   <div class="form-part">
     <div class="form" id="contact">
-      <app-page-form></app-page-form>
+      <app-page-form [addressData]="{
+        text:'Hillview – Malavalli - Mysore Road (95 km from Banashankari)',
+        mapLink:'https://maps.app.goo.gl/om14sFrXbDgvkWyq9',
+        embedMapLink:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.052735160901!2d76.9330217!3d12.3122356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf0ff0bbfbbf09%3A0xc88bb8114a0efca7!2sSharanya%20hill%20view%20farms!5e0!3m2!1sen!2sin!4v1774682463045!5m2!1sen!2sin'
+      }"></app-page-form>
     </div>
     <div class="video">
       <video src="/imgs/form-video.mp4" autoplay loop muted playinline></video>

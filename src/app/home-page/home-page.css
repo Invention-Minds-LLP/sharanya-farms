@@ -220,7 +220,7 @@
 
 .we-are-content {
     position: absolute;
-    top: 1830px;
+    top: 1740px;
     left: 0;
     right: 0;
     width: 100%;
@@ -1165,6 +1165,12 @@
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
+@media(max-width:1440px) {
+    .we-are-content {
+        top: 1880px;
+    }
+}
+
 
 
 @media(max-width:1439px) {
@@ -1176,7 +1182,7 @@
     }
 
     .we-are-content {
-        top: 1550px;
+        top: 1820px;
     }
 
     .we-are-bg img {
@@ -1320,11 +1326,12 @@
     }
 
     .bottom-circle {
-        left: 170px;
+        left: 50px;
+        bottom: -170px;
     }
 
     .left-circle {
-        margin-top: -230px;
+        margin-top: -170px;
     }
 
     .center-content p {
@@ -1521,7 +1528,7 @@
         width: 260px;
         height: 260px;
         left: 60px;
-        bottom: -90px;
+        bottom: -120px;
     }
 
     .top-circle {

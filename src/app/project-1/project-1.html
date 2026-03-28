@@ -191,7 +191,11 @@
 
   <div class="form-part">
     <div class="form" id="contact">
-      <app-page-form></app-page-form>
+      <app-page-form [addressData]="{
+        text:'Sandal Valley – Malavalli -  Mysore Road (95 km from Banashankari)',
+        mapLink:'https://maps.app.goo.gl/p8QT46M2uRk4wskh9',
+        embedMapLink:'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.302804853126!2d76.963171!3d12.295383399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf1117522c81d3%3A0x226706a0889d9808!2sSharanya%20Sandal%20valley%20farm!5e0!3m2!1sen!2sin!4v1774682367139!5m2!1sen!2sin '
+      }"></app-page-form>
     </div>
     <div class="video">
       <video src="/imgs/form-video.mp4" autoplay loop muted playinline></video>
