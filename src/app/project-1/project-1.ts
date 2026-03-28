@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import AOS from 'aos';
 import { PageForm } from '../page-form/page-form';
 
+import { Meta, Title } from '@angular/platform-browser';
+
 
 interface HighlightCard {
   icon: string;
@@ -16,6 +18,7 @@ interface HighlightCard {
 interface AmenitySlide {
   // title: string;
   image: string;
+  alt: string
 }
 
 @Component({
@@ -75,20 +78,61 @@ export class Project1 {
 
 
   amenities: AmenitySlide[] = [
-    { image: 'imgs/gallery-page/san-1.png' },
-    { image: 'imgs/gallery-page/san-2.png' },
-    { image: 'imgs/gallery-page/san-3.png' },
-    { image: 'imgs/gallery-page/san-4.png' },
-    { image: 'imgs/gallery-page/san-5.png' },
-    { image: 'imgs/gallery-page/san-6.png' },
-    { image: 'imgs/gallery-page/san-7.png' },
-    { image: 'imgs/gallery-page/san-8.png' },
-    { image: 'imgs/gallery-page/san-9.png' },
-    { image: 'imgs/gallery-page/san-10.png' },
-    { image: 'imgs/gallery-page/san-11.png' },
-    { image: 'imgs/gallery-page/san-12.png' },
-    { image: 'imgs/gallery-page/san-13.png' },
-    { image: 'imgs/gallery-page/san-14.png' },
+    { 
+      image: 'imgs/gallery-page/san-1.png',
+      alt: 'Farmland view with trees in Sandal Valley Farms project'
+    },
+    { image: 'imgs/gallery-page/san-2.png',
+      alt: 'Open agricultural land in Sandal Valley farmland project'
+    },
+    { 
+      image: 'imgs/gallery-page/san-3.png', 
+      alt: 'Organized plantation area in Sandal Valley managed farmland' 
+    },
+    { 
+      image: 'imgs/gallery-page/san-4.png',
+      alt: 'Natural farmland landscape with trees in Sandal Valley Farms'
+    },
+    { 
+      image: 'imgs/gallery-page/san-5.png',
+      alt: 'Green farmland with developing plantation in Sandal Valley' 
+    },
+    { 
+      image: 'imgs/gallery-page/san-6.png' ,
+      alt: 'Farm pathway surrounded by trees in Sandal Valley Farms'
+    },
+    { 
+      image: 'imgs/gallery-page/san-7.png',
+      alt: 'Internal road inside Sandal Valley farmland with greenery'
+     },
+    { 
+      image: 'imgs/gallery-page/san-8.png',
+      alt: 'Tree plantation rows in Sandal Valley managed farmland'
+    },
+    { 
+      image: 'imgs/gallery-page/san-9.png',
+      alt: 'Young trees growing in Sandal Valley farmland plantation'
+    },
+    { 
+      image: 'imgs/gallery-page/san-10.png',
+      alt: 'Dense greenery in Sandal Valley Farms project landscape'
+    },
+    { 
+      image: 'imgs/gallery-page/san-11.png',
+      alt: 'Dense greenery in Sandal Valley Farms project landscape'
+    },
+    { 
+      image: 'imgs/gallery-page/san-12.png',
+      alt: 'Open land prepared for farming in Sandal Valley Farms'
+    },
+    { 
+      image: 'imgs/gallery-page/san-13.png',
+      alt: 'Open land prepared for farming in Sandal Valley Farms'
+    },
+    { 
+      image: 'imgs/gallery-page/san-14.png',
+      alt: 'Green leaves close view in Sandal Valley plantation area'
+     },
   ];
 
   currentAmenityIndex = 0;
@@ -97,7 +141,7 @@ export class Project1 {
   showFormVideo = false;
   isMobile = false;
 
-  constructor(private router: Router) { }
+  // constructor(private router: Router) { }
 
   ngOnInit() {
     this.checkScreen();
@@ -230,7 +274,20 @@ export class Project1 {
   //   ];
   // }
 
-  // constructor(private router: Router) { }
+  constructor(private router: Router, private title: Title, private meta: Meta) { 
+    this.title.setTitle('Sharanya Sandal Valley Farms | Sandalwood Investment');
+
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Invest in Sharanya Sandal Valley Farms with premium sandalwood plantations. Managed farmland offering sustainable growth and long-term investment returns.'
+    });
+
+    this.meta.updateTag({
+      name: 'keywords',
+      content: 'Sharanya Sandal Valley Farms, sandalwood farmland investment, managed farmland sandalwood, sandalwood plantation investment India, Sharanya Farms projects, high return farmland investment'
+    });
+
+  }
 
   goToImagePage(): void {
 

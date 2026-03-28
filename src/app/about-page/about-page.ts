@@ -4,6 +4,8 @@ import { PageForm } from "../page-form/page-form";
 import { Footer } from "../footer/footer";
 import { NavBar } from "../nav-bar/nav-bar";
 
+import { Meta, Title } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-about-page',
   imports: [CommonModule, PageForm, Footer, NavBar],
@@ -11,6 +13,23 @@ import { NavBar } from "../nav-bar/nav-bar";
   styleUrl: './about-page.css',
 })
 export class AboutPage {
+
+  constructor(private title: Title, private meta: Meta) {
+
+    this.title.setTitle('About Sharanya Farms | Managed Farmland Experts');
+
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Know more about Sharanya Farms, experts in managed farmland near Bangalore. We offer secure land ownership, sustainable practices, and trusted farm management.'
+    });
+
+    this.meta.updateTag({
+      name: 'keywords',
+      content: 'sharanya Farms, managed farmland company, farmland experts India, farmland investment company, sustainable farming projects, managed agricultural land Karnataka'
+    });
+
+  }
+
   card = [
     {
       heading: 'Sustainable Stewardship',
@@ -29,27 +48,33 @@ export class AboutPage {
   channels = [
     {
       img: '/imgs/about/chan-1.png',
-      name: 'PUBLIC TV'
+      name: 'PUBLIC TV',
+      alt: 'Sharanya Farms coverage in Deccan Herald newspaper article'
     },
     {
       img: '/imgs/about/chan-2.png',
-      name: 'DECCAN HERALD'
+      name: 'DECCAN HERALD',
+      alt: 'Sharanya Farms featured on Public TV news channel coverage'
     },
     {
       img: '/imgs/about/chan-3.png',
-      name: 'SUVARNA news'
+      name: 'SUVARNA news',
+      alt: 'Sharanya Farms coverage in Deccan Herald newspaper article'
     },
     {
       img: '/imgs/about/chan-4.png',
-      name: 'KARNATAKA TV9'
+      name: 'KARNATAKA TV9',
+      alt: 'Sharanya Farms coverage on TV9 Karnataka news channel'
     },
     {
       img: '/imgs/about/chan-5.png',
-      name: 'No.1 VIJAYAVANI KANNADA DAILY'
+      name: 'No.1 VIJAYAVANI KANNADA DAILY',
+      alt: 'Sharanya Farms coverage on TV9 Karnataka news channel'
     },
     {
       img: '/imgs/about/chan-6.png',
-      name: 'VIJAY KARNATAKA'
+      name: 'VIJAY KARNATAKA',
+      alt: 'Sharanya Farms coverage in Vijay Karnataka news publication'
     },
   ]
   current = 0;

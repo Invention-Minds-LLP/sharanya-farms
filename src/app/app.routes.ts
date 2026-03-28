@@ -43,13 +43,16 @@ export const routes: Routes = [
     { path: 'weekendvillage', component: Project3 },
     { path: 'contact', component: Contact },
     { path: 'about', component: AboutPage },
-    { path: 'gallery', component: GalleryPage },
-    { path: 'page-form', component: PageForm },
-
-    { path: 'registration-link', component: RegisterForm, data: { hideLayout: true } },
-
-
-    { path: 'hillview-map', component: HillView, data: { hideLayout: true } },
-    { path: 'sandalvalley-map', component: SandalValley, data: { hideLayout: true } },
-    { path: 'weekendvillage-map', component: WeekendVillage, data: { hideLayout: true } }
+    { path: 'page-form', component: PageForm},
+    { path: 'gallery', component: GalleryPage},
+    { path: 'registration', component: RegisterForm,data: { hideLayout: true }},
+    // { path: 'sandalvalley', component: Project1},
+    { path: 'sandal-valley-farms', component: Project1},
+    // { path: 'hillview', component: Project2},
+    { path: 'hill-view-farms', component: Project2},
+    // { path: 'weekendvillage', component: Project3},
+    { path: 'weekend-village-farms', component: Project3},
+    { path: 'hillview-map', component: HillView, data: { hideLayout: true }},
+    { path: 'sandalvalley-map', component: SandalValley, data: { hideLayout: true }},
+    { path: 'weekendvillage-map', component: WeekendVillage,data: { hideLayout: true }}
 ];
